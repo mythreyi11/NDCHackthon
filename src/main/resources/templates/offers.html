@@ -64,9 +64,9 @@
 					</div>
        			 </div>
        			  <div id ="filtered-result" th:fragment="resultsList" th:object ="${offerList}" class="col-sm-offset-1 col-sm-5">
-       			  <table border="0">
-					<th:block th:each="offer : ${offerList.offerDetailsList}">
-					<tr>
+       			  <table class="offertable">
+					<th:block  th:each="offer : ${offerList.offerDetailsList}">
+					<tr >
 		        		<td id="filtered-offer-td">
 		        		<div class="well well-lg-color box box2">
 		        		<div class="well well-sm-color well-xs">
@@ -141,6 +141,12 @@
 		$("#filtered-result").html(data);
 		$("#filtered-offer-td").css({"height":"340"});
 	}
+	
+	/* $("#filtered-result").hover(function () {
+        $("#filtered-result").addClass("divclass");
+    }, function () {
+        $("#filtered-result").removeClass("divclass");
+    }); */
 </script>
 	
 </body>

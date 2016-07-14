@@ -62,3 +62,10 @@ ul.slide li:hover {
 .box2 {
   transition: all 1s;
 }
+
+.offertable {
+	width: 300px;
+	height: 100%;
+	table-layout: fixed;
+	border-collapse: collapse
+}
