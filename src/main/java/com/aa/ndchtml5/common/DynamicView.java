@@ -1,12 +1,12 @@
 package com.aa.ndchtml5.common;
 
 
-public class Filter {
+public class DynamicView {
 
 	private String code;
 	private String value;
 
-	public Filter(String code, String value) {
+	public DynamicView(String code, String value) {
 		super();
 		this.code = code;
 		this.value = value;

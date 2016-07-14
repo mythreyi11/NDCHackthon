@@ -1,6 +1,6 @@
 package com.aa.ndchtml5.common;
 
-public class Stop extends Filter {
+public class Stop extends DynamicView {
 
 	public static Stop NONSTOP = new Stop("Nonstop", "Nonstop");
 	public static Stop ONE_PLUS = new Stop("1+", "1+");
