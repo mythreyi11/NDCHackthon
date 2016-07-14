@@ -18,7 +18,7 @@
 
 <body background="/images/bgimage.jpg">
 	<form class="form-display" autocomplete="off" id="flight-search-form"
-		th:action="@{/loadInitialData}" th:object="${offerList}" method="post">
+		th:action="@{/loadInitialData}" th:object="${flightSearchCriteria}" method="post">
 		<div class="container">
 
 			<div id="aa-carousel" class="carousel slide" data-ride="carousel">
@@ -73,15 +73,10 @@
 										id="to-airport-roundtrip" class="form-control" /></label>
 								</div>
 								<div class="col-xs-12 col-sm-4">
-									<label for="passengers-number-roundtrip">Number of
-										Passengers <select id="passengers-number-roundtrip"
-										class="form-control">
-											<option th:value="1">1</option>
-											<option th:value="2">2</option>
-											<option th:value="3">3</option>
-											<option th:value="4">4</option>
-											<option th:value="5">5</option>
-											<option th:value="6">6</option>
+									<label for="passengers-number-roundtrip">Number of Passengers
+									<select class="form-control" id ="passengers-number-roundtrip" th:field="*{passengersNumberRoundtrip}">
+									<option th:each="number : ${T(com.aa.ndchtml5.common.PassengerNumber).passengerNumberList}"
+										th:value="${number.getCode()}" th:text="${number.getValue()}"></option>
 									</select>
 									</label>
 								</div>
@@ -116,15 +111,10 @@
 										id="to-airport-oneway" class="form-control" /></label>
 								</div>
 								<div class="col-xs-12 col-sm-4">
-									<label for="passengers-number-oneway">Number of
-										Passengers <select id="passengers-number-oneway"
-										class="form-control">
-											<option th:value="1">1</option>
-											<option th:value="2">2</option>
-											<option th:value="3">3</option>
-											<option th:value="4">4</option>
-											<option th:value="5">5</option>
-											<option th:value="6">6</option>
+									<label for="passengers-number-oneway">Number of Passengers
+									<select class="form-control" id ="passengers-number-oneway">
+									<option th:each="number : ${T(com.aa.ndchtml5.common.PassengerNumber).passengerNumberList}"
+										th:value="${number.getCode()}" th:text="${number.getValue()}"></option>
 									</select>
 									</label>
 								</div>
