@@ -31,9 +31,9 @@
 							</div>
 							<ul class="slide">
 								<li th:each="stop : ${T(com.aa.ndchtml5.common.Stop).stopsList}">
-									<input type="checkbox" id ="stop"  onclick = "getDetailsOnFilterSelection()"
+									<input type="checkbox" th:id ="${stop.getCode()}"  onclick = "getDetailsOnFilterSelection()"
 									th:value="${stop.getCode()}" /> 
-									<label th:text="${stop.getValue()}"></label>
+									<label th:for="${stop.getCode()}" th:text="${stop.getValue()}"></label>
 								</li>
 							</ul>
 						</div>
@@ -43,9 +43,9 @@
 							</div>
 							<ul class="slide">
 								<li th:each="airline : ${T(com.aa.ndchtml5.common.Airline).airlineList}">
-									<input type="checkbox" id ="airline"  onclick = "getDetailsOnFilterSelection()"
+									<input type="checkbox" th:id ="${airline.getCode()}"  onclick = "getDetailsOnFilterSelection()"
 									th:value="${airline.getCode()}" /> 
-									<label th:text="${airline.getValue()}"></label>
+									<label th:for="${airline.getCode()}" th:text="${airline.getValue()}"></label>
 								</li>
 							</ul>
 						</div>
@@ -55,9 +55,11 @@
 							</div>
 							<ul class="slide">
 								<li th:each="feature : ${T(com.aa.ndchtml5.common.Feature).featuresList}">
-									<input  type="checkbox" id ="feature"  onclick = "getDetailsOnFilterSelection()"
+									<input  type="checkbox" th:id ="${feature.getCode()}"  onclick = "getDetailsOnFilterSelection()"
 									th:value="${feature.getCode()}" /> 
+									<label th:for="${feature.getCode()}">
 									<img th:title="${feature.getCode()}" th:src="${feature.getValue()}" th:alt="${feature.getCode()}"></img>
+									</label>
 								</li>
 							</ul>
 						</div>
