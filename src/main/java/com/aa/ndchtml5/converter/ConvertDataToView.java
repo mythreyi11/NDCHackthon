@@ -10,6 +10,10 @@ import com.aa.ndchtml5.web.model.OfferList;
 
 public class ConvertDataToView {
 	
+	/**
+	 * @param offers
+	 * @return
+	 */
 	public static OfferList getOfferListToShow(List<Offer> offers) {
 		
 		OfferList offerList = new OfferList();
