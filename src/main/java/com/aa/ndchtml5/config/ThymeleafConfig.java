@@ -1,4 +1,4 @@
-package com.aa.ndcttml5.config;
+package com.aa.ndchtml5.config;
 
 
 import org.springframework.context.annotation.Bean;
