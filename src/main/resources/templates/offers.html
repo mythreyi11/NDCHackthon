@@ -55,9 +55,9 @@
 							</div>
 							<ul class="slide">
 								<li th:each="feature : ${T(com.aa.ndchtml5.common.Feature).featuresList}">
-									<input type="checkbox" id ="feature"  onclick = "getDetailsOnFilterSelection()"
+									<input  type="checkbox" id ="feature"  onclick = "getDetailsOnFilterSelection()"
 									th:value="${feature.getCode()}" /> 
-									<img th:src="${feature.getValue()}" th:alt="${feature.getCode()}"></img>
+									<img th:title="${feature.getCode()}" th:src="${feature.getValue()}" th:alt="${feature.getCode()}"></img>
 								</li>
 							</ul>
 						</div>
