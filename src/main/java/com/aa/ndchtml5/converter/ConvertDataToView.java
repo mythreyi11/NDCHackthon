@@ -25,6 +25,10 @@ public class ConvertDataToView {
 		return offerList;
 	}
 	
+	/**
+	 * @param offer
+	 * @return
+	 */
 	public static OfferDetails getOfferDetails(Offer offer) {
 		if (offer == null) {
 			return null;
