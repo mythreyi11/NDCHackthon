@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>User Search</title>
+<link href="/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+<link href="/css/custom.css" th:href="@{css/custom.css}"
+	rel="stylesheet" media="screen" />
+
+</head>
+
+<body>
+	<form class="form-display" autocomplete="off" id="flight-search-form"
+		th:action="@{/loadInitialData}" th:object="${offerList}" method="post">
+		<div class="container">
+
+			<div id="aa-carousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#aa-carousel" data-slide-to="0" class="active"></li>
+					<li data-target="#aa-carousel" data-slide-to="1"></li>
+					<li data-target="#aa-carousel" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="/images/carousel_1.jpg" alt="carousel_1"/>
+					</div>
+					<div class="item">
+						<img src="/images/carousel_2.jpg" alt="carousel_2"/>
+					</div>
+					<div class="item">
+						<img src="/images/carousel_3.jpg" alt="carousel_3"/>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+			<div class ="col-xs-12  col-sm-offset-1 col-sm-10">
+				<h3 class="heading-color">Shopping</h3>
+				<hr class="heading-color"></hr>
+				<p class="padding-bottom"></p>
+				<div class="col-xs-12 col-sm-8">
+					<ul class="nav nav-pills" role="tablist">
+						<li role="presentation" class="active"><a href="#roundtrip"
+							aria-controls="roundtrip" role="tab" data-toggle="tab">Round
+								trip</a></li>
+						<li role="presentation"><a href="#oneway"
+							aria-controls="oneway" role="tab" data-toggle="tab">One way</a></li>
+						<li role="presentation"><a href="#roundtriphotel"
+							aria-controls="roundtriphotel" role="tab" data-toggle="tab">Round
+								trip + Hotel</a></li>
+					</ul>
+					<div class="padding-bottom" />
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active"
+							id="roundtrip">
+							<div class="row">
+								<div class="col-xs-12 col-sm-4">
+									<label for="from-airport-roundtrip">From <input
+										type="text" id="from-airport-roundtrip" class="form-control" /></label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<label for="to-airport-roundtrip">To <input type="text"
+										id="to-airport-roundtrip" class="form-control" /></label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<label for="passengers-number-roundtrip">Number of
+										Passengers <select id="passengers-number-roundtrip"
+										class="form-control">
+											<option th:value="1">1</option>
+											<option th:value="2">2</option>
+											<option th:value="3">3</option>
+											<option th:value="4">4</option>
+											<option th:value="5">5</option>
+											<option th:value="6">6</option>
+									</select>
+									</label>
+								</div>
+							</div>
+							<!-- end of first row -->
+							<div class="padding-bottom" />	
+							<div class="row">
+								<div class="col-xs-12 col-sm-4">
+									<label for="depart-date-roundtrip">Depart <input
+										type="date" id="depart-date-roundtrip" class="form-control" /></label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<label for="return-date-roundtrip">Return <input
+										type="date" id="return-date-roundtrip" class="form-control" /></label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<button type="submit" id="flight-search-roundtrip"
+										class="btn btn-primary btn-lg">Search</button>
+								</div>
+							</div>
+							<!--  end of second row -->
+						</div>
+						<!--  end of round trip tab -->
+						<div role="tabpanel" class="tab-pane fade" id="oneway">
+							<div class="row">
+								<div class="col-xs-12 col-sm-4">
+									<label for="from-airport-oneway">From <input type="text"
+										id="from-airport-oneway" class="form-control" /></label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<label for="to-airport-oneway">To <input type="text"
+										id="to-airport-oneway" class="form-control" /></label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<label for="passengers-number-oneway">Number of
+										Passengers <select id="passengers-number-oneway"
+										class="form-control">
+											<option th:value="1">1</option>
+											<option th:value="2">2</option>
+											<option th:value="3">3</option>
+											<option th:value="4">4</option>
+											<option th:value="5">5</option>
+											<option th:value="6">6</option>
+									</select>
+									</label>
+								</div>
+							</div>
+							<!-- end of first row -->
+							<div class="padding-bottom" />
+							<div class="row">
+								<div class="col-xs-12 col-sm-4">
+									<label for="depart-date-oneway">Depart <input
+										type="date" id="depart-date-oneway" class="form-control" /></label>
+								</div>
+
+								<div class="col-xs-12 col-sm-offset-4 col-sm-4">
+									<button type="submit" id="flight-search-oneway"
+										class="btn btn-primary btn-lg">Search</button>
+								</div>
+							</div>
+							<!--  end of second row -->
+						</div>
+						<!--  end of one way tab -->
+						<div role="tabpanel" class="tab-pane fade" id="roundtriphotel">
+						</div>
+					</div>
+
+				</div>
+			</div>
+			</div>
+		</div>
+	</form>
+	<script src="/js/jquery.1.10.2.min.js"
+		th:src="@{/js/jquery.1.10.2.min.js}"></script>
+	<script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+</body>
+</html>

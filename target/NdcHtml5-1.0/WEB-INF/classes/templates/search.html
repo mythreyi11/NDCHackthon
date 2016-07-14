@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>User Search</title>
+<link href="/css/bootstrap.min.css"
+          th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+
+</head>
+
+<body>
+	<form class="form-display" autocomplete="off"
+				id="flight-search-form">
+	<div class="container">
+
+        <p style="padding:30px"></p>
+
+        <h3>Shopping</h3>
+        <p style="padding:5px;"></p>
+
+        <div class="row">
+        	<div class="col-xs-12 col-sm-8">
+            	<ul class="nav nav-pills" role="tablist">
+                  <li role="presentation" class="active"><a href="#roundtrip" aria-controls="roundtrip" role="tab" data-toggle="tab">Round trip</a></li>
+                  <li role="presentation"><a href="#oneway" aria-controls="oneway" role="tab" data-toggle="tab">One way</a></li>
+                  <li role="presentation"><a href="#roundtriphotel" aria-controls="roundtriphotel" role="tab" data-toggle="tab">Round trip + Hotel</a></li>
+              </ul>
+				 <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane fade in active" id="roundtrip">
+                  	<div class="row">
+                  		<div class="col-xs-12 col-sm-4">
+                  		 <label for="fromairport-roundtrip">From
+							<input type="text" id="fromairport-roundtrip" class="form-control"
+								 required ="true" /></label>
+                  		</div>
+                  		<div class="col-xs-12 col-sm-4">
+                  			<label for="toairport-roundtrip">To
+							<input type="text" id="toairport-roundtrip" class="form-control"
+								required ="true" /></label>
+                  		</div>
+							<div class="col-xs-12 col-sm-4">
+								<label for="passengersnumber-roundtrip">Number of Passengers
+								<select id="passengersnumber-roundtrip" class="form-control">
+									<option th:value="1">1</option>
+									<option th:value="2">2</option>
+									<option th:value="3">3</option>
+									<option th:value="4">4</option>
+									<option th:value="5">5</option>
+									<option th:value="6">6</option>
+								</select></label>
+							</div>
+						</div>
+						<!-- end of first row -->
+						
+						<div class="row">
+                  		<div class="col-xs-12 col-sm-4">
+                  		 <label for="departdate-roundtrip">Depart
+							<input type="date" id="departdate-roundtrip" class="form-control"
+								required ="true" /></label>
+                  		</div>
+                  		<div class="col-xs-12 col-sm-4">
+                  			<label for="returndate-roundtrip">From
+							<input type="date" id="returndate-roundtrip" class="form-control"
+								required ="true" /></label>
+                  		</div>
+							<div class="col-xs-12 col-sm-4">
+								<button type="submit" id="flight-search-roundtrip"
+								class="btn btn-primary btn-lg">Search</button>
+							</div>
+						</div>
+						<!--  end of second row -->
+                  </div>
+                  <!--  end of round trip tab -->
+                  <div role="tabpanel" class="tab-pane fade" id="oneway">
+                  	<div class="row">
+                  		<div class="col-xs-12 col-sm-4">
+                  		 <label for="fromairport-oneway">From
+							<input type="text" id="fromairport-oneway" class="form-control"
+								 required ="true" /></label>
+                  		</div>
+                  		<div class="col-xs-12 col-sm-4">
+                  			<label for="toairport-oneway">To
+							<input type="text" id="toairport-oneway" class="form-control"
+								required ="true" /></label>
+                  		</div>
+							<div class="col-xs-12 col-sm-4">
+								<label for="passengersnumber-oneway">Number of Passengers
+								<select id="passengersnumber-oneway" class="form-control">
+									<option th:value="1">1</option>
+									<option th:value="2">2</option>
+									<option th:value="3">3</option>
+									<option th:value="4">4</option>
+									<option th:value="5">5</option>
+									<option th:value="6">6</option>
+								</select></label>
+							</div>
+						</div>
+						<!-- end of first row -->
+						
+						<div class="row">
+                  		<div class="col-xs-12 col-sm-4">
+                  		 <label for="departdate-oneway">Depart
+							<input type="date" id="departdate-oneway" class="form-control"
+								required ="true" /></label>
+                  		</div>
+                  		
+							<div class="col-xs-12 col-sm-offset-4 col-sm-4">
+								<button type="submit" id="flight-search-oneway"
+								class="btn btn-primary btn-lg">Search</button>
+							</div>
+						</div>
+						<!--  end of second row -->
+                  </div>
+                  <!--  end of one way tab -->
+                  <div role="tabpanel" class="tab-pane fade" id="roundtriphotel">
+                  </div>
+              </div>
+
+            </div>
+        </div>
+		<div class="" style="padding:40px;">
+        </div>
+
+    </div>
+    </form>
+    <script src="/js/jquery.1.10.2.min.js"
+            th:src="@{/js/jquery.1.10.2.min.js}"></script>
+     <script src="/js/bootstrap.min.js"
+            th:src="@{/js/bootstrap.min.js}"></script>       
+</body>
+</html>

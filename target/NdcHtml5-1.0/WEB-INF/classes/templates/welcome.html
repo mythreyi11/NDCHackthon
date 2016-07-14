@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>User Search</title>
+<link href="/css/bootstrap.min.css"
+          th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+
+</head>
+
+<body>
+	<div class="page-body">
+		<div class="container">
+
+			<form class="form-display panel panel-primary" autocomplete="off"
+				id="search-form">
+
+				<div class="panel-heading">
+					<h3 class="panel-title center-align">Search User</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-xs-12 col-sm-4">
+							<label for="username">User Name</label>
+						</div>
+						<div class="col-xs-12 col-sm-8">
+							<input type="text" id="username" class="form-control"
+								autofocus="true"
+								placeholder="Enter User Name" />
+						</div>
+					</div>
+					<!-- end of username row -->
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-4">
+							<label for="email">Email Address<span class="required" /></label>
+						</div>
+						<div class="col-xs-12 col-sm-8">
+							<input type="text" id="email" class="form-control"
+								placeholder="Enter Email Address" />
+						</div>
+					</div>
+					<!-- end of emailid row -->
+
+					<div class="row">
+						<div class="col-xs-12 col-sm-4">
+							<label for="gender">Gender<span
+								class="required" /></label>
+						</div>
+						<div class="col-xs-12 col-sm-8">
+							<ul>
+								<li th:each="gender : ${T(com.web.model.Gender).genderList}">
+									<input type="checkbox" id ="gender" onclick = "searchViaGender()"
+									th:value="${gender.getCode()}" /> 
+									<label th:text="${gender.getValue()}"></label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- end of reasonforvisit row -->
+
+					<div class="row">
+						<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" id="bth-search"
+						class="btn btn-primary btn-lg">Search</button>
+					</div>
+					</div>
+					<!-- end of buttons row -->
+
+				</div>
+				<!-- end of panel body -->
+				<div id="feedback"></div>
+			</form>
+		</div>
+		<!-- end of container -->
+
+	</div>
+	
+  <script src="/js/jquery.1.10.2.min.js"
+            th:src="@{/js/jquery.1.10.2.min.js}"></script>
+	<script>
+	jQuery(document).ready(function($) {
+
+		$("#search-form").submit(function(event) {
+
+			// Disble the search button
+			enableSearchButton(false);
+
+			// Prevent the form from submitting via the browser.
+			event.preventDefault();
+
+			searchViaAjax();
+
+		});
+
+	});
+
+	function searchViaAjax() {
+
+		var search = {}
+		search["username"] = $("#username").val();
+		search["email"] = $("#email").val();
+
+		$.ajax({
+			type : "POST",
+			contentType : "application/json",
+			url : "/search/api/getSearchResult",
+			data : JSON.stringify(search),
+			dataType : 'json',
+			timeout : 100000,
+			success : function(data) {
+				console.log("SUCCESS: ", data);
+				display(data);
+			},
+			error : function(e) {
+				console.log("ERROR: ", e);
+				display(e);
+			},
+			done : function(e) {
+				console.log("DONE");
+				enableSearchButton(true);
+			}
+		});
+
+	}
+	
+	function searchViaGender() {
+
+		var search = {}
+		search["gender"] =  $("input[type='checkbox']:checked").map(function(){
+		    return this.value;
+		}).get()
+		
+        $.ajax({
+			type : "POST",
+			contentType : "application/json",
+			url : "/search/api/getSearchResult",
+			data : JSON.stringify(search),
+			dataType : 'json',
+			timeout : 100000,
+			success : function(data) {
+				console.log("SUCCESS: ", data);
+				display(data);
+			},
+			error : function(e) {
+				console.log("ERROR: ", e);
+				display(e);
+			},
+			done : function(e) {
+				console.log("DONE");
+				enableSearchButton(true);
+			}
+		});
+
+	}
+
+	function enableSearchButton(flag) {
+		$("#btn-search").prop("disabled", flag);
+	}
+
+	function display(data) {
+		var json = "<h4>Ajax Response</h4><pre>"
+				+ JSON.stringify(data, null, 4) + "</pre>";
+		$('#feedback').html(json);
+	}
+</script>
+	
+
+</body>
+</html>

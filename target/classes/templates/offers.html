@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Offers</title>
+<link href="/css/bootstrap.min.css"
+          th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+<link href="/css/custom.css"
+          th:href="@{css/custom.css}" rel="stylesheet" media="screen"/>          
+
+</head>
+
+<body>
+		<div id ="main" class="container">
+			 <p class="padding-top"></p>
+			<h3 class="heading-color">Shopping Results/Offer/Shopping Cart</h3>
+			<hr class="heading-color"></hr>
+			<p class="padding-bottom"></p>
+				<div class="row">
+       			 <div class="col-sm-3">
+       			 	<div class="row">
+       			 		<div class="col-sm-12">
+							<div class ="well well-xs well-green-color">
+							<label for="stop">Stops</label>
+							</div>
+							<ul class="slide">
+								<li th:each="stop : ${T(com.aa.ndchtml5.common.Stop).stopsList}">
+									<input type="checkbox" id ="stop"  onclick = "getDetailsOnFilterSelection()"
+									th:value="${stop.getCode()}" /> 
+									<label th:text="${stop.getValue()}"></label>
+								</li>
+							</ul>
+						</div>
+						<div class="col-sm-12">
+							<div class ="well well-xs well-green-color">
+							<label for="airline">Airlines</label>
+							</div>
+							<ul class="slide">
+								<li th:each="airline : ${T(com.aa.ndchtml5.common.Airline).airlineList}">
+									<input type="checkbox" id ="airline"  onclick = "getDetailsOnFilterSelection()"
+									th:value="${airline.getCode()}" /> 
+									<label th:text="${airline.getValue()}"></label>
+								</li>
+							</ul>
+						</div>
+						<div class="col-sm-12">
+							<div class ="well well-xs well-green-color">
+							<label for="feature">Features</label>
+							</div>
+							<ul class="slide">
+								<li th:each="feature : ${T(com.aa.ndchtml5.common.Feature).featuresList}">
+									<input type="checkbox" id ="feature"  onclick = "getDetailsOnFilterSelection()"
+									th:value="${feature.getCode()}" /> 
+									<img th:src="${feature.getValue()}" th:alt="${feature.getCode()}"></img>
+								</li>
+							</ul>
+						</div>
+					</div>
+       			 </div>
+       			  <div id ="filtered-result" th:fragment="resultsList" th:object ="${offerList}" class="col-sm-offset-1 col-sm-5">
+       			  <table border="0">
+					<th:block th:each="offer : ${offerList.offerDetailsList}">
+					<tr>
+		        		<td id="filtered-offer-td">
+		        		<div class="well well-lg-color box box2">
+		        		<div class="well well-sm-color well-xs">
+		        			<label>Offer </label><label th:text="${offer.offerId}"></label>
+		        		</div>
+		        		<u><label th:text="${offer.flightDetails}"> </label></u>
+		        		<div class = "padding-lines"/>
+		        		<label>Fare:</label><label th:text="${offer.fare}"> </label>
+						<div class = "padding-lines"/>
+						<label>Included</label>
+						<ul><li th:each="inclFeature : ${offer.includeFeatures}" th:text="${inclFeature}"></li></ul>
+						<div class = "padding-lines"/>
+						<label>For Purchase</label>
+						<ul><li th:each="purFeature : ${offer.purchaseFeautues}" th:text="${purFeature}"></li></ul>
+						</div>	
+		        		</td>
+    				</tr>
+					</th:block>
+				</table>
+       			</div>
+       			<div class="col-sm-3">
+       				<div class="row" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+       					<div class="col-xs-12">
+       						<img src="/images/shopping_cart.png" alt="shoppingcart"/>
+       					</div>
+       					<div class="col-xs-4">
+       						<button type="reset" id="offer-select-cancel"
+										class="btn btn-default btn-lg">Cancel</button>
+       					</div>
+       					<div class="col-xs-4">
+       					<button type="submit" id="offer-select-submit"
+										class="btn btn-primary btn-lg">Submit</button>
+       					</div>
+       				</div>
+       			</div>
+       		</div>
+		</div>		
+	
+  <script src="/js/jquery.1.10.2.min.js"
+            th:src="@{/js/jquery.1.10.2.min.js}"></script>
+     <script src="/js/bootstrap.min.js"
+            th:src="@{/js/bootstrap.min.js}"></script>  
+	<script>
+	
+	function getDetailsOnFilterSelection() {
+
+		var filters = {}
+		filters["selectedFeatures"] =  $("input[type='checkbox']:checked").map(function(){
+		    return this.value;
+		}).get()
+        $.ajax({
+			type : "POST",
+			contentType : "application/json",
+			url : "/getDetailsOnFilterSelection",
+			data : JSON.stringify(filters),
+			dataType : 'html',
+			timeout : 100000,
+			success : function(data) {
+				console.log("SUCCESS: ", data);
+				display(data);
+			},
+			error : function(e) {
+				console.log("ERROR: ",e);
+			},
+			done : function(e) {
+				console.log("DONE");
+			}
+		});
+
+	}
+	function display(data) {
+		$("#filtered-result").html(data);
+		$("#filtered-offer-td").css({"height":"340"});
+	}
+</script>
+	
+</body>
+</html>

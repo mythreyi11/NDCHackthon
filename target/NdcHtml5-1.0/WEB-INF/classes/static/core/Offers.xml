@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<offers>
+	<offer>
+		<offerId>1Z346</offerId>
+		<offerExpiryTime>2016-12-11T09:45</offerExpiryTime>
+		<sliceDetail>
+			<numberOfSegments>2</numberOfSegments>
+			<totalFlyTime>735</totalFlyTime>
+			<totalLayoverTime>390</totalLayoverTime>
+			<totalTravelTime>1125</totalTravelTime>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>MIA</destination>
+			<departureTime>2016-12-10T08:45</departureTime>
+			<arrivalTime>2016-12-10T19:30</arrivalTime>
+		</sliceDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>1324</flightNumber>
+			<CarrierCode>AA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>180</duration>
+			<nextSegmentLeadTime>390</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>MCO</destination>
+			<departureTime>2016-12-10T08:45</departureTime>
+			<arrivalTime>2016-12-10T09:30</arrivalTime>
+		</segmentDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>2013</flightNumber>
+			<CarrierCode>BA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>180</duration>
+			<nextSegmentLeadTime>0</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>MCO</origin>
+			<destination>MIA</destination>
+			<departureTime>2016-12-10T11:45</departureTime>
+			<arrivalTime>2016-12-10T19:30</arrivalTime>
+		</segmentDetail>
+		<price>350</price>
+
+		<includedFeatures>
+			<Feature>Seat Back Entertainment</Feature>
+			<Feature>PowerPorts</Feature>
+			<Feature>Double Miles</Feature>
+			<Feature>Free Luggauge Delivery</Feature>
+		</includedFeatures>
+		<ForPurchaseFeatures>
+			<Feature>Advance Seat Selection</Feature>
+			<Feature>Pre Ordered Meals</Feature>
+		</ForPurchaseFeatures>
+	</offer>
+	<offer>
+		<offerId>1Z347</offerId>
+		<offerExpiryTime>2016-12-11T19:45</offerExpiryTime>
+		<sliceDetail>
+			<numberOfSegments>1</numberOfSegments>
+			<totalFlyTime>735</totalFlyTime>
+			<totalLayoverTime>390</totalLayoverTime>
+			<totalTravelTime>1125</totalTravelTime>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>SEA</destination>
+			<departureTime>2016-12-10T10:45</departureTime>
+			<arrivalTime>2016-12-10T13:30</arrivalTime>
+		</sliceDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>1454</flightNumber>
+			<CarrierCode>AA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>180</duration>
+			<nextSegmentLeadTime>390</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>SEA</destination>
+			<departureTime>2016-12-10T10:45</departureTime>
+			<arrivalTime>2016-12-10T13:30</arrivalTime>
+		</segmentDetail>
+		<price>247</price>
+
+		<includedFeatures>
+			<Feature>Seat Back Entertainment</Feature>
+			<Feature>One Free check bag</Feature>
+			<Feature>Free Wifi</Feature>
+		</includedFeatures>
+		<ForPurchaseFeatures>
+			<Feature>Advance Seat Selection</Feature>
+			<Feature>Pre Ordered Meals</Feature>
+		</ForPurchaseFeatures>
+	</offer>
+	<offer>
+		<offerId>1Z348</offerId>
+		<sliceDetail>
+			<numberOfSegments>1</numberOfSegments>
+			<totalFlyTime>735</totalFlyTime>
+			<totalLayoverTime>390</totalLayoverTime>
+			<totalTravelTime>1125</totalTravelTime>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>MSP</destination>
+			<departureTime>2016-12-10T08:45</departureTime>
+			<arrivalTime>2016-12-10T09:30</arrivalTime>
+		</sliceDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>4034</flightNumber>
+			<CarrierCode>IB</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>180</duration>
+			<nextSegmentLeadTime>390</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>MSP</destination>
+			<departureTime>2016-07-16T08:45:00</departureTime>
+			<arrivalTime>2016-24-05T11:45</arrivalTime>
+		</segmentDetail>
+		<price>125</price>
+
+		<includedFeatures>
+			<Feature>Main Cabin Seat</Feature> 
+			<Feature>Admirals Club Access</Feature>
+		</includedFeatures>
+		<ForPurchaseFeatures>
+			<Feature>Wifi</Feature>
+			<Feature>Extra Miles</Feature>
+			<Feature>Checked Bags</Feature>
+		</ForPurchaseFeatures>
+	</offer>
+	<offer>
+		<offerId>1Z349</offerId>
+		<sliceDetail>
+			<numberOfSegments>1</numberOfSegments>
+			<totalFlyTime>735</totalFlyTime>
+			<totalLayoverTime>390</totalLayoverTime>
+			<totalTravelTime>1125</totalTravelTime>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>ORD</destination>
+			<departureTime>2016-12-10T06:45</departureTime>
+			<arrivalTime>2016-12-10T10:30</arrivalTime>
+		</sliceDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>2345</flightNumber>
+			<CarrierCode>AS</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>180</duration>
+			<nextSegmentLeadTime>390</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>ORD</destination>
+			<departureTime>2016-12-10T06:45</departureTime>
+			<arrivalTime>2016-12-10T10:30</arrivalTime>
+		</segmentDetail>
+		<price>250</price>
+
+		<includedFeatures>
+			<Feature>Free Group1 boarding</Feature>
+			<Feature>Free Admirals Club Access</Feature>
+		</includedFeatures>
+		<ForPurchaseFeatures>
+			<Feature>Pre Ordered Meals</Feature>
+			<Feature>Baggage delivery</Feature>
+			</ForPurchaseFeatures>
+	</offer>
+	<offer>
+		<offerId>1Z350</offerId>
+		<sliceDetail>
+			<numberOfSegments>1</numberOfSegments>
+			<totalFlyTime>735</totalFlyTime>
+			<totalLayoverTime>390</totalLayoverTime>
+			<totalTravelTime>1125</totalTravelTime>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>BHM</destination>
+			<departureTime>2016-12-10T15:45</departureTime>
+			<arrivalTime>2016-12-10T19:30</arrivalTime>
+		</sliceDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>1467</flightNumber>
+			<CarrierCode>SQ</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>180</duration>
+			<nextSegmentLeadTime>390</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>BHM</destination>
+			<departureTime>2016-12-10T15:45</departureTime>
+			<arrivalTime>2016-12-10T19:30</arrivalTime>
+		</segmentDetail>
+		<price>330</price>
+
+		<includedFeatures>
+			<Feature>Option to choose Exit Row</Feature>
+			<Feature>PowerPorts</Feature>
+			<Feature>Free Group1 boarding</Feature>
+		</includedFeatures>
+		<ForPurchaseFeatures>
+			<Feature>Mileage Multiplier</Feature>
+			<Feature>Upgrade to First Class</Feature>
+			<Feature>Pre Ordered Meals</Feature>
+		</ForPurchaseFeatures>
+	</offer>
+
+</offers>

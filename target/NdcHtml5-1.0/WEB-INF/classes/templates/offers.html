@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Offers</title>
+<link href="/css/bootstrap.min.css"
+          th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+
+</head>
+
+<body>
+		<div class="container-fluid">
+				<div class="row">
+       			 <div class="col-sm-3 col-md-3 sidebar">
+       			 	<div class="row">
+						<div class="col-sm-12">
+							<label for="includedfeature">Features</label>
+							<ul>
+								<li th:each="includedfeature : ${T(com.web.model.IncludedFeature).includedFeatureList}">
+									<input type="checkbox" id ="gender"  onclick = "getSelectedFeatureDetails()"
+									th:value="${includedfeature.getCode()}" /> 
+									<label th:text="${includedfeature.getValue()}"></label>
+								</li>
+							</ul>
+						</div>
+					</div>
+       			 </div>
+       			  <div id ="feedback" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+       			   </div>
+       			 </div>
+		</div>		
+	
+  <script src="/js/jquery.1.10.2.min.js"
+            th:src="@{/js/jquery.1.10.2.min.js}"></script>
+     <script src="/js/bootstrap.min.js"
+            th:src="@{/js/bootstrap.min.js}"></script>  
+	<script>
+	
+	function getSelectedFeatureDetails() {
+
+		var search = {}
+		search["selectedFeatures"] =  $("input[type='checkbox']:checked").map(function(){
+		    return this.value;
+		}).get()
+		
+        $.ajax({
+			type : "POST",
+			contentType : "application/json",
+			url : "/search/api/getSearchResult",
+			data : JSON.stringify(search),
+			dataType : 'json',
+			timeout : 100000,
+			success : function(data) {
+				console.log("SUCCESS: ", data);
+				display(data);
+			},
+			error : function(e) {
+				console.log("ERROR: ", e);
+				display(e);
+			},
+			done : function(e) {
+				console.log("DONE");
+			}
+		});
+
+	}
+
+	function display(data) {
+		var json = "<h4>Ajax Response</h4><pre>"
+				+ JSON.stringify(data, null, 4) + "</pre>";
+		$('#feedback').html(json);
+	}
+</script>
+	
+</body>
+</html>
