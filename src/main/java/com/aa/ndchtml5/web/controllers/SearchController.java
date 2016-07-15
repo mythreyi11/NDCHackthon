@@ -41,6 +41,10 @@ public class SearchController {
 		return "search";
 	}
 	
+	@RequestMapping(value = "/cart", method = RequestMethod.GET)
+	public String returncartPage(ModelMap model) {
+		return "cart";
+	}
 	@RequestMapping(value = "/loadInitialData" , method = RequestMethod.POST)
 	public String returnOffersPage(@ModelAttribute("flightSearchCriteria") FlightSearchCriteria flightSearchCriteria,
 			ModelMap model, BindingResult result) {
@@ -49,6 +53,7 @@ public class SearchController {
 	        }
 		OfferList offerList = ConvertDataToView.getOfferListToShow(allOffers.getOffer());
 		model.addAttribute("offerList", offerList);
+		model.addAttribute("purchaseList", purchaseList);
 		return "offers";
 	}
 	
@@ -72,6 +77,7 @@ public class SearchController {
 	public String aaddToCart(@RequestBody String offerId, ModelMap model) {
 		  Offer offer = CommonService.getOfferByOfferID(offerId,allOffers.getOffer());
 		  purchaseList.add(offer);
+		  model.addAttribute("purchaseList", purchaseList);
 		  return offerId;
 		}
 }
