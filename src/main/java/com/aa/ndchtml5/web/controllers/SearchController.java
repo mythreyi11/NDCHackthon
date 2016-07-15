@@ -79,4 +79,11 @@ public class SearchController {
 		  model.addAttribute("purchaseList", purchaseList);
 		  return "offers :: purchaseCartList";
 		}
+	
+	@RequestMapping(value = "/payment", method = RequestMethod.GET)
+	public String returnPaymentPage(@ModelAttribute("purchaseList") List<Offer> purchaseList, ModelMap model) {
+		OfferList offerList = ConvertDataToView.getOfferListToShow(purchaseList);
+		model.addAttribute("purchaseList", offerList);
+		return "payment";
+	}
 }
