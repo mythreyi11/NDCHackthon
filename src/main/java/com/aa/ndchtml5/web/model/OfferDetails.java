@@ -9,6 +9,7 @@ public class OfferDetails {
 	private String fare;
 	private List<String> includeFeatures;
 	private List<String> purchaseFeautues;
+	private String offerExpiryDate;
 	
 	public String getOfferId() {
 		return offerId;
@@ -39,6 +40,12 @@ public class OfferDetails {
 	}
 	public void setPurchaseFeautues(List<String> purchaseFeautues) {
 		this.purchaseFeautues = purchaseFeautues;
+	}
+	public String getOfferExpiryDate() {
+		return offerExpiryDate;
+	}
+	public void setOfferExpiryDate(String offerExpiryDate) {
+		this.offerExpiryDate = offerExpiryDate;
 	}
 	
 	

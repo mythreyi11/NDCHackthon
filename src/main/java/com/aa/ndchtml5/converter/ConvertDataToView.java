@@ -1,7 +1,11 @@
 package com.aa.ndchtml5.converter;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import com.aa.ndchtml5.common.Stop;
 import com.aa.ndchtml5.domain.Offers.Offer;
@@ -36,6 +40,7 @@ public class ConvertDataToView {
 		OfferDetails offerDetails = new OfferDetails();
 		
 		offerDetails.setOfferId(offer.getOfferId());
+		offerDetails.setOfferExpiryDate(populateExpiryDate(offer.getOfferExpiryTime()));
 		offerDetails.setFlightDetails(getFlightDetails(offer));
 		offerDetails.setFare("$" + offer.getPrice().getTotal());
 		offerDetails.setIncludeFeatures(offer.getIncludedFeatures().getFeature());
@@ -60,5 +65,24 @@ public class ConvertDataToView {
 		default:
 			return null;
 		}
+		
+	}
+	
+	private static String populateExpiryDate(String dateStr) {
+		if (dateStr == null)
+			return null;
+		dateStr = dateStr.replace('T', ' ');
+		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		SimpleDateFormat stringFormatter = new SimpleDateFormat("dd MMM yyyy HH:mm");
+		String formattedStr = dateStr; 
+		Date date;
+		try {
+			date = (Date)dateFormatter.parse(dateStr);
+			formattedStr = (String)stringFormatter.format(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		formattedStr = "(Expires " +formattedStr+")";
+		return formattedStr;
 	}
 }
