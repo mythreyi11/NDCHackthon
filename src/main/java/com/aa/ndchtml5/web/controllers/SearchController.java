@@ -73,11 +73,10 @@ public class SearchController {
 	}
 	
 	@RequestMapping(value = "/addToCart" , method = RequestMethod.POST)
-	@ResponseBody
 	public String aaddToCart(@RequestBody String offerId, ModelMap model) {
 		  Offer offer = CommonService.getOfferByOfferID(offerId,allOffers.getOffer());
 		  purchaseList.add(offer);
 		  model.addAttribute("purchaseList", purchaseList);
-		  return offerId;
+		  return "offers :: purchaseCartList";
 		}
 }

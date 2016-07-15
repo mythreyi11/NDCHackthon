@@ -43,9 +43,12 @@ ul.slide li:hover {
     display: none;
     width: 100%;
 }
-
 a:hover + .box,.box:hover{
     display: block;
     position: relative;
     z-index: 100;
+}
+.right {
+	 right: 0;     
+
 }
