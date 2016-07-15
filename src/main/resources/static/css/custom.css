@@ -26,3 +26,7 @@ ul.slide li:hover {
 .underline {
 	text-decoration: underline
 }
+.carousel-size {
+	width:100%;
+	height:270px;
+}
