@@ -33,12 +33,6 @@ ul.slide li:hover {
 .big-cart {
     font-size: 75px;
 }
-.badge-notify{
-   position:relative;
-   top: -20px;
-   left: -35px;
-}
-
 .box{
     display: none;
     width: 100%;

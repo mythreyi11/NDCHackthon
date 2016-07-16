@@ -20,7 +20,6 @@
 </head>
 
 <body>
-	<form class="form-display">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
@@ -31,11 +30,10 @@
 						class="btn btn-default btn-lg">Cancel</button>
 				</div>
 				<div class="col-xs-4">
-					<button type="submit" id="offer-select-submit"
-						class="btn btn-primary btn-lg">Submit</button>
+					<a th:href="@{/payment}" id="offer-select-submit"
+						class="btn btn-primary btn-lg">Submit</a>
 				</div>
 			</div>
 		</div>
-	</form>
 </body>
 </html>

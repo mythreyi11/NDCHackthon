@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.aa.ndchtml5.converter.ConvertDataToView;
 import com.aa.ndchtml5.converter.ConvertXMLToJava;
@@ -24,10 +24,11 @@ import com.aa.ndchtml5.web.model.FlightSearchCriteria;
 import com.aa.ndchtml5.web.model.OfferList;
 
 @Controller
+@SessionAttributes("purchaseList")
 public class SearchController {
 	
 	Offers allOffers;
-	List<Offer> purchaseList;
+	ArrayList<Offer> purchaseList;
 	
 	@PostConstruct
 	private void iniData() {
@@ -81,7 +82,7 @@ public class SearchController {
 		}
 	
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
-	public String returnPaymentPage(@ModelAttribute("purchaseList") List<Offer> purchaseList, ModelMap model) {
+	public String returnPaymentPage(@ModelAttribute("purchaseList") ArrayList<Offer> purchaseList, ModelMap model) {
 		OfferList offerList = ConvertDataToView.getOfferListToShow(purchaseList);
 		model.addAttribute("purchaseList", offerList);
 		return "payment";
