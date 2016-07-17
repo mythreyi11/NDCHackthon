@@ -46,46 +46,46 @@
 			<departureTime>2016-12-10T11:45</departureTime>
 			<arrivalTime>2016-12-10T19:30</arrivalTime>
 		</segmentDetail>
-		<Price Total="10310">
-			<BaseFare Amount="8279"></BaseFare>
-			<taxes  Amount="2031">
-				<tax  Amount="560">
+		<Price Total="103.10">
+			<BaseFare Amount="82.79"></BaseFare>
+			<taxes  Amount="20.31">
+				<tax  Amount="5.60">
 					<Designator>AY</Designator>
 					<Nature>US</Nature>
 					<Description>US September 11th Security Fee</Description>
 					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-					<LocalAmount>560</LocalAmount>
+					<LocalAmount>5.60</LocalAmount>
 				</tax>
-				<tax  Amount="621">
+				<tax  Amount="6.21">
 					<Designator>US</Designator>
 					<Nature>US</Nature>
 					<Description>US Transportation Tax</Description>
 					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-					<LocalAmount>621</LocalAmount>
+					<LocalAmount>6.21</LocalAmount>
 				</tax>
-				<tax  Amount="450">
+				<tax  Amount="4.50">
 					<Designator>XF</Designator>
 					<Nature>US</Nature>
 					<Description>US Passenger Facility Charge</Description>
-					<CollectionPoint Amount="450">
+					<CollectionPoint Amount="4.50">
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-						<AirportAmount>450</AirportAmount>
+						<AirportAmount>4.50</AirportAmount>
 						<AirportCode>DFW</AirportCode>
 					</CollectionPoint>
 					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-					<LocalAmount>450</LocalAmount>
+					<LocalAmount>4.50</LocalAmount>
 				</tax>
-				<tax  Amount="400">
+				<tax  Amount="4.00">
 					<Designator>ZP</Designator>
 					<Nature>US</Nature>
 					<Description>US Flight Segment Tax</Description>
-					<CollectionPoint Amount="400">
+					<CollectionPoint Amount="4.00">
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-						<AirportAmount>400</AirportAmount>
+						<AirportAmount>4.00</AirportAmount>
 						<AirportCode>DFW</AirportCode>
 					</CollectionPoint>
 					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-					<LocalAmount>400</LocalAmount>
+					<LocalAmount>4.00</LocalAmount>
 				</tax>
 			</taxes>
 		</Price>
@@ -121,37 +121,37 @@
 				</RelatedSegment>
 				<FareRefKey>APP4d7Cn7nbxPtQAFPKaZgTtTWfBIvaXbXSQHIOSbZoM#####PTCADT/TNO011/RNO611L/RONO25/TYPEPrice/DEP**DFW/ARR**CHI/
 				</FareRefKey>
-				<FareComponent Total="10310" Fare="8279" Surcharges="0">
+				<FareComponent Total="103.10" Fare="82.79" Surcharges="0">
 					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-					<BaseFare Amount="8279"></BaseFare>
-					<Taxes  Amount="2031">
-						<Tax  Amount="621">
+					<BaseFare Amount="82.79"></BaseFare>
+					<Taxes  Amount="20.31">
+						<Tax  Amount="6.21">
 							<Designator>US</Designator>
 							<Nature>US</Nature>
 							<Description>US Transportation Tax</Description>
 						</Tax>
-						<Tax  Amount="560">
+						<Tax  Amount="5.60">
 							<Designator>AY</Designator>
 							<Nature>US</Nature>
 							<Description>US September 11th Security Fee</Description>
 						</Tax>
-						<Tax  Amount="450">
+						<Tax  Amount="4.50">
 							<Designator>XF</Designator>
 							<Nature>US</Nature>
 							<Description>US Passenger Facility Charge</Description>
-							<CollectionPoint Amount="450">
+							<CollectionPoint Amount="4.50">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>450</AirportAmount>
+								<AirportAmount>4.50</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 						</Tax>
-						<Tax  Amount="400">
+						<Tax  Amount="4.00">
 							<Designator>ZP</Designator>
 							<Nature>US</Nature>
 							<Description>US Flight Segment Tax</Description>
-							<CollectionPoint Amount="400">
+							<CollectionPoint Amount="4.00">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>400</AirportAmount>
+								<AirportAmount>4.00</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 						</Tax>
@@ -170,8 +170,8 @@
 			<Remark>This ticket is non-refundable.</Remark>
 			<Remark>Changes to this ticket will incur a penalty fee.</Remark>
 			<Penalty  TicketRefundable="N">
-				<Change Total="20000" Amount="20000">
-					<PenaltyAmount Unit="M">20000</PenaltyAmount>
+				<Change Total="200.00" Amount="200.00">
+					<PenaltyAmount Unit="M">200.00</PenaltyAmount>
 					<Taxes Amount="000"></Taxes>
 				</Change>
 				<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
@@ -220,46 +220,46 @@
 			<departureTime>2016-12-10T10:45</departureTime>
 			<arrivalTime>2016-12-10T13:30</arrivalTime>
 		</segmentDetail>
-		<Price Total="19310">
-					<BaseFare Amount="16651"></BaseFare>
-					<taxes  Amount="2659">
-						<tax  Amount="560">
+		<Price Total="193.10">
+					<BaseFare Amount="166.51"></BaseFare>
+					<taxes  Amount="26.59">
+						<tax  Amount="5.60">
 							<Designator>AY</Designator>
 							<Nature>US</Nature>
 							<Description>US September 11th Security Fee</Description>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>560</LocalAmount>
+							<LocalAmount>5.60</LocalAmount>
 						</tax>
-						<tax  Amount="1249">
+						<tax  Amount="12.49">
 							<Designator>US</Designator>
 							<Nature>US</Nature>
 							<Description>US Transportation Tax</Description>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>1249</LocalAmount>
+							<LocalAmount>12.49</LocalAmount>
 						</tax>
-						<tax  Amount="450">
+						<tax  Amount="4.50">
 							<Designator>XF</Designator>
 							<Nature>US</Nature>
 							<Description>US Passenger Facility Charge</Description>
-							<CollectionPoint Amount="450">
+							<CollectionPoint Amount="4.50">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>450</AirportAmount>
+								<AirportAmount>4.50</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>450</LocalAmount>
+							<LocalAmount>4.50</LocalAmount>
 						</tax>
-						<tax  Amount="400">
+						<tax  Amount="4.00">
 							<Designator>ZP</Designator>
 							<Nature>US</Nature>
 							<Description>US Flight Segment Tax</Description>
-							<CollectionPoint Amount="400">
+							<CollectionPoint Amount="4.00">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>400</AirportAmount>
+								<AirportAmount>4.00</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>400</LocalAmount>
+							<LocalAmount>4.00</LocalAmount>
 						</tax>
 					</taxes>
 				</Price>
@@ -295,38 +295,38 @@
 						</RelatedSegment>
 						<FareRefKey>AIyl31QHm5NlBwQvuNkQ9cpl2/KPZqHZZPam8FAgn/aY#####PTCADT/TNO011/RNO611L/RONO205/TYPEPrice/DEP**DFW/ARR**CHI/
 						</FareRefKey>
-						<FareComponent Total="19310" Fare="16651"
+						<FareComponent Total="193.10" Fare="166.51"
 							Surcharges="0">
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<BaseFare Amount="16651"></BaseFare>
-							<Taxes  Amount="2659">
-								<Tax  Amount="1249">
+							<BaseFare Amount="166.51"></BaseFare>
+							<Taxes  Amount="26.59">
+								<Tax  Amount="12.49">
 									<Designator>US</Designator>
 									<Nature>US</Nature>
 									<Description>US Transportation Tax</Description>
 								</Tax>
-								<Tax  Amount="560">
+								<Tax  Amount="5.60">
 									<Designator>AY</Designator>
 									<Nature>US</Nature>
 									<Description>US September 11th Security Fee</Description>
 								</Tax>
-								<Tax  Amount="450">
+								<Tax  Amount="4.50">
 									<Designator>XF</Designator>
 									<Nature>US</Nature>
 									<Description>US Passenger Facility Charge</Description>
-									<CollectionPoint Amount="450">
+									<CollectionPoint Amount="4.50">
 										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-										<AirportAmount>450</AirportAmount>
+										<AirportAmount>4.50</AirportAmount>
 										<AirportCode>DFW</AirportCode>
 									</CollectionPoint>
 								</Tax>
-								<Tax  Amount="400">
+								<Tax  Amount="4.00">
 									<Designator>ZP</Designator>
 									<Nature>US</Nature>
 									<Description>US Flight Segment Tax</Description>
-									<CollectionPoint Amount="400">
+									<CollectionPoint Amount="4.00">
 										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-										<AirportAmount>400</AirportAmount>
+										<AirportAmount>4.00</AirportAmount>
 										<AirportCode>DFW</AirportCode>
 									</CollectionPoint>
 								</Tax>
@@ -345,8 +345,8 @@
 					<Remark>This ticket is non-refundable.</Remark>
 					<Remark>Changes to this ticket will incur a penalty fee.</Remark>
 					<Penalty  TicketRefundable="N">
-						<Change Total="20000" Amount="20000">
-							<PenaltyAmount Unit="M">20000</PenaltyAmount>
+						<Change Total="200.00" Amount="200.00">
+							<PenaltyAmount Unit="M">200.00</PenaltyAmount>
 							<Taxes Amount="000"></Taxes>
 						</Change>
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
@@ -393,46 +393,46 @@
 			<departureTime>2016-07-16T08:45:00</departureTime>
 			<arrivalTime>2016-24-05T11:45</arrivalTime>
 		</segmentDetail>
-		<Price Total="22010">
-					<BaseFare Amount="19163"></BaseFare>
-					<taxes  Amount="2847">
-						<tax  Amount="560">
+		<Price Total="220.10">
+					<BaseFare Amount="191.63"></BaseFare>
+					<taxes  Amount="28.47">
+						<tax  Amount="5.60">
 							<Designator>AY</Designator>
 							<Nature>US</Nature>
 							<Description>US September 11th Security Fee</Description>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>560</LocalAmount>
+							<LocalAmount>5.60</LocalAmount>
 						</tax>
-						<tax  Amount="1437">
+						<tax  Amount="14.37">
 							<Designator>US</Designator>
 							<Nature>US</Nature>
 							<Description>US Transportation Tax</Description>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>1437</LocalAmount>
+							<LocalAmount>14.37</LocalAmount>
 						</tax>
-						<tax  Amount="450">
+						<tax  Amount="4.50">
 							<Designator>XF</Designator>
 							<Nature>US</Nature>
 							<Description>US Passenger Facility Charge</Description>
-							<CollectionPoint Amount="450">
+							<CollectionPoint Amount="4.50">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>450</AirportAmount>
+								<AirportAmount>4.50</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>450</LocalAmount>
+							<LocalAmount>4.50</LocalAmount>
 						</tax>
-						<tax  Amount="400">
+						<tax  Amount="4.00">
 							<Designator>ZP</Designator>
 							<Nature>US</Nature>
 							<Description>US Flight Segment Tax</Description>
-							<CollectionPoint Amount="400">
+							<CollectionPoint Amount="4.00">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>400</AirportAmount>
+								<AirportAmount>4.00</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>400</LocalAmount>
+							<LocalAmount>4.00</LocalAmount>
 						</tax>
 					</taxes>
 				</Price>
@@ -468,38 +468,38 @@
 						</RelatedSegment>
 						<FareRefKey>AvLHF8C8D8j5Omi/R7mYyEXfOsjN5/bBiLd/4O2yNdnY#####PTCADT/TNO011/RNO611I/RONO205/TYPEPrice/DEP**DFW/ARR**CHI/
 						</FareRefKey>
-						<FareComponent Total="22010" Fare="19163"
+						<FareComponent Total="220.10" Fare="191.63"
 							Surcharges="0">
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<BaseFare Amount="19163"></BaseFare>
-							<Taxes  Amount="2847">
-								<Tax  Amount="1437">
+							<BaseFare Amount="191.63"></BaseFare>
+							<Taxes  Amount="28.47">
+								<Tax  Amount="14.37">
 									<Designator>US</Designator>
 									<Nature>US</Nature>
 									<Description>US Transportation Tax</Description>
 								</Tax>
-								<Tax  Amount="560">
+								<Tax  Amount="5.60">
 									<Designator>AY</Designator>
 									<Nature>US</Nature>
 									<Description>US September 11th Security Fee</Description>
 								</Tax>
-								<Tax  Amount="450">
+								<Tax  Amount="4.50">
 									<Designator>XF</Designator>
 									<Nature>US</Nature>
 									<Description>US Passenger Facility Charge</Description>
-									<CollectionPoint Amount="450">
+									<CollectionPoint Amount="4.50">
 										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-										<AirportAmount>450</AirportAmount>
+										<AirportAmount>4.50</AirportAmount>
 										<AirportCode>DFW</AirportCode>
 									</CollectionPoint>
 								</Tax>
-								<Tax  Amount="400">
+								<Tax  Amount="4.00">
 									<Designator>ZP</Designator>
 									<Nature>US</Nature>
 									<Description>US Flight Segment Tax</Description>
-									<CollectionPoint Amount="400">
+									<CollectionPoint Amount="4.00">
 										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-										<AirportAmount>400</AirportAmount>
+										<AirportAmount>4.00</AirportAmount>
 										<AirportCode>DFW</AirportCode>
 									</CollectionPoint>
 								</Tax>
@@ -518,8 +518,8 @@
 					<Remark>This ticket is non-refundable.</Remark>
 					<Remark>Changes to this ticket will incur a penalty fee.</Remark>
 					<Penalty  TicketRefundable="N">
-						<Change Total="20000" Amount="20000">
-							<PenaltyAmount Unit="M">20000</PenaltyAmount>
+						<Change Total="200.00" Amount="200.00">
+							<PenaltyAmount Unit="M">200.00</PenaltyAmount>
 							<Taxes Amount="000"></Taxes>
 						</Change>
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
@@ -565,46 +565,46 @@
 			<departureTime>2016-12-10T06:45</departureTime>
 			<arrivalTime>2016-12-10T10:30</arrivalTime>
 		</segmentDetail>
-		<Price Total="16310">
-					<BaseFare Amount="13860"></BaseFare>
-					<taxes  Amount="2450">
-						<tax  Amount="560">
+		<Price Total="163.10">
+					<BaseFare Amount="138.60"></BaseFare>
+					<taxes  Amount="24.50">
+						<tax  Amount="5.60">
 							<Designator>AY</Designator>
 							<Nature>US</Nature>
 							<Description>US September 11th Security Fee</Description>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>560</LocalAmount>
+							<LocalAmount>5.60</LocalAmount>
 						</tax>
-						<tax  Amount="1040">
+						<tax  Amount="10.40">
 							<Designator>US</Designator>
 							<Nature>US</Nature>
 							<Description>US Transportation Tax</Description>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>1040</LocalAmount>
+							<LocalAmount>10.40</LocalAmount>
 						</tax>
-						<tax  Amount="450">
+						<tax  Amount="4.50">
 							<Designator>XF</Designator>
 							<Nature>US</Nature>
 							<Description>US Passenger Facility Charge</Description>
-							<CollectionPoint Amount="450">
+							<CollectionPoint Amount="4.50">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>450</AirportAmount>
+								<AirportAmount>4.50</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>450</LocalAmount>
+							<LocalAmount>4.50</LocalAmount>
 						</tax>
-						<tax  Amount="400">
+						<tax  Amount="4.00">
 							<Designator>ZP</Designator>
 							<Nature>US</Nature>
 							<Description>US Flight Segment Tax</Description>
-							<CollectionPoint Amount="400">
+							<CollectionPoint Amount="4.00">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>400</AirportAmount>
+								<AirportAmount>4.00</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>400</LocalAmount>
+							<LocalAmount>4.00</LocalAmount>
 						</tax>
 					</taxes>
 				</Price>
@@ -640,38 +640,38 @@
 						</RelatedSegment>
 						<FareRefKey>AXi6Qptn9VhN/oqPb1tDtLu0pLThlG9xHExuIeO9ud6M#####PTCADT/TNO011/RNO611L/RONO205/TYPEPrice/DEP**DFW/ARR**CHI/
 						</FareRefKey>
-						<FareComponent Total="16310" Fare="13860"
+						<FareComponent Total="163.10" Fare="138.60"
 							Surcharges="0">
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<BaseFare Amount="13860"></BaseFare>
-							<Taxes  Amount="2450">
-								<Tax  Amount="1040">
+							<BaseFare Amount="138.60"></BaseFare>
+							<Taxes  Amount="24.50">
+								<Tax  Amount="10.40">
 									<Designator>US</Designator>
 									<Nature>US</Nature>
 									<Description>US Transportation Tax</Description>
 								</Tax>
-								<Tax  Amount="560">
+								<Tax  Amount="5.60">
 									<Designator>AY</Designator>
 									<Nature>US</Nature>
 									<Description>US September 11th Security Fee</Description>
 								</Tax>
-								<Tax  Amount="450">
+								<Tax  Amount="4.50">
 									<Designator>XF</Designator>
 									<Nature>US</Nature>
 									<Description>US Passenger Facility Charge</Description>
-									<CollectionPoint Amount="450">
+									<CollectionPoint Amount="4.50">
 										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-										<AirportAmount>450</AirportAmount>
+										<AirportAmount>4.50</AirportAmount>
 										<AirportCode>DFW</AirportCode>
 									</CollectionPoint>
 								</Tax>
-								<Tax  Amount="400">
+								<Tax  Amount="4.00">
 									<Designator>ZP</Designator>
 									<Nature>US</Nature>
 									<Description>US Flight Segment Tax</Description>
-									<CollectionPoint Amount="400">
+									<CollectionPoint Amount="4.00">
 										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-										<AirportAmount>400</AirportAmount>
+										<AirportAmount>4.00</AirportAmount>
 										<AirportCode>DFW</AirportCode>
 									</CollectionPoint>
 								</Tax>
@@ -690,8 +690,8 @@
 					<Remark>This ticket is non-refundable.</Remark>
 					<Remark>Changes to this ticket will incur a penalty fee.</Remark>
 					<Penalty  TicketRefundable="N">
-						<Change Total="20000" Amount="20000">
-							<PenaltyAmount Unit="M">20000</PenaltyAmount>
+						<Change Total="200.00" Amount="200.00">
+							<PenaltyAmount Unit="M">200.00</PenaltyAmount>
 							<Taxes Amount="000"></Taxes>
 						</Change>
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
@@ -737,46 +737,46 @@
 			<departureTime>2016-12-10T15:45</departureTime>
 			<arrivalTime>2016-12-10T19:30</arrivalTime>
 		</segmentDetail>
-		<Price Total="16310">
-					<BaseFare Amount="13860"></BaseFare>
-					<taxes  Amount="2450">
-						<tax  Amount="560">
+		<Price Total="163.10">
+					<BaseFare Amount="138.60"></BaseFare>
+					<taxes  Amount="24.50">
+						<tax  Amount="5.60">
 							<Designator>AY</Designator>
 							<Nature>US</Nature>
 							<Description>US September 11th Security Fee</Description>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>560</LocalAmount>
+							<LocalAmount>5.60</LocalAmount>
 						</tax>
-						<tax  Amount="1040">
+						<tax  Amount="10.40">
 							<Designator>US</Designator>
 							<Nature>US</Nature>
 							<Description>US Transportation Tax</Description>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>1040</LocalAmount>
+							<LocalAmount>10.40</LocalAmount>
 						</tax>
-						<tax  Amount="450">
+						<tax  Amount="4.50">
 							<Designator>XF</Designator>
 							<Nature>US</Nature>
 							<Description>US Passenger Facility Charge</Description>
-							<CollectionPoint Amount="450">
+							<CollectionPoint Amount="4.50">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>450</AirportAmount>
+								<AirportAmount>4.50</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>450</LocalAmount>
+							<LocalAmount>4.50</LocalAmount>
 						</tax>
-						<tax  Amount="400">
+						<tax  Amount="4.00">
 							<Designator>ZP</Designator>
 							<Nature>US</Nature>
 							<Description>US Flight Segment Tax</Description>
-							<CollectionPoint Amount="400">
+							<CollectionPoint Amount="4.00">
 								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-								<AirportAmount>400</AirportAmount>
+								<AirportAmount>4.00</AirportAmount>
 								<AirportCode>DFW</AirportCode>
 							</CollectionPoint>
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<LocalAmount>400</LocalAmount>
+							<LocalAmount>4.00</LocalAmount>
 						</tax>
 					</taxes>
 				</Price>
@@ -812,38 +812,38 @@
 						</RelatedSegment>
 						<FareRefKey>AXi6Qptn9VhN/oqPb1tDtLu0pLThlG9xHExuIeO9ud6M#####PTCADT/TNO011/RNO611L/RONO205/TYPEPrice/DEP**DFW/ARR**CHI/
 						</FareRefKey>
-						<FareComponent Total="16310" Fare="13860"
+						<FareComponent Total="163.10" Fare="138.60"
 							Surcharges="0">
 							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-							<BaseFare Amount="13860"></BaseFare>
-							<Taxes  Amount="2450">
-								<Tax  Amount="1040">
+							<BaseFare Amount="138.60"></BaseFare>
+							<Taxes  Amount="24.50">
+								<Tax  Amount="10.40">
 									<Designator>US</Designator>
 									<Nature>US</Nature>
 									<Description>US Transportation Tax</Description>
 								</Tax>
-								<Tax  Amount="560">
+								<Tax  Amount="5.60">
 									<Designator>AY</Designator>
 									<Nature>US</Nature>
 									<Description>US September 11th Security Fee</Description>
 								</Tax>
-								<Tax  Amount="450">
+								<Tax  Amount="4.50">
 									<Designator>XF</Designator>
 									<Nature>US</Nature>
 									<Description>US Passenger Facility Charge</Description>
-									<CollectionPoint Amount="450">
+									<CollectionPoint Amount="4.50">
 										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-										<AirportAmount>450</AirportAmount>
+										<AirportAmount>4.50</AirportAmount>
 										<AirportCode>DFW</AirportCode>
 									</CollectionPoint>
 								</Tax>
-								<Tax  Amount="400">
+								<Tax  Amount="4.00">
 									<Designator>ZP</Designator>
 									<Nature>US</Nature>
 									<Description>US Flight Segment Tax</Description>
-									<CollectionPoint Amount="400">
+									<CollectionPoint Amount="4.00">
 										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-										<AirportAmount>400</AirportAmount>
+										<AirportAmount>4.00</AirportAmount>
 										<AirportCode>DFW</AirportCode>
 									</CollectionPoint>
 								</Tax>
@@ -862,8 +862,8 @@
 					<Remark>This ticket is non-refundable.</Remark>
 					<Remark>Changes to this ticket will incur a penalty fee.</Remark>
 					<Penalty  TicketRefundable="N">
-						<Change Total="20000" Amount="20000">
-							<PenaltyAmount Unit="M">20000</PenaltyAmount>
+						<Change Total="200.00" Amount="200.00">
+							<PenaltyAmount Unit="M">200.00</PenaltyAmount>
 							<Taxes Amount="000"></Taxes>
 						</Change>
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
