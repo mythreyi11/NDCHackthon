@@ -18,35 +18,37 @@
 
 <body>
 	<div class="container">
-	<form class="form-display" autocomplete="off"
-			id="payment-details-form">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">Review and pay</h3>
 			</div>
-		<div class="panel-body">
-			<div id="filtered-result" th:fragment="resultsList"
-				th:object="${purchaseList}" class="col-sm-offset-1 col-sm-5">
-				<table class="table table-bordered table-striped table-hover table-condensed">
-					<tr>
-					<th>Sno.</th>
-					<th>Offer Id</th>
-					<th>Flight Details</th>
-					<th>Fare</th>
-					</tr>		
-					<th:block th:each="offer,iterator : ${purchaseList.offerDetailsList}">
+			<div class="panel-body">
+				<div id="filtered-result" th:fragment="resultsList"
+					th:object="${purchaseList}" class="col-sm-offset-1 col-sm-5">
+					<table
+						class="table table-bordered table-striped table-hover table-condensed">
 						<tr>
-							<td th:text ="${iterator.index+1}"></td>
-							<td th:text ="${offer.offerId}"></td>
-							<td th:text ="${offer.flightDetails}"></td>
-							<td th:text ="${offer.fare}"></td>
+							<th>Sno.</th>
+							<th>Offer Id</th>
+							<th>Flight Details</th>
+							<th>Fare</th>
 						</tr>
-					</th:block>
-				</table>
+						<th:block
+							th:each="offer,iterator : ${purchaseList.offerDetailsList}">
+							<tr>
+								<td th:text="${iterator.index+1}"></td>
+								<td th:text="${offer.offerId}"></td>
+								<td th:text="${offer.flightDetails}"></td>
+								<td th:text="${offer.fare}"></td>
+							</tr>
+						</th:block>
+					</table>
+				</div>
 			</div>
 		</div>
-		</div>
-
+		<form class="form-display" autocomplete="off"
+			id="payment-details-form" th:action="@{/showReceipt}"
+			th:object="${paymentDetails}" method="post">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Payment Details</h3>
@@ -55,48 +57,55 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
+
 						<div class="col-sm-3">
-							<label for="card-type">Card Type <input type="text"
-								id="card-type" class="form-control" /></label>
+							<label for="card-type">Card Type <select
+								class="form-control" id="card-type" th:field="*{cardType}">
+									<option
+										th:each="cardType : ${T(com.aa.ndchtml5.common.CardType).cardTypeList}"
+										th:value="${cardType.getCode()}"
+										th:text="${cardType.getValue()}"></option>
+							</select>
+							</label>
 						</div>
 						<div class="col-sm-3">
 							<label for="card-number">Card Number <input type="text"
-								id="card-number" class="form-control" /></label>
+								id="card-number" class="form-control" th:field="*{cardNumber}" /></label>
 						</div>
 						<div class="col-sm-2">
 							<label for="month">Month <input type="text" id="month"
-								class="form-control" /></label>
+								class="form-control" th:field="*{month}" /></label>
 						</div>
 						<div class="col-sm-2">
 							<label for="year">Year <input type="text" id="year"
-								class="form-control" /></label>
+								class="form-control" th:field="*{year}" /></label>
 						</div>
 						<div class="col-sm-2">
 							<label for="cvv">Security Code (CVV) <input type="text"
-								id="cvv" class="form-control" /></label>
+								id="cvv" class="form-control" th:field="*{cvv}" /></label>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-sm-3">
 							<label for="first-name">First Name <input type="text"
-								id="first-name" class="form-control" /></label>
+								id="first-name" class="form-control" th:field="*{firstName}" /></label>
 						</div>
 						<div class="col-sm-3">
 							<label for="middle-name">Middle Name <input type="text"
-								id="middle-name" class="form-control" /></label>
+								id="middle-name" class="form-control" th:field="*{middleName}" /></label>
 						</div>
 						<div class="col-sm-4">
 							<label for="last-name">Last Name <input type="text"
-								id="last-name" class="form-control" /></label>
+								id="last-name" class="form-control" th:field="*{lastName}" /></label>
 						</div>
 
 
 					</div>
 					<div class="row">
 						<div class="col-sm-3">
-							<label for="email">Email for receipt <input type="text"
-								id="email" class="form-control" /></label>
+							<label for="email">Email for receipt <input type="email"
+								id="email" class="form-control" th:field="*{email}" /></label>
 						</div>
 
 					</div>
@@ -105,12 +114,11 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-4">
-							<button type="submit" id="flight-search-roundtrip"
-								class="btn btn-primary btn-lg">Start over</button>
+							<a href="/welcome" class="btn btn-primary btn-lg">Start over</a>
 						</div>
 						<div class="col-sm-4">
-							<button type="submit" id="flight-search-roundtrip"
-								class="btn btn-primary btn-lg">Pay now</button>
+							<button type="submit" class="btn btn-primary btn-lg">Pay
+								now</button>
 						</div>
 					</div>
 				</div>

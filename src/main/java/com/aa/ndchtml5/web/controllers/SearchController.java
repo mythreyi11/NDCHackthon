@@ -22,6 +22,7 @@ import com.aa.ndchtml5.service.CommonService;
 import com.aa.ndchtml5.web.model.FilterCriteria;
 import com.aa.ndchtml5.web.model.FlightSearchCriteria;
 import com.aa.ndchtml5.web.model.OfferList;
+import com.aa.ndchtml5.web.model.PaymentDetails;
 
 @Controller
 @SessionAttributes("purchaseList")
@@ -31,7 +32,7 @@ public class SearchController {
 	ArrayList<Offer> purchaseList;
 	
 	@PostConstruct
-	private void iniData() {
+	private void initData() {
 		allOffers = ConvertXMLToJava.getOffers();
 		purchaseList = new ArrayList<Offer>();
 	}
@@ -39,6 +40,7 @@ public class SearchController {
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String returnSearchPage(ModelMap model) {
 		model.addAttribute("flightSearchCriteria", new FlightSearchCriteria());
+		initData();
 		return "search";
 	}
 	
@@ -85,6 +87,17 @@ public class SearchController {
 	public String returnPaymentPage(@ModelAttribute("purchaseList") ArrayList<Offer> purchaseList, ModelMap model) {
 		OfferList offerList = ConvertDataToView.getOfferListToShow(purchaseList);
 		model.addAttribute("purchaseList", offerList);
+		model.addAttribute("paymentDetails", new PaymentDetails());
 		return "payment";
 	}
+	
+	
+	@RequestMapping(value = "/showReceipt", method = RequestMethod.POST)
+	public String returnReceiptPage(@ModelAttribute("paymentDetails") PaymentDetails paymentDetails, ModelMap model) {
+		/*OfferList offerList = ConvertDataToView.getOfferListToShow(purchaseList);
+		model.addAttribute("purchaseList", offerList);
+		model.addAttribute("paymentDetails", new PaymentDetails());*/
+		return "receipt";
+	}
+	
 }
