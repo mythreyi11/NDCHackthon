@@ -34,7 +34,7 @@
 							<th>Fare</th>
 						</tr>
 						<th:block
-							th:each="offer,iterator : ${purchaseList.offerDetailsList}">
+							th:each="offer,iterator : ${offerDetailsList}">
 							<tr>
 								<td th:text="${iterator.index+1}"></td>
 								<td th:text="${offer.offerId}"></td>
