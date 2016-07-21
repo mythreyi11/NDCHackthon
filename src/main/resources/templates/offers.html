@@ -18,6 +18,9 @@
 	th:href="@{css/font-awesome.min.css}" rel="stylesheet" media="screen" />
 <link href="/css/custom.css" th:href="@{css/custom.css}"
 	rel="stylesheet" media="screen" />
+<link href="/css/css-effects.css" th:href="@{css/css-effects.css}"
+	rel="stylesheet" media="screen" />	
+	
 
 </head>
 
@@ -28,6 +31,7 @@
 		<hr></hr>
 		<p class="padding-bottom"></p>
 		<div class="row">
+			<!--  section for showing the filters -->
 			<div class="col-sm-3">
 				<div class="row">
 					<div class="col-sm-12">
@@ -76,13 +80,17 @@
 					</div>
 				</div>
 			</div>
-			<div id="filtered-offers-list" th:fragment="resultsList"
-				th:object="${offerDetailsList}" class="col-sm-offset-1 col-sm-5">
-				<table class="offertable">
-					<th:block th:each="offer : ${offerDetailsList}" >
-						<tr th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
-							<td id="filtered-offer-td">
-								<div class="well" style="cursor:grab;">
+			<!--  end of filters section -->
+
+			<!--  section for showing the offers -->
+			<section id="portfolio">
+				<div id="filtered-offers-list" th:fragment="resultsList"
+					th:object="${offerDetailsList}" class="col-sm-offset-1 col-sm-5">
+					<div class="row" th:each="offer : ${offerDetailsList}">
+						<div class="col-xs-12 col-sm-8" th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
+							<div class="folio-item wow fadeInRightBig"
+								data-wow-duration="1000ms" data-wow-delay="300ms">
+									<div class="well grabbable">
 									<div class="row">
 										<div class="thumbnail well-xs">
 											<div class="row">
@@ -98,7 +106,7 @@
 										<label class="col-xs-3">Fare:</label> <label class="col-xs-9"
 											th:text="${offer.fare}"> </label>
 										<div class="padding-lines"></div>
-										<div class="col-xs=12">
+											<div class="col-xs=12">
 											<label>Included</label>
 											<ul>
 												<li th:each="inclFeature : ${offer.includeFeatures}"
@@ -113,27 +121,53 @@
 													th:text="${purFeature}"></li>
 											</ul>
 										</div>
-										<button type="button" id="add-to-cart"
-											class="btn btn-primary btn-lg col-xs-12"
-											th:onclick="'javascript:addToCart(\'' + ${offer.offerId} + '\');'">
-											Add to Cart <i class="fa fa-cart-plus" aria-hidden="true"></i>
-										</button>
 									</div>
 								</div>
-							</td>
-						</tr>
-					</th:block>
-				</table>
-			</div>
+								<div class="overlay grabbable">
+									<div class="overlay-content">
+										<div class="overlay-text">
+											<div class="folio-info">
+												<div class="col-xs=12">
+											<label>Included</label>
+											<ul>
+												<li th:each="inclFeature : ${offer.includeFeatures}"
+													th:text="${inclFeature}"></li>
+											</ul>
+										</div>
+										<div class="padding-lines"></div>
+										<div class="col-xs=12">
+											<label>For Purchase</label>
+											<ul>
+												<li th:each="purFeature : ${offer.purchaseFeautues}"
+													th:text="${purFeature}"></li>
+											</ul>
+										</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--  end of showing the offers -->
+
+			<!-- section for showing the cart -->
 			<div class="col-sm-3 right" id="purchase-cart"
-				th:fragment="purchaseCartList" th:object="${purchaseList}" th:position="fixed" ondragover="dragover(event)" ondrop="drop(event)">
+				th:fragment="purchaseCartList" th:object="${purchaseList}"
+				th:position="fixed" ondragover="dragover(event)"
+				ondrop="drop(event)">
 				<span class="glyphicon-shopping-cart glyphicon big-cart"></span>
 				<div>
 					<button type="button" class="btn btn-primary" data-toggle="modal"
-						data-target=".bs-example-modal-sm">View Cart
-						 <span class="badge">
-						 <label th:text="${purchaseList.size()}"/></span></button>
-					<form id="modal-form" th:action="@{/payment}" th:object="${purchaseList}">
+						data-target=".bs-example-modal-sm">
+						View Cart <span class="badge"> <label
+							th:text="${purchaseList.size()}" /></span>
+					</button>
+					<form id="modal-form" th:action="@{/payment}"
+						th:object="${purchaseList}">
 						<div class="modal fade bs-example-modal-sm" tabindex="-1"
 							role="dialog" aria-labelledby="mySmallModalLabel">
 							<div class="modal-dialog modal-sm">
@@ -159,83 +193,84 @@
 					</form>
 				</div>
 			</div>
-			</div>
+			<!-- end of showing cart -->
+
 		</div>
+	</div>
 
-		<script src="/js/jquery.1.10.2.min.js"
-			th:src="@{/js/jquery.1.10.2.min.js}"></script>
-		<script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
-		<script>
-			function getDetailsOnFilterSelection() {
-				var filters = {}
-				filters["selectedFeatures"] = $(
-						"input[type='checkbox']:checked").map(function() {
-					return this.value;
-				}).get()
-				$.ajax({
-					type : "POST",
-					contentType : "application/json",
-					url : "/getDetailsOnFilterSelection",
-					data : JSON.stringify(filters),
-					dataType : 'html',
-					timeout : 100000,
-					success : function(data) {
-						console.log("SUCCESS: ", data);
-						displayFilteredOffers(data);
-					},
-					error : function(e) {
-						console.log("ERROR: ", e);
-					},
-					done : function(e) {
-						console.log("DONE");
-					}
-				});
-			}
-			function displayFilteredOffers(data) {
-				$("#filtered-offers-list").html(data);
-			}
+	<script src="/js/jquery.1.10.2.min.js"
+		th:src="@{/js/jquery.1.10.2.min.js}"></script>
+	<script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+	<script>
+		function getDetailsOnFilterSelection() {
+			var filters = {}
+			filters["selectedFeatures"] = $("input[type='checkbox']:checked")
+					.map(function() {
+						return this.value;
+					}).get()
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "/getDetailsOnFilterSelection",
+				data : JSON.stringify(filters),
+				dataType : 'html',
+				timeout : 100000,
+				success : function(data) {
+					console.log("SUCCESS: ", data);
+					displayFilteredOffers(data);
+				},
+				error : function(e) {
+					console.log("ERROR: ", e);
+				},
+				done : function(e) {
+					console.log("DONE");
+				}
+			});
+		}
+		function displayFilteredOffers(data) {
+			$("#filtered-offers-list").html(data);
+		}
 
-			function addToCart(offerId) {
-				$.ajax({
-					type : "POST",
-					contentType : "application/json",
-					url : "/addToCart",
-					data : JSON.stringify(offerId),
-					dataType : 'html',
-					timeout : 100000,
-					success : function(data) {
-						console.log("SUCCESS: ", data);
-						updateCart(data);
-					},
-					error : function(e) {
-						console.log("ERROR: ", e);
-					},
-					done : function(e) {
-						console.log("DONE");
-					}
-				});
-			}
+		function addToCart(offerId) {
+			$.ajax({
+				type : "POST",
+				contentType : "application/json",
+				url : "/addToCart",
+				data : JSON.stringify(offerId),
+				dataType : 'html',
+				timeout : 100000,
+				success : function(data) {
+					console.log("SUCCESS: ", data);
+					updateCart(data);
+				},
+				error : function(e) {
+					console.log("ERROR: ", e);
+				},
+				done : function(e) {
+					console.log("DONE");
+				}
+			});
+		}
 
-			function updateCart(data) {
-				$("#purchase-cart").html(data);
-				$('input[type=button]').on('click', function() {
-					$(this).toggleClass("btn-success");
-				});
-			}
+		function updateCart(data) {
+			$("#purchase-cart").html(data);
+			$('input[type=button]').on('click', function() {
+				$(this).toggleClass("btn-success");
+			});
+		}
 
-					
-			function drag(event) {
-			    event.dataTransfer.setData("offerId", event.srcElement.id);
-			   
-			}
-			function drop(event) {
-			    event.preventDefault();
-			    addToCart(event.dataTransfer.getData("offerId"));
-			}
-			function dragover(event){
-				event.preventDefault();
-			    event.dataTransfer.dropEffect = 'copy';
-			}
-		</script>
+		function drag(event) {
+			event.dataTransfer.setData("offerId", event.srcElement.id);
+
+		}
+		function drop(event) {
+			event.preventDefault();
+			addToCart(event.dataTransfer.getData("offerId"));
+		}
+		function dragover(event) {
+			event.preventDefault();
+			event.dataTransfer.dropEffect = 'copy';
+		}
+	</script>
 </body>
 </html>
