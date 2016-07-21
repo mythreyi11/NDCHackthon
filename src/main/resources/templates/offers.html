@@ -79,8 +79,8 @@
 			<div id="filtered-offers-list" th:fragment="resultsList"
 				th:object="${offerList}" class="col-sm-offset-1 col-sm-5">
 				<table class="offertable">
-					<th:block th:each="offer : ${offerList.offerDetailsList}">
-						<tr>
+					<th:block th:each="offer : ${offerList.offerDetailsList}" >
+						<tr th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
 							<td id="filtered-offer-td">
 								<div class="well">
 									<div class="row">
@@ -126,7 +126,7 @@
 				</table>
 			</div>
 			<div class="col-sm-3 right" id="purchase-cart"
-				th:fragment="purchaseCartList" th:object="${purchaseList}">
+				th:fragment="purchaseCartList" th:object="${purchaseList}" th:position="fixed" ondragover="dragover(event)" ondrop="drop(event)">
 				<span class="glyphicon-shopping-cart glyphicon big-cart"></span>
 				<div>
 					<button type="button" class="btn btn-primary" data-toggle="modal"
@@ -223,21 +223,20 @@
 				});
 			}
 
-			/*  $(document).ready(function() {
-				$("#modal-div").hover(function() {
-					$('.modal').modal({
-						focus : this,
-						show : true
-
-					});
-				});
-			 }); */
-			/*$('#offer-select-submit').on('click', function(event) {
-				alert();
+					
+			function drag(event) {
+			    event.dataTransfer.setData("offerId", event.srcElement.id);
+			    //addToCart(event.srcElement.id);
+			    //alert(event.srcElement.id);
+			}
+			function drop(event) {
+			    event.preventDefault();
+			    addToCart(event.srcElement.id);
+			}
+			function dragover(event){
 				event.preventDefault();
-			});
-
-			}); */
+			    event.dataTransfer.dropEffect = 'copy';
+			}
 		</script>
 </body>
 </html>
