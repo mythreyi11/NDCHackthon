@@ -77,12 +77,12 @@
 				</div>
 			</div>
 			<div id="filtered-offers-list" th:fragment="resultsList"
-				th:object="${offerList}" class="col-sm-offset-1 col-sm-5">
+				th:object="${offerDetailsList}" class="col-sm-offset-1 col-sm-5">
 				<table class="offertable">
-					<th:block th:each="offer : ${offerList.offerDetailsList}" >
+					<th:block th:each="offer : ${offerDetailsList}" >
 						<tr th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
 							<td id="filtered-offer-td">
-								<div class="well">
+								<div class="well" style="cursor:grab;">
 									<div class="row">
 										<div class="thumbnail well-xs">
 											<div class="row">
@@ -226,12 +226,11 @@
 					
 			function drag(event) {
 			    event.dataTransfer.setData("offerId", event.srcElement.id);
-			    //addToCart(event.srcElement.id);
-			    //alert(event.srcElement.id);
+			   
 			}
 			function drop(event) {
 			    event.preventDefault();
-			    addToCart(event.srcElement.id);
+			    addToCart(event.dataTransfer.getData("offerId"));
 			}
 			function dragover(event){
 				event.preventDefault();

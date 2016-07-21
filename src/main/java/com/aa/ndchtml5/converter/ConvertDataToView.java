@@ -5,12 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 
 import com.aa.ndchtml5.common.Stop;
 import com.aa.ndchtml5.domain.Offers.Offer;
 import com.aa.ndchtml5.web.model.OfferDetails;
-import com.aa.ndchtml5.web.model.OfferList;
 
 public class ConvertDataToView {
 	
@@ -18,15 +16,13 @@ public class ConvertDataToView {
 	 * @param offers
 	 * @return
 	 */
-	public static OfferList getOfferListToShow(List<Offer> offers) {
+	public static ArrayList<OfferDetails> getOfferListToShow(List<Offer> offers) {
 		
-		OfferList offerList = new OfferList();
-		List<OfferDetails> offerDetailsList = new ArrayList<OfferDetails>();
+		ArrayList<OfferDetails> offerDetailsList = new ArrayList<OfferDetails>();
 		for (Offer offer : offers) { 
 			offerDetailsList.add(getOfferDetails(offer));
 		}
-		offerList.setOfferDetailsList(offerDetailsList);
-		return offerList;
+		return offerDetailsList;
 	}
 	
 	/**

@@ -21,20 +21,22 @@ import com.aa.ndchtml5.domain.Offers.Offer;
 import com.aa.ndchtml5.service.CommonService;
 import com.aa.ndchtml5.web.model.FilterCriteria;
 import com.aa.ndchtml5.web.model.FlightSearchCriteria;
-import com.aa.ndchtml5.web.model.OfferList;
+import com.aa.ndchtml5.web.model.OfferDetails;
 import com.aa.ndchtml5.web.model.PaymentDetails;
 
 @Controller
-@SessionAttributes("purchaseList")
+@SessionAttributes(value={"purchaseList","offerDetailsList"})
 public class SearchController {
 	
 	Offers allOffers;
 	ArrayList<Offer> purchaseList;
+	ArrayList<OfferDetails> offerDetailsList;
 	
 	@PostConstruct
 	private void initData() {
 		allOffers = ConvertXMLToJava.getOffers();
 		purchaseList = new ArrayList<Offer>();
+		offerDetailsList = new ArrayList<OfferDetails>();
 	}
 
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
@@ -54,8 +56,8 @@ public class SearchController {
 		 if (result.hasErrors()) {
 	            return "search";
 	        }
-		OfferList offerList = ConvertDataToView.getOfferListToShow(allOffers.getOffer());
-		model.addAttribute("offerList", offerList);
+		offerDetailsList = ConvertDataToView.getOfferListToShow(allOffers.getOffer());
+		model.addAttribute("offerDetailsList", offerDetailsList);
 		model.addAttribute("purchaseList", purchaseList);
 		return "offers";
 	}
@@ -69,24 +71,35 @@ public class SearchController {
 		 else {
 			 selectedOffers = CommonService.findByFeature(filters.getSelectedFeatures(),allOffers.getOffer());
 		 }
-		OfferList offerList = ConvertDataToView.getOfferListToShow(selectedOffers);
-		model.addAttribute("offerList", offerList);
+		List<OfferDetails> offerDetailsList = ConvertDataToView.getOfferListToShow(selectedOffers);
+		model.addAttribute("offerDetailsList", offerDetailsList);
 		return "offers :: resultsList";
 
 	}
 	
 	@RequestMapping(value = "/addToCart" , method = RequestMethod.POST)
-	public String aaddToCart(@RequestBody String offerId, ModelMap model) {
+	public String addToCart(@RequestBody String offerId, ModelMap model) {
 		  Offer offer = CommonService.getOfferByOfferID(offerId,allOffers.getOffer());
 		  purchaseList.add(offer);
+		  
+		  for(OfferDetails offerDetail: offerDetailsList){
+			  offerId = offerId.replace("\"", "");
+			  if(offerDetail.getOfferId().equals(offerId)){
+				  offerDetailsList.remove(offerDetail);
+				  break;
+			  }
+		  }
 		  model.addAttribute("purchaseList", purchaseList);
+		  model.addAttribute("offerDetailsList", offerDetailsList);
 		  return "offers :: purchaseCartList";
 		}
 	
+	
+	
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
 	public String returnPaymentPage(@ModelAttribute("purchaseList") ArrayList<Offer> purchaseList, ModelMap model) {
-		OfferList offerList = ConvertDataToView.getOfferListToShow(purchaseList);
-		model.addAttribute("purchaseList", offerList);
+		List<OfferDetails> offerDetailsList = ConvertDataToView.getOfferListToShow(purchaseList);
+		model.addAttribute("purchaseList", offerDetailsList);
 		model.addAttribute("paymentDetails", new PaymentDetails());
 		return "payment";
 	}
