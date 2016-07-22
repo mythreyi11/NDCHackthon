@@ -84,8 +84,9 @@
 			<!--  end of filters section -->
 
 			<!--  section for showing the offers -->
-			<div id="filtered-offers-list" th:fragment="resultsList"
-					th:object="${offerDetailsList}" class="col-sm-offset-1 col-sm-5">
+			<div id="filtered-offers-list">
+			<div class="col-sm-offset-1 col-sm-5" th:fragment="resultsList"
+					th:object="${offerDetailsList}">
 					<div class="row" th:each="offer : ${offerDetailsList}">
 						<div class="col-xs-12 col-sm-8" th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
 						<div class="offer-highlight">
@@ -126,6 +127,7 @@
 						</div>
 					</div>
 					</div>
+			</div>
 			</div>
 			<!--  end of showing the offers -->
 
