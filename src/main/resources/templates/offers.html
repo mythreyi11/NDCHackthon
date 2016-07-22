@@ -86,7 +86,7 @@
 			<section id="portfolio">
 				<div id="filtered-offers-list" th:fragment="resultsList"
 					th:object="${offerDetailsList}" class="col-sm-offset-1 col-sm-5">
-					<div class="row" th:each="offer : ${offerDetailsList}">
+					<div class="row offertable" th:each="offer : ${offerDetailsList}">
 						<div class="col-xs-12 col-sm-8" th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
 							<div class="folio-item wow fadeInRightBig"
 								data-wow-duration="1000ms" data-wow-delay="300ms">
@@ -129,7 +129,7 @@
 											<div class="folio-info">
 												<div class="col-xs=12">
 											<label>Included</label>
-											<ul>
+											<ul class="nobullet">
 												<li th:each="inclFeature : ${offer.includeFeatures}"
 													th:text="${inclFeature}"></li>
 											</ul>
@@ -137,7 +137,7 @@
 										<div class="padding-lines"></div>
 										<div class="col-xs=12">
 											<label>For Purchase</label>
-											<ul>
+											<ul class="nobullet">
 												<li th:each="purFeature : ${offer.purchaseFeautues}"
 													th:text="${purFeature}"></li>
 											</ul>

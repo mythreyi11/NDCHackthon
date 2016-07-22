@@ -17,6 +17,9 @@ body {
 ul.slide li:hover {
 	padding-left: 5px;
 	}
+.nobullet {
+	list-style-type: none;
+}
 .offertable {
 	width: 300px;
 	height: 100%;
