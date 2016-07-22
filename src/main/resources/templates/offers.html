@@ -71,7 +71,8 @@
 								<input type="checkbox" th:id="${feature.getCode()}"
 								onclick="getDetailsOnFilterSelection()"
 								th:value="${feature.getCode()}" /> <label
-								th:for="${feature.getCode()}"> <img
+								th:for="${feature.getCode()}"> 
+								<img class="filter-highlight"
 									th:title="${feature.getCode()}" th:src="${feature.getValue()}"
 									th:alt="${feature.getCode()}"></img>
 							</label>
@@ -87,7 +88,7 @@
 					th:object="${offerDetailsList}" class="col-sm-offset-1 col-sm-5">
 					<div class="row" th:each="offer : ${offerDetailsList}">
 						<div class="col-xs-12 col-sm-8" th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
-						<div class="highlight">
+						<div class="offer-highlight">
 							<div class="panel offer-panel grabbable">
 								<div class="panel-heading offer-panel-heading">
 									<div class="row">
