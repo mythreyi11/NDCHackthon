@@ -18,7 +18,7 @@
 
 <body>
 	<div class="container">
-		<div class="panel panel-default">
+		<div class="panel">
 			<div class="panel-heading">
 				<h3 class="panel-title">Review and pay</h3>
 			</div>
@@ -49,7 +49,7 @@
 		<form class="form-display" autocomplete="off"
 			id="payment-details-form" th:action="@{/showReceipt}"
 			th:object="${paymentDetails}" method="post">
-			<div class="panel panel-default">
+			<div class="panel">
 				<div class="panel-heading">
 					<h3 class="panel-title">Payment Details</h3>
 					<img class="img-responsive"
@@ -114,10 +114,10 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-4">
-							<a href="/welcome" class="btn btn-primary btn-lg">Start over</a>
+							<a href="/welcome" class="btn btn-lg">Start over</a>
 						</div>
 						<div class="col-sm-4">
-							<button type="submit" class="btn btn-primary btn-lg">Pay
+							<button type="submit" class="btn btn-lg">Pay
 								now</button>
 						</div>
 					</div>
