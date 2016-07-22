@@ -30,10 +30,14 @@
 		<h3>Shopping Results/Offer/Shopping Cart</h3>
 		<hr></hr>
 		<p class="padding-bottom"></p>
+		<section id="main">
 		<div class="row">
 			<!--  section for showing the filters -->
 			<div class="col-sm-3">
 				<div class="row">
+				<div class ="col-sm-12">
+					  <a id="towelcome" href="/welcome" ><i class="fa fa-angle-left big-arrow"></i></a>
+				</div>
 					<div class="col-sm-12">
 						<div class="well well-xs">
 							<label for="stop">Stops</label>
@@ -132,7 +136,8 @@
 			<!--  end of showing the offers -->
 
 			<!-- section for showing the cart -->
-			<div class="col-sm-3 right" id="purchase-cart"
+			<div class="col-sm-3">
+			<div class="right" id="purchase-cart"
 				th:fragment="purchaseCartList" th:object="${purchaseList}"
 				th:position="fixed" ondragover="dragover(event)"
 				ondrop="drop(event)">
@@ -169,10 +174,15 @@
 						</div>
 					</form>
 				</div>
+				</div>
+				<div class ="col-sm-3 affix" data-spy="affix" data-offset-top="700">
+					  <a id="backtotop" href="#main" ><i class="fa fa-chevron-circle-up big-arrow"></i></a>
+				</div>
 			</div>
 			<!-- end of showing cart -->
 
 		</div>
+		</section>
 	</div>
 
 	<script src="/js/jquery.1.10.2.min.js"

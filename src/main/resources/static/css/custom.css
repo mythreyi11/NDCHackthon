@@ -81,7 +81,9 @@ ul.slide li:hover {
 .big-cart {
 	font-size: 75px;
 }
-
+.big-arrow {
+	font-size: 40px;
+}
 .grabbable {
 	cursor: move;
 	cursor: grab;
