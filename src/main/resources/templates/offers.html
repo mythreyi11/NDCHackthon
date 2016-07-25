@@ -94,8 +94,8 @@
 					<div class="row" th:each="offer : ${offerDetailsList}">
 						<div class="col-xs-12 col-sm-8" th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
 						<div class="offer-highlight">
-							<div class="panel offer-panel grabbable">
-								<div class="panel-heading offer-panel-heading">
+							<div class="panel grabbable">
+								<div class="panel-heading">
 									<div class="row">
 										<label class="col-xs-offset-2 col-xs-2">Offer </label> <label
 											class="col-xs-offset-1 col-xs-7" th:text="${offer.offerId}"></label>
