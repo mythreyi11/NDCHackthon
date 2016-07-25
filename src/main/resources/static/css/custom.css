@@ -24,6 +24,10 @@ a {
 	text-decoration: none;
 }
 
+a:hover {
+	color: #FCAC45;
+}
+
 .btn {
 	background: #FCAC45;
 	color: #ffffff;
@@ -81,9 +85,11 @@ ul.slide li:hover {
 .big-cart {
 	font-size: 75px;
 }
+
 .big-arrow {
 	font-size: 40px;
 }
+
 .grabbable {
 	cursor: move;
 	cursor: grab;
@@ -122,4 +128,15 @@ ul.slide li:hover {
 
 .filter-highlight:hover {
 	border: 2px solid #FCAC45;
+}
+
+.back-to-top {
+	position: fixed;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.back-to-top.back-to-top-visible {
+	visibility: visible;
+	opacity: 1;
 }
