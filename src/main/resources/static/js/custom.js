@@ -50,9 +50,6 @@
 
 			function updateCart(data) {
 				$("#purchase-cart").html(data);
-				$('input[type=button]').on('click', function() {
-					$(this).toggleClass("btn-success");
-				});
 			}
 
 			function drag(event) {
@@ -75,4 +72,8 @@
 								.addClass('back-to-top-visible') : $back_to_top
 								.removeClass('back-to-top-visible');
 					});
-
+			/*function() {
+				($"#cartimage").hover() 
+						.addClass('animated infinite pulse');
+			});
+*/

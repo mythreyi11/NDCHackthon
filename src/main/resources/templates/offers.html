@@ -18,7 +18,9 @@
 	th:href="@{css/font-awesome.min.css}" rel="stylesheet" media="screen" />
 <link href="/css/custom.css" th:href="@{css/custom.css}"
 	rel="stylesheet" media="screen" />
-
+<link href="/css/animate.min.css" th:href="@{css/animate.min.css}"
+	rel="stylesheet" media="screen" />	
+	
 </head>
 
 <body>
@@ -33,7 +35,7 @@
 			<div class="col-sm-3">
 				<div class="row">
 				<div class ="col-sm-12">
-					  <a id="towelcome" href="/welcome" ><i class="fa fa-angle-left big-arrow"></i></a>
+					  <a id="towelcome" href="/welcome" ><i class="fa fa-angle-left big-arrow animated infinite pulse"></i></a>
 				</div>
 					<div class="col-sm-12">
 						<div class="well well-xs">
@@ -91,7 +93,7 @@
 					<div class="row" th:each="offer : ${offerDetailsList}">
 						<div class="col-xs-12 col-sm-8" th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
 						<div class="offer-highlight">
-							<div class="panel grabbable">
+							<div class="panel">
 								<div class="panel-heading">
 									<div class="row">
 										<label class="col-xs-offset-2 col-xs-2">Offer </label> <label
@@ -133,12 +135,12 @@
 			<!--  end of showing the offers -->
 
 			<!-- section for showing the cart -->
-			<div class="col-sm-3">
-			<div class="right" id="purchase-cart"
+			<div class ="col-sm-3 right" data-spy="affix" data-offset-top="200">
+			<div id="purchase-cart"
 				th:fragment="purchaseCartList" th:object="${purchaseList}"
 				th:position="fixed" ondragover="dragover(event)"
 				ondrop="drop(event)">
-				<span class="glyphicon-shopping-cart glyphicon big-cart"></span>
+				<span id = "cartimage" class="glyphicon-shopping-cart glyphicon big-cart"></span>
 				<div>
 					<button type="button" class="btn" data-toggle="modal"
 						data-target=".bs-example-modal-sm">
@@ -172,13 +174,12 @@
 					</form>
 				</div>
 				</div>
-				<div class ="col-sm-3">
+				</div>
+			<!-- end of showing cart -->
+			
 				<div class="back-to-top">
 					  <a id="backtotop" href="#main" ><i class="fa fa-chevron-circle-up big-arrow"></i></a>
 					</div>	  
-				</div>
-			</div>
-			<!-- end of showing cart -->
 
 		</div>
 		</section>

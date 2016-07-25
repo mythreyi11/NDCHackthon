@@ -36,11 +36,13 @@ a:hover {
 .panel {
 	background: #666;
 	color: #ffffff;
+	border-radius: 10px;
 }
 
 .panel-heading {
 	background: #FCAC45;
 	color: #ffffff;
+	border-radius: 10px;
 }
 
 .well {
@@ -131,6 +133,7 @@ ul.slide li:hover {
 }
 
 .back-to-top {
+	bottom : 12px;
 	position: fixed;
 	visibility: hidden;
 	opacity: 0;
