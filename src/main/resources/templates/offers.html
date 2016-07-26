@@ -166,7 +166,8 @@
 										<th:block th:each="purchasedItem : ${purchasedList}">
 										<tr>
         									<td th:text="${purchasedItem.offerId}"></td>
-        									<td><button type="button">
+        									<td><button type="button" 
+        									th:onclick="'javascript:removeFromCart(\'' + ${purchasedItem.offerId} + '\');'">
         									<i class="fa fa-minus-circle" aria-hidden="true"></i>
         									</button></td>
         								</tr>

@@ -94,7 +94,22 @@ public class MainController {
 		  return "offers :: offersWithCart";
 		}
 	
-	
+	@RequestMapping(value = "/removeFromCart" , method = RequestMethod.POST)
+	public String removeFromCart(@RequestBody String offerId, ModelMap model) {
+		  Offer offer = CommonService.getOfferByOfferID(offerId,allOffers.getOffer());
+		  availableOfferDetailsList.add(ConvertDataToView.getOfferDetails(offer));
+		  
+		  for(OfferDetails purchasedItem: purchasedList){
+			  offerId = offerId.replace("\"", "");
+			  if(purchasedItem.getOfferId().equals(offerId)){
+				  availableOfferDetailsList.remove(purchasedItem);
+				  break;
+			  }
+		  }
+		  model.addAttribute("purchasedList", purchasedList);
+		  model.addAttribute("availableOfferDetailsList", availableOfferDetailsList);
+		  return "offers :: offersWithCart";
+		}
 	
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
 	public String returnPaymentPage(ModelMap model) {

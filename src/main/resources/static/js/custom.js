@@ -47,11 +47,33 @@
 					}
 				});
 			}
-
+			
 			function updateCart(data) {
 				 $("#offers-with-cart").html(data);
 			}
 
+			function removeFromCart(offerId) {
+				$.ajax({
+					type : "POST",
+					contentType : "application/json",
+					url : "/removeFromCart",
+					data : JSON.stringify(offerId),
+					dataType : 'html',
+					timeout : 100000,
+					success : function(data) {
+						console.log("SUCCESS: ", data);
+						updateCart(data);
+					},
+					error : function(e) {
+						console.log("ERROR: ", e);
+					},
+					done : function(e) {
+						console.log("DONE");
+					}
+				});
+			}
+			
+			
 			function drag(event) {
 				event.dataTransfer.setData("offerId", event.srcElement.id);
 
