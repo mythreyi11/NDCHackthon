@@ -16,13 +16,25 @@ public class ConvertDataToView {
 	 * @param offers
 	 * @return
 	 */
-	public static ArrayList<OfferDetails> getOfferListToShow(List<Offer> offers) {
+	public static ArrayList<OfferDetails> getOfferListToShow(List<Offer> offers , List<OfferDetails> availableOfferDetails) {
 		
 		ArrayList<OfferDetails> offerDetailsList = new ArrayList<OfferDetails>();
-		for (Offer offer : offers) { 
-			offerDetailsList.add(getOfferDetails(offer));
+		if (availableOfferDetails.isEmpty()) {
+			for (Offer offer : offers) {
+				offerDetailsList.add(getOfferDetails(offer));
+			}
 		}
-		return offerDetailsList;
+		else {
+			for (Offer offer : offers) {
+				for (OfferDetails offerDetails : availableOfferDetails) {
+					if (!offer.getOfferId().equalsIgnoreCase(offerDetails.getOfferId())) {
+						offerDetailsList.add(getOfferDetails(offer));
+					}
+				}
+			}
+		}
+		
+		return offerDetailsList; 
 	}
 	
 	/**

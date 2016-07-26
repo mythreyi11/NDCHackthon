@@ -24,7 +24,7 @@
 			</div>
 			<div class="panel-body">
 				<div id="filtered-result" th:fragment="resultsList"
-					th:object="${purchaseList}" class="col-sm-offset-1 col-sm-5">
+					th:object="${purchasedList}" class="col-sm-offset-1 col-sm-5">
 					<table
 						class="table table-bordered table-striped table-hover table-condensed">
 						<tr>
@@ -34,12 +34,12 @@
 							<th>Fare</th>
 						</tr>
 						<th:block
-							th:each="offer,iterator : ${offerDetailsList}">
+							th:each="purchasedItem,iterator : ${purchasedList}">
 							<tr>
 								<td th:text="${iterator.index+1}"></td>
-								<td th:text="${offer.offerId}"></td>
-								<td th:text="${offer.flightDetails}"></td>
-								<td th:text="${offer.fare}"></td>
+								<td th:text="${purchasedItem.offerId}"></td>
+								<td th:text="${purchasedItem.flightDetails}"></td>
+								<td th:text="${purchasedItem.fare}"></td>
 							</tr>
 						</th:block>
 					</table>

@@ -86,11 +86,13 @@
 			</div>
 			<!--  end of filters section -->
 
+			<div id="offers-with-cart" th:fragment="offersWithCart">
+			
 			<!--  section for showing the offers -->
 			<div id="filtered-offers-list">
-			<div class="col-sm-offset-1 col-sm-5" th:fragment="resultsList"
-					th:object="${offerDetailsList}">
-					<div class="row" th:each="offer : ${offerDetailsList}">
+			<div class="col-sm-offset-1 col-sm-5" th:fragment="filteredOffersList"
+					th:object="${availableOfferDetailsList}">
+					<div class="row" th:each="offer : ${availableOfferDetailsList}">
 						<div class="col-xs-12 col-sm-8" th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
 						<div class="offer-highlight">
 							<div class="panel">
@@ -136,8 +138,7 @@
 
 			<!-- section for showing the cart -->
 			<div class ="col-sm-3 right" data-spy="affix" data-offset-top="200">
-			<div id="purchase-cart"
-				th:fragment="purchaseCartList" th:object="${purchaseList}"
+			<div id="purchase-cart" th:fragment="purchasedCartList" th:object="${purchasedList}"
 				th:position="fixed" ondragover="dragover(event)"
 				ondrop="drop(event)">
 				<span id = "cartimage" class="glyphicon-shopping-cart glyphicon big-cart"></span>
@@ -145,10 +146,10 @@
 					<button type="button" class="btn" data-toggle="modal"
 						data-target=".bs-example-modal-sm">
 						View Cart <span class="badge"> <label
-							th:text="${purchaseList.size()}" /></span>
+							th:text="${purchasedList.size()}" /></span>
 					</button>
 					<form id="modal-form" th:action="@{/payment}"
-						th:object="${purchaseList}">
+						th:object="${purchasedList}">
 						<div class="modal fade bs-example-modal-sm" tabindex="-1"
 							role="dialog" aria-labelledby="mySmallModalLabel">
 							<div class="modal-dialog modal-sm">
@@ -161,7 +162,16 @@
 										<h4 class="modal-title">Cart Details</h4>
 									</div>
 									<div class="modal-body">
-										<p>Order Details</p>
+										<table class="table">
+										<th:block th:each="purchasedItem : ${purchasedList}">
+										<tr>
+        									<td th:text="${purchasedItem.offerId}"></td>
+        									<td><button type="button">
+        									<i class="fa fa-minus-circle" aria-hidden="true"></i>
+        									</button></td>
+        								</tr>
+        								</th:block>	
+										</table>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-default"
@@ -176,8 +186,10 @@
 				</div>
 				</div>
 			<!-- end of showing cart -->
-			
-				<div class="back-to-top right">
+			</div> <!--  end of the offers with cart fragment -->
+				
+			<!-- Back to Top -->	
+			<div class="back-to-top right">
 					  <a id="backtotop" href="#main" ><i class="fa fa-chevron-circle-up big-arrow"></i></a>
 					</div>	  
 
