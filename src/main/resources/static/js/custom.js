@@ -62,7 +62,7 @@
 			}
 			function dragover(event) {
 				event.preventDefault();
-				event.dataTransfer.dropEffect = 'copy';
+				//event.dataTransfer.dropEffect = 'copy';
 			}
 			var offset = 300,
 			$back_to_top = $('.back-to-top');
@@ -72,6 +72,7 @@
 								.addClass('back-to-top-visible') : $back_to_top
 								.removeClass('back-to-top-visible');
 					});
+			
 			/*function() {
 				($"#cartimage").hover() 
 						.addClass('animated infinite pulse');
