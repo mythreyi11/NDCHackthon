@@ -89,7 +89,7 @@ ul.slide li:hover {
 }
 
 .big-cart {
-	font-size: 75px;
+	font-size: 100px;
 }
 
 .big-arrow {
@@ -146,4 +146,9 @@ ul.slide li:hover {
 .back-to-top.back-to-top-visible {
 	visibility: visible;
 	opacity: 1;
+}
+.navbar-fixed {
+	position:fixed;
+	right:0;
+	padding-right: 30px;
 }
