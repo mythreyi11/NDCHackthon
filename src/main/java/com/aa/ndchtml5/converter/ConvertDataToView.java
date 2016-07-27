@@ -19,6 +19,7 @@ public class ConvertDataToView {
 	public static ArrayList<OfferDetails> getOfferListToShow(List<Offer> offers , List<OfferDetails> availableOfferDetails) {
 		
 		ArrayList<OfferDetails> offerDetailsList = new ArrayList<OfferDetails>();
+		boolean purchased = false;
 		if (availableOfferDetails.isEmpty()) {
 			for (Offer offer : offers) {
 				offerDetailsList.add(getOfferDetails(offer));
@@ -27,11 +28,17 @@ public class ConvertDataToView {
 		else {
 			for (Offer offer : offers) {
 				for (OfferDetails offerDetails : availableOfferDetails) {
-					if (!offer.getOfferId().equalsIgnoreCase(offerDetails.getOfferId())) {
-						offerDetailsList.add(getOfferDetails(offer));
+					if (offer.getOfferId().equalsIgnoreCase(offerDetails.getOfferId())) {
+						purchased = true;
+						break;
 					}
 				}
+				if(!purchased) {
+					offerDetailsList.add(getOfferDetails(offer));
+				}
+				purchased = false;
 			}
+			
 		}
 		
 		return offerDetailsList; 

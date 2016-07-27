@@ -24,6 +24,60 @@
 </head>
 
 <body>
+<div id="whole-page" th:fragment="offersWithCart">
+ 	<div class="navbar navbar-fixed-top">
+ 	<!-- section for showing the cart -->
+			<div class ="col-sm-3 right" >
+			<div id="purchase-cart" th:fragment="purchasedCartList" th:object="${purchasedList}"
+				th:position="fixed" ondragover="dragover(event)"
+				ondrop="drop(event)">
+				<span id = "cartimage" class="glyphicon-shopping-cart glyphicon big-cart"></span>
+				<div>
+					<button type="button" class="btn" data-toggle="modal"
+						data-target=".bs-example-modal-sm">
+						View Cart <span class="badge"> <label
+							th:text="${purchasedList.size()}" /></span>
+					</button>
+					<form id="modal-form" th:action="@{/payment}"
+						th:object="${purchasedList}">
+						<div class="modal fade bs-example-modal-sm" tabindex="-1"
+							role="dialog" aria-labelledby="mySmallModalLabel">
+							<div class="modal-dialog modal-sm">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+										<h4 class="modal-title">Cart Details</h4>
+									</div>
+									<div class="modal-body">
+										<table class="table">
+										<th:block th:each="purchasedItem : ${purchasedList}">
+										<tr>
+        									<td th:text="${purchasedItem.offerId}"></td>
+        									<td><button type="button" 
+        									th:onclick="'javascript:removeFromCart(\'' + ${purchasedItem.offerId} + '\');'">
+        									<i class="fa fa-minus-circle" aria-hidden="true"></i>
+        									</button></td>
+        								</tr>
+        								</th:block>	
+										</table>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default"
+											data-dismiss="modal">Cancel</button>
+										<button type="submit" class="btn">Submit</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				</div>
+				</div>
+			<!-- end of showing cart -->
+ 	</div>
 	<div id="main" class="container">
 		<div class ="left">
 			<a id="towelcome" href="/welcome" ><i class="fa fa-angle-left big-arrow"></i></a>
@@ -86,11 +140,11 @@
 			</div>
 			<!--  end of filters section -->
 
-			<div id="offers-with-cart" th:fragment="offersWithCart">
+		<!-- 	<div id="offers-with-cart" th:fragment="offersWithCart"> -->
 			
 			<!--  section for showing the offers -->
 			<div id="filtered-offers-list">
-			<div class="col-sm-offset-1 col-sm-5" th:fragment="filteredOffersList"
+			<div class="col-sm-offset-1 col-sm-8" th:fragment="filteredOffersList"
 					th:object="${availableOfferDetailsList}">
 					<div class="row" th:each="offer : ${availableOfferDetailsList}">
 						<div class="col-xs-12 col-sm-8" th:id="${offer.offerId}" draggable="true" ondragstart="drag(event)">
@@ -135,9 +189,9 @@
 			</div>
 			</div>
 			<!--  end of showing the offers -->
-
-			<!-- section for showing the cart -->
-			<div class ="col-sm-3 right" data-spy="affix" data-offset-top="200">
+<!-- 
+			section for showing the cart
+			<div class ="col-sm-3 right" data-spy="affix" data-offset-top="150" data-offset-bottom="800">
 			<div id="purchase-cart" th:fragment="purchasedCartList" th:object="${purchasedList}"
 				th:position="fixed" ondragover="dragover(event)"
 				ondrop="drop(event)">
@@ -186,8 +240,8 @@
 				</div>
 				</div>
 				</div>
-			<!-- end of showing cart -->
-			</div> <!--  end of the offers with cart fragment -->
+			end of showing cart -->
+			<!-- </div>   end of the offers with cart fragment -->
 				
 			<!-- Back to Top -->	
 			<div class="back-to-top right">
@@ -197,7 +251,7 @@
 		</div>
 		</section>
 	</div>
-
+</div>
 	<script src="/js/jquery.1.10.2.min.js"
 		th:src="@{/js/jquery.1.10.2.min.js}"></script>
 	<script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
