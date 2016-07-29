@@ -152,3 +152,15 @@ ul.slide li:hover {
 	right:0;
 	padding-right: 30px;
 }
+.top-arrow {
+	width: 22px;
+    height: 12px;
+    background-position: -275px 0;
+    position: absolute;
+    top: -12px;
+    right: 6px;
+ 	background-image: url("/images/header-sprite.png");
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-size: 485px;
+}

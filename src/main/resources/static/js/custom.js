@@ -49,7 +49,7 @@
 			}
 			
 			function updateCart(data) {
-				 $("#whole-page").html(data);
+				 $("#offers-with-cart").html(data);
 			}
 
 			function removeFromCart(offerId) {

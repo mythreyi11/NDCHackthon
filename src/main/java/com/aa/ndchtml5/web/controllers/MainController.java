@@ -102,7 +102,7 @@ public class MainController {
 		  for(OfferDetails purchasedItem: purchasedList){
 			  offerId = offerId.replace("\"", "");
 			  if(purchasedItem.getOfferId().equals(offerId)){
-				  availableOfferDetailsList.remove(purchasedItem);
+				  purchasedList.remove(purchasedItem);
 				  break;
 			  }
 		  }

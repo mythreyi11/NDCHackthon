@@ -24,83 +24,22 @@
 </head>
 
 <body>
-	<div id="whole-page" th:fragment="offersWithCart">
-		<!-- nav bar for showing the cart -->
-		<nav class="navbar navbar-fixed navbar-right" role="navigation">
-			<div class="collapse navbar-collapse"
-				id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<div id="purchase-cart" th:object="${purchasedList}"
-							th:position="fixed" ondragover="dragover(event)"
-							ondrop="drop(event)">
-							<span id="cartimage"
-								class="glyphicon-shopping-cart glyphicon big-cart"></span>
-							<div>
-								<button type="button" class="btn" data-toggle="modal"
-									data-target="#cart-details-modal">
-									View Cart <span class="badge"> <label
-										th:text="${purchasedList.size()}" /></span>
-								</button>
-							</div>
-						</div>
-
-					</li>
-				</ul>
-			</div>
-		</nav>
-
-		<div class="modal fade bs-example-modal-sm" tabindex="-1"
-			id="cart-details-modal" role="dialog"
-			aria-labelledby="mySmallModalLabel">
-			<form id="modal-form" th:action="@{/payment}"
-				th:object="${purchasedList}">
-				<div class="modal-dialog modal-sm">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<h4 class="modal-title">Cart Details</h4>
-						</div>
-						<div class="modal-body">
-							<table class="table">
-								<th:block th:each="purchasedItem : ${purchasedList}">
-									<tr>
-										<td th:text="${purchasedItem.offerId}"></td>
-										<td><button type="button"
-												th:onclick="'javascript:removeFromCart(\'' + ${purchasedItem.offerId} + '\');'">
-												<i class="fa fa-minus-circle" aria-hidden="true"></i>
-											</button></td>
-									</tr>
-								</th:block>
-							</table>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Cancel</button>
-							<button type="submit" class="btn">Submit</button>
-						</div>
-					</div>
-				</div>
-			</form>
-		</div>
-		<!-- end of showing cart -->
-
-		<div id="main" class="container">
+	<div id="main" class="container-fluid">
+	
 			<div class="left">
 				<a id="towelcome" href="/welcome"><i
 					class="fa fa-angle-left big-arrow"></i></a>
-			</div>
+			</div> <!--  to go back to main screen -->
 			<p class="padding-top"></p>
 			<h3>Shopping Results/Offer/Shopping Cart</h3>
 			<hr></hr>
 			<p class="padding-bottom"></p>
+
 			<section id="main">
 				<div class="row">
+
 					<!--  section for showing the filters -->
-					<div class="col-sm-3">
+					<div class="col-sm-2">
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="well well-xs">
@@ -150,14 +89,15 @@
 						</div>
 					</div>
 					<!--  end of filters section -->
-
+					
+					<div id="offers-with-cart" th:fragment="offersWithCart">
 					<!--  section for showing the offers -->
 					<div id="filtered-offers-list">
-						<div class="col-sm-offset-1 col-sm-8"
+						<div class="col-sm-offset-1 col-sm-6"
 							th:fragment="filteredOffersList"
 							th:object="${availableOfferDetailsList}">
 							<div class="row" th:each="offer : ${availableOfferDetailsList}">
-								<div class="col-xs-12 col-sm-8" th:id="${offer.offerId}"
+								<div class="col-xs-12 col-sm-6" th:id="${offer.offerId}"
 									draggable="true" ondragstart="drag(event)">
 									<div class="offer-highlight">
 										<div class="panel">
@@ -199,20 +139,73 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div><!-- End of fragment filteredOffersList -->
 					</div>
 					<!--  end of showing the offers -->
 
-					<!-- Back to Top -->
+					<!-- section for showing the cart -->
+					<div class="col-sm-3">
+						<nav class="navbar navbar-fixed navbar-right" role="navigation">
+							<div class="collapse navbar-collapse"
+								id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav navbar-right">
+									<li>
+										<div id="purchase-cart" th:object="${purchasedList}"
+											th:position="fixed" ondragover="dragover(event)"
+											ondrop="drop(event)">
+											<span id="cartimage"
+												class="glyphicon-shopping-cart glyphicon big-cart"></span>
+											<div>
+												<div class="dropdown">
+													<div data-toggle="dropdown" class=" dropdown-toggle"
+														id="mini" aria-expanded="true">
+														<button type="button" class="btn">
+															View Cart <span class="badge"> <label
+																th:text="${purchasedList.size()}" /></span>
+														</button>
+													</div>
+													<div class="dropdown-menu dropdown-menu-right row">
+													<span class="top-arrow"></span>
+														<form id="view-cart-form" th:action="@{/payment}"
+															th:object="${purchasedList}">
+																<div class ="col-xs-12">
+																<table class="table">
+																	<th:block th:each="purchasedItem : ${purchasedList}">
+																		<tr>
+																			<td th:text="${purchasedItem.offerId}"></td>
+																			<td><button type="button"
+																					th:onclick="'javascript:removeFromCart(\'' + ${purchasedItem.offerId} + '\');'">
+																					<i class="fa fa-minus-circle" aria-hidden="true"></i>
+																				</button></td>
+																		</tr>
+																	</th:block>
+																</table>
+																<button type="submit" class="btn">Submit</button>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<!-- end of showing cart -->
+					</div>
+					
+					</div> <!-- End of fragment offersWithCart -->
+					
 					<div class="back-to-top right">
 						<a id="backtotop" href="#main"><i
 							class="fa fa-chevron-circle-up big-arrow"></i></a>
-					</div>
+					</div><!-- Back to Top -->
 
-				</div>
+				</div><!-- End of main row -->
 			</section>
 		</div>
-	</div>
+		
 	<script src="/js/jquery.1.10.2.min.js"
 		th:src="@{/js/jquery.1.10.2.min.js}"></script>
 	<script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
