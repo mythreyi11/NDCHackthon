@@ -4,8 +4,8 @@ public class PaymentDetails {
 
 	private String cardType;
 	private String cardNumber;
-	private String month;
-	private String year;
+	private String cardExpMonth;
+	private String cardExpYear;
 	private String cvv;
 	private String firstName;
 	private String middleName;
@@ -35,30 +35,7 @@ public class PaymentDetails {
 	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
 	}
-	/**
-	 * @return the month
-	 */
-	public String getMonth() {
-		return month;
-	}
-	/**
-	 * @param month the month to set
-	 */
-	public void setMonth(String month) {
-		this.month = month;
-	}
-	/**
-	 * @return the year
-	 */
-	public String getYear() {
-		return year;
-	}
-	/**
-	 * @param year the year to set
-	 */
-	public void setYear(String year) {
-		this.year = year;
-	}
+	
 	/**
 	 * @return the cvv
 	 */
@@ -118,6 +95,18 @@ public class PaymentDetails {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getCardExpMonth() {
+		return cardExpMonth;
+	}
+	public void setCardExpMonth(String cardExpMonth) {
+		this.cardExpMonth = cardExpMonth;
+	}
+	public String getCardExpYear() {
+		return cardExpYear;
+	}
+	public void setCardExpYear(String cardExpYear) {
+		this.cardExpYear = cardExpYear;
 	}
 	
 	

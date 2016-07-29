@@ -26,7 +26,7 @@
 				<div id="filtered-result" th:fragment="resultsList"
 					th:object="${purchasedList}" class="col-sm-offset-1 col-sm-5">
 					<table
-						class="table table-bordered table-striped table-hover table-condensed">
+						class="table table-striped table-hover">
 						<tr>
 							<th>Sno.</th>
 							<th>Offer Id</th>
@@ -73,12 +73,24 @@
 								id="card-number" class="form-control" th:field="*{cardNumber}" /></label>
 						</div>
 						<div class="col-sm-2">
-							<label for="month">Month <input type="text" id="month"
-								class="form-control" th:field="*{month}" /></label>
+							<label for="card-exp-month">Month <select
+								class="form-control" id="card-exp-month" th:field="*{cardExpMonth}">
+									<option
+										th:each="cardExpMonth : ${T(com.aa.ndchtml5.common.CCExpiryMonth).expMonthList}"
+										th:value="${cardExpMonth.getCode()}"
+										th:text="${cardExpMonth.getValue()}"></option>
+							</select>
+							</label>
 						</div>
 						<div class="col-sm-2">
-							<label for="year">Year <input type="text" id="year"
-								class="form-control" th:field="*{year}" /></label>
+							<label for="card-exp-year">Year <select
+								class="form-control" id="card-exp-year" th:field="*{cardExpYear}">
+									<option
+										th:each="cardExpYear : ${T(com.aa.ndchtml5.common.CCExpiryYear).expYearList}"
+										th:value="${cardExpYear.getCode()}"
+										th:text="${cardExpYear.getValue()}"></option>
+							</select>
+							</label>
 						</div>
 						<div class="col-sm-2">
 							<label for="cvv">Security Code (CVV) <input type="text"
