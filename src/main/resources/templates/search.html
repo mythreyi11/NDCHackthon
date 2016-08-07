@@ -52,23 +52,55 @@
 				<p class="padding-bottom"></p>
 				<div class="col-xs-12 col-sm-8">
 					<ul class="nav nav-pills" role="tablist">
-						<li role="presentation" class="active"><a href="#roundtrip"
-							aria-controls="roundtrip" role="tab" data-toggle="tab">Round
-								trip</a></li>
-						<li role="presentation"><a href="#oneway"
+						<li role="presentation" class="active"><a href="#oneway"
 							aria-controls="oneway" role="tab" data-toggle="tab">One way</a></li>
-						<li role="presentation"><a href="#roundtriphotel"
-							aria-controls="roundtriphotel" role="tab" data-toggle="tab">Round
-								trip + Hotel</a></li>
+						<li role="presentation" ><a href="#roundtrip"
+							aria-controls="roundtrip" role="tab" data-toggle="tab">Round trip</a></li>	
 					</ul>
 					<div class="padding-bottom" />
 					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane fade in active"
+						<div role="tabpanel" class="tab-pane fade in active" id="oneway">
+							<div class="row">
+								<div class="col-xs-12 col-sm-4">
+									<label for="from-airport">From <input type="text"
+										id="from-airport" class="form-control" th:field="*{fromAirport}" /></label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<label for="to-airport-oneway">To <input type="text"
+										id="to-airport-oneway" class="form-control"  th:field="*{toAirport}" /></label>
+								</div>
+								<div class="col-xs-12 col-sm-4">
+									<label for="passengers-number-oneway">Number of Passengers
+									<select class="form-control" id ="passengers-number-oneway" th:field="*{passengersNumber}">
+									<option th:each="number : ${T(com.aa.ndchtml5.common.PassengerNumber).passengerNumberList}"
+										th:value="${number.getCode()}" th:text="${number.getValue()}"></option>
+									</select>
+									</label>
+								</div>
+							</div>
+							<!-- end of first row -->
+							<div class="padding-bottom" />
+							<div class="row">
+								<div class="col-xs-12 col-sm-4">
+									<label for="depart-date-oneway">Depart <input
+										type="date" id="depart-date-oneway" class="form-control" th:field="*{departDate}" /></label>
+								</div>
+
+								<div class="col-xs-12 col-sm-offset-4 col-sm-4">
+									<button type="submit" id="flight-search-oneway"
+										class="btn btn-lg">Search</button>
+								</div>
+							</div>
+							<!--  end of second row -->
+						</div>
+						<!--  end of one way tab -->
+						
+						<div role="tabpanel" class="tab-pane fade"
 							id="roundtrip">
 							<div class="row">
 								<div class="col-xs-12 col-sm-4">
-									<label for="from-airport-roundtrip">From <input
-										type="text" id="from-airport-roundtrip" class="form-control" /></label>
+									<label for="from-airport">From <input
+										type="text" id="from-airport" class="form-control" /></label>
 								</div>
 								<div class="col-xs-12 col-sm-4">
 									<label for="to-airport-roundtrip">To <input type="text"
@@ -76,7 +108,7 @@
 								</div>
 								<div class="col-xs-12 col-sm-4">
 									<label for="passengers-number-roundtrip">Number of Passengers
-									<select class="form-control" id ="passengers-number-roundtrip" th:field="*{passengersNumberRoundtrip}">
+									<select class="form-control" id ="passengers-number-roundtrip">
 									<option th:each="number : ${T(com.aa.ndchtml5.common.PassengerNumber).passengerNumberList}"
 										th:value="${number.getCode()}" th:text="${number.getValue()}"></option>
 									</select>
@@ -102,43 +134,7 @@
 							<!--  end of second row -->
 						</div>
 						<!--  end of round trip tab -->
-						<div role="tabpanel" class="tab-pane fade" id="oneway">
-							<div class="row">
-								<div class="col-xs-12 col-sm-4">
-									<label for="from-airport-oneway">From <input type="text"
-										id="from-airport-oneway" class="form-control" /></label>
-								</div>
-								<div class="col-xs-12 col-sm-4">
-									<label for="to-airport-oneway">To <input type="text"
-										id="to-airport-oneway" class="form-control" /></label>
-								</div>
-								<div class="col-xs-12 col-sm-4">
-									<label for="passengers-number-oneway">Number of Passengers
-									<select class="form-control" id ="passengers-number-oneway">
-									<option th:each="number : ${T(com.aa.ndchtml5.common.PassengerNumber).passengerNumberList}"
-										th:value="${number.getCode()}" th:text="${number.getValue()}"></option>
-									</select>
-									</label>
-								</div>
-							</div>
-							<!-- end of first row -->
-							<div class="padding-bottom" />
-							<div class="row">
-								<div class="col-xs-12 col-sm-4">
-									<label for="depart-date-oneway">Depart <input
-										type="date" id="depart-date-oneway" class="form-control" /></label>
-								</div>
-
-								<div class="col-xs-12 col-sm-offset-4 col-sm-4">
-									<button type="submit" id="flight-search-oneway"
-										class="btn btn-lg">Search</button>
-								</div>
-							</div>
-							<!--  end of second row -->
-						</div>
-						<!--  end of one way tab -->
-						<div role="tabpanel" class="tab-pane fade" id="roundtriphotel">
-						</div>
+						
 					</div>
 
 				</div>

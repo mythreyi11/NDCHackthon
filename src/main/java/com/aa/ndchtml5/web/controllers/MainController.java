@@ -1,6 +1,7 @@
 package com.aa.ndchtml5.web.controllers;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -53,10 +54,13 @@ public class MainController {
 	@RequestMapping(value = "/loadInitialData" , method = RequestMethod.POST)
 	public String returnOffersPage(@ModelAttribute("flightSearchCriteria") FlightSearchCriteria flightSearchCriteria,
 			ModelMap model, BindingResult result) {
-		 if (result.hasErrors()) {
-	            return "search";
-	        }
-		availableOfferDetailsList = ConvertDataToView.getOfferListToShow(allOffers.getOffer(),availableOfferDetailsList);
+		if (result.hasErrors()) {
+			return "search";
+		}
+		List<Offer> filteredOffers = CommonService.filterByOffersFlightSearch(allOffers,flightSearchCriteria);
+		availableOfferDetailsList = ConvertDataToView.getOfferListToShow(filteredOffers,
+				availableOfferDetailsList);
+
 		model.addAttribute("availableOfferDetailsList", availableOfferDetailsList);
 		model.addAttribute("purchasedList", purchasedList);
 		return "offers";
