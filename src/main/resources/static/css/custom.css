@@ -89,7 +89,7 @@ ul.slide li:hover {
 }
 
 .big-cart {
-	font-size: 100px;
+	font-size: 300px;
 }
 
 .big-arrow {
@@ -163,4 +163,7 @@ ul.slide li:hover {
     background-repeat: no-repeat;
     display: inline-block;
     background-size: 485px;
+}
+.offer-panel {
+	height: 375px;
 }
