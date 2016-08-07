@@ -143,8 +143,7 @@
 						</div>
 						<!-- End of fragment filteredOffersList -->
 					</div>
-					<!--  end of showing the offers -->
-
+					
 					<!-- section for showing the cart -->
 					<div class="col-sm-3">
 						<nav class="navbar navbar-fixed navbar-right" role="navigation">
@@ -157,11 +156,11 @@
 											ondrop="drop(event)">
 											<span id="cartimage"
 												class="glyphicon-shopping-cart glyphicon big-cart"></span>
-											<div>
+											<div th:if="${not #lists.isEmpty(purchasedList)}">
 												<div class="dropdown">
 													<div data-toggle="dropdown" class=" dropdown-toggle"
 														id="mini" aria-expanded="true">
-														<button type="button" class="btn">
+														<button type="button" id="viewcart" class="btn">
 															View Cart <span class="badge"> <label
 																th:text="${purchasedList.size()}" /></span>
 														</button>
@@ -215,5 +214,6 @@
 		th:src="@{/js/jquery.1.10.2.min.js}"></script>
 	<script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
 	<script src="/js/custom.js" th:src="@{/js/custom.js}"></script>
+	
 </body>
 </html>
