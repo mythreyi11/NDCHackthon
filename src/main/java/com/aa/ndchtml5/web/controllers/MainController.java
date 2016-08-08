@@ -1,7 +1,6 @@
 package com.aa.ndchtml5.web.controllers;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -125,9 +124,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/showReceipt", method = RequestMethod.POST)
 	public String returnReceiptPage(@ModelAttribute("paymentDetails") PaymentDetails paymentDetails, ModelMap model) {
-		/*OfferList offerList = ConvertDataToView.getOfferListToShow(purchaseList);
-		model.addAttribute("purchaseList", offerList);
-		model.addAttribute("paymentDetails", new PaymentDetails());*/
+		model.addAttribute("purchasedList", purchasedList);
 		return "receipt";
 	}
 	

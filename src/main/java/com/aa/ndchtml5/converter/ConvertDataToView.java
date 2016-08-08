@@ -60,6 +60,8 @@ public class ConvertDataToView {
 		offerDetails.setFare("$" + offer.getPrice().getTotal());
 		offerDetails.setIncludeFeatures(offer.getIncludedFeatures().getFeature());
 		offerDetails.setPurchaseFeautues(offer.getForPurchaseFeatures().getFeature());
+		offerDetails.setPrice(offer.getPrice());
+		offerDetails.setFareRules(offer.getFareRules());
 		return offerDetails;
 	}
 
