@@ -95,10 +95,10 @@
 					<div id="filtered-offers-list">
 						<div class="col-sm-offset-1 col-sm-6"
 							th:fragment="filteredOffersList"
-							th:object="${availableOfferDetailsList}">
+							th:object="${displayOffersList}">
 							<div class="row">
 								<div class="col-xs-12 col-sm-6"
-									th:each="offer : ${availableOfferDetailsList}">
+									th:each="offer : ${displayOffersList}">
 									<div class="offer-highlight">
 										<div class="panel offer-panel" th:id="${offer.offerId}"
 											draggable="true" ondragstart="drag(event)">
@@ -151,27 +151,27 @@
 								id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav navbar-right">
 									<li>
-										<div id="purchase-cart" th:object="${purchasedList}"
+										<div id="purchase-cart" th:object="${shoppingCartOffersList}"
 											th:position="fixed" ondragover="dragover(event)"
 											ondrop="drop(event)">
 											<span id="cartimage"
 												class="glyphicon-shopping-cart glyphicon big-cart"></span>
-											<div th:if="${not #lists.isEmpty(purchasedList)}">
+											<div th:if="${not #lists.isEmpty(shoppingCartOffersList)}">
 												<div class="dropdown">
 													<div data-toggle="dropdown" class=" dropdown-toggle"
 														id="mini" aria-expanded="true">
 														<button type="button" id="viewcart" class="btn">
 															View Cart <span class="badge"> <label
-																th:text="${purchasedList.size()}" /></span>
+																th:text="${shoppingCartOffersList.size()}" /></span>
 														</button>
 													</div>
 													<div class="dropdown-menu dropdown-menu-right row">
 														<span class="top-arrow"></span>
 														<form id="view-cart-form" th:action="@{/payment}"
-															th:object="${purchasedList}">
+															th:object="${shoppingCartOffersList}">
 															<div class="col-xs-12">
 																<table class="table">
-																	<th:block th:each="purchasedItem : ${purchasedList}">
+																	<th:block th:each="purchasedItem : ${shoppingCartOffersList}">
 																		<tr>
 																			<td th:text="${purchasedItem.offerId}"></td>
 																			<td><button type="button"

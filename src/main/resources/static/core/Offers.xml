@@ -92,11 +92,11 @@
 		<FareRules>
 			<FareInfo>
 				<DepartureCode>DFW</DepartureCode>
-				<DepartureDate>2016-04-21</DepartureDate>
-				<DepartureTime>22:00</DepartureTime>
-				<ArrivalCode>ORD</ArrivalCode>
-				<ArrivalDate>2016-04-22</ArrivalDate>
-				<ArrivalTime>00:23</ArrivalTime>
+				<DepartureDate>2016-12-10</DepartureDate>
+				<DepartureTime>08:45</DepartureTime>
+				<ArrivalCode>MIA</ArrivalCode>
+				<ArrivalDate>2016-12-10</ArrivalDate>
+				<ArrivalTime>19:30</ArrivalTime>
 				<AirlineCode>AA</AirlineCode>
 				<FareBasisCode PriceClass="Lowest Fare">NA00ZOL3</FareBasisCode>
 				<record1FareType>SIP</record1FareType>
@@ -104,11 +104,11 @@
 					<SegmentIDRef SegmentTrackingID="2378DFWORD2016-04-21N">1</SegmentIDRef>
 					<AirlineCode>AA</AirlineCode>
 					<DepartureCode>DFW</DepartureCode>
-					<ArrivalCode>ORD</ArrivalCode>
-					<DepartureDate>2016-04-21</DepartureDate>
-					<DepartureTime>22:00</DepartureTime>
-					<ArrivalDate>2016-04-22</ArrivalDate>
-					<ArrivalTime>00:23</ArrivalTime>
+					<ArrivalCode>MIA</ArrivalCode>
+					<DepartureDate>2016-12-10</DepartureDate>
+					<DepartureTime>08:45</DepartureTime>
+					<ArrivalDate>2016-12-10</ArrivalDate>
+					<ArrivalTime>19:30</ArrivalTime>
 					<FlightNumber>2378</FlightNumber>
 					<Cabin>Y</Cabin>
 					<ClassOfService>N</ClassOfService>
@@ -158,7 +158,7 @@
 					</Taxes>
 				</FareComponent>
 			</FareInfo>
-			<FareCalculation>DFW AA CHI82.79NA00ZOL3 USD82.79END ZP DFW XT
+			<FareCalculation>DFW AA MIA82.79NA00ZOL3 USD82.79END ZP DFW XT
 				6.21US4.00ZP5.60AY4.50XF DFW4.50</FareCalculation>
 			<TicketByDate Time="23:59">2016-04-15</TicketByDate>
 			<Endorsement Type="A">
@@ -167,11 +167,11 @@
 			<Endorsement Type="A">
 				<Text>CXL BY FLT TIME OR NOVALUE</Text>
 			</Endorsement>
-			<Remark>This ticket is non-refundable.</Remark>
-			<Remark>Changes to this ticket will incur a penalty fee.</Remark>
+			<Remark>This offer is non-refundable.</Remark>
+			<Remark>Changes to this offer will incur a penalty fee.</Remark>
 			<Penalty  TicketRefundable="N">
-				<Change Total="200.00" Amount="200.00">
-					<PenaltyAmount Unit="M">200.00</PenaltyAmount>
+				<Change Total="300.00" Amount="300.00">
+					<PenaltyAmount Unit="M">300.00</PenaltyAmount>
 					<Taxes Amount="000"></Taxes>
 				</Change>
 				<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
@@ -183,6 +183,194 @@
 			<Feature>Seat Back Entertainment</Feature>
 			<Feature>PowerPorts</Feature>
 			<Feature>Double Miles</Feature>
+			<Feature>Free Wifi</Feature>
+		</includedFeatures>
+		<ForPurchaseFeatures>
+			<Feature>Advance Seat Selection</Feature>
+			<Feature>Pre Ordered Meals</Feature>
+		</ForPurchaseFeatures>
+	</offer>
+	<offer>
+		<offerId>1Z520</offerId>
+		<offerExpiryTime>2016-12-11T09:45</offerExpiryTime>
+		<sliceDetail>
+			<numberOfSegments>2</numberOfSegments>
+			<totalFlyTime>735</totalFlyTime>
+			<totalLayoverTime>390</totalLayoverTime>
+			<totalTravelTime>1125</totalTravelTime>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>MIA</destination>
+			<departureTime>2016-12-10T08:45</departureTime>
+			<arrivalTime>2016-12-10T19:30</arrivalTime>
+		</sliceDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>1324</flightNumber>
+			<CarrierCode>AA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>180</duration>
+			<nextSegmentLeadTime>390</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>MCO</destination>
+			<departureTime>2016-12-10T08:45</departureTime>
+			<arrivalTime>2016-12-10T09:30</arrivalTime>
+		</segmentDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>2013</flightNumber>
+			<CarrierCode>BA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>180</duration>
+			<nextSegmentLeadTime>0</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>MCO</origin>
+			<destination>MIA</destination>
+			<departureTime>2016-12-10T11:45</departureTime>
+			<arrivalTime>2016-12-10T19:30</arrivalTime>
+		</segmentDetail>
+		<Price Total="83.10">
+			<BaseFare Amount="62.79"></BaseFare>
+			<taxes  Amount="20.31">
+				<tax  Amount="5.60">
+					<Designator>AY</Designator>
+					<Nature>US</Nature>
+					<Description>US September 11th Security Fee</Description>
+					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+					<LocalAmount>5.60</LocalAmount>
+				</tax>
+				<tax  Amount="6.21">
+					<Designator>US</Designator>
+					<Nature>US</Nature>
+					<Description>US Transportation Tax</Description>
+					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+					<LocalAmount>6.21</LocalAmount>
+				</tax>
+				<tax  Amount="4.50">
+					<Designator>XF</Designator>
+					<Nature>US</Nature>
+					<Description>US Passenger Facility Charge</Description>
+					<CollectionPoint Amount="4.50">
+						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+						<AirportAmount>4.50</AirportAmount>
+						<AirportCode>DFW</AirportCode>
+					</CollectionPoint>
+					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+					<LocalAmount>4.50</LocalAmount>
+				</tax>
+				<tax  Amount="4.00">
+					<Designator>ZP</Designator>
+					<Nature>US</Nature>
+					<Description>US Flight Segment Tax</Description>
+					<CollectionPoint Amount="4.00">
+						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+						<AirportAmount>4.00</AirportAmount>
+						<AirportCode>DFW</AirportCode>
+					</CollectionPoint>
+					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+					<LocalAmount>4.00</LocalAmount>
+				</tax>
+			</taxes>
+		</Price>
+		<FareRules>
+			<FareInfo>
+				<DepartureCode>DFW</DepartureCode>
+				<DepartureDate>2016-12-10</DepartureDate>
+				<DepartureTime>08:45</DepartureTime>
+				<ArrivalCode>MIA</ArrivalCode>
+				<ArrivalDate>2016-12-10</ArrivalDate>
+				<ArrivalTime>19:30</ArrivalTime>
+				<AirlineCode>AA</AirlineCode>
+				<FareBasisCode PriceClass="Lowest Fare">NA00ZOL3</FareBasisCode>
+				<record1FareType>SIP</record1FareType>
+				<RelatedSegment MarriedSegment="S">
+					<SegmentIDRef SegmentTrackingID="2378DFWORD2016-04-21N">1</SegmentIDRef>
+					<AirlineCode>AA</AirlineCode>
+					<DepartureCode>DFW</DepartureCode>
+					<ArrivalCode>MIA</ArrivalCode>
+					<DepartureDate>2016-12-10</DepartureDate>
+					<DepartureTime>08:45</DepartureTime>
+					<ArrivalDate>2016-12-10</ArrivalDate>
+					<ArrivalTime>19:30</ArrivalTime>
+					<FlightNumber>2378</FlightNumber>
+					<Cabin>Y</Cabin>
+					<ClassOfService>N</ClassOfService>
+					<NVB>2016-04-21</NVB>
+					<NVA>2016-04-21</NVA>
+					<StopOverIndicator>O</StopOverIndicator>
+					<ElectronicTicketing>Y</ElectronicTicketing>
+					<SegmentAvailability>FA|AA|PA|ZA|YA|BA|HA|MA|LA|KA|WA|VA|EA|GA|SA|NA|Q0|O0|TA
+					</SegmentAvailability>
+				</RelatedSegment>
+				<FareRefKey>APP4d7Cn7nbxPtQAFPKaZgTtTWfBIvaXbXSQHIOSbZoM#####PTCADT/TNO011/RNO611L/RONO25/TYPEPrice/DEP**DFW/ARR**CHI/
+				</FareRefKey>
+				<FareComponent Total="103.10" Fare="82.79" Surcharges="0">
+					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+					<BaseFare Amount="82.79"></BaseFare>
+					<Taxes  Amount="20.31">
+						<Tax  Amount="6.21">
+							<Designator>US</Designator>
+							<Nature>US</Nature>
+							<Description>US Transportation Tax</Description>
+						</Tax>
+						<Tax  Amount="5.60">
+							<Designator>AY</Designator>
+							<Nature>US</Nature>
+							<Description>US September 11th Security Fee</Description>
+						</Tax>
+						<Tax  Amount="4.50">
+							<Designator>XF</Designator>
+							<Nature>US</Nature>
+							<Description>US Passenger Facility Charge</Description>
+							<CollectionPoint Amount="4.50">
+								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+								<AirportAmount>4.50</AirportAmount>
+								<AirportCode>DFW</AirportCode>
+							</CollectionPoint>
+						</Tax>
+						<Tax  Amount="4.00">
+							<Designator>ZP</Designator>
+							<Nature>US</Nature>
+							<Description>US Flight Segment Tax</Description>
+							<CollectionPoint Amount="4.00">
+								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+								<AirportAmount>4.00</AirportAmount>
+								<AirportCode>DFW</AirportCode>
+							</CollectionPoint>
+						</Tax>
+					</Taxes>
+				</FareComponent>
+			</FareInfo>
+			<FareCalculation>DFW AA MIA82.79NA00ZOL3 USD82.79END ZP DFW XT
+				6.21US4.00ZP5.60AY4.50XF DFW4.50</FareCalculation>
+			<TicketByDate Time="23:59">2016-04-15</TicketByDate>
+			<Endorsement Type="A">
+				<Text>NONREF/SVCCHGPLUSFAREDIF/</Text>
+			</Endorsement>
+			<Endorsement Type="A">
+				<Text>CXL BY FLT TIME OR NOVALUE</Text>
+			</Endorsement>
+			<Remark>This offer is non-refundable.</Remark>
+			<Remark>Changes to this offer will incur a penalty fee.</Remark>
+			<Penalty  TicketRefundable="N">
+				<Change Total="300.00" Amount="300.00">
+					<PenaltyAmount Unit="M">300.00</PenaltyAmount>
+					<Taxes Amount="000"></Taxes>
+				</Change>
+				<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+			</Penalty>
+			<FeeApplies ChangeItinerary="Y"></FeeApplies>
+		</FareRules>
+
+		<includedFeatures>
+			<Feature>Seat Back Entertainment</Feature>
 			<Feature>Free Wifi</Feature>
 		</includedFeatures>
 		<ForPurchaseFeatures>
@@ -266,11 +454,11 @@
 				<FareRules>
 					<FareInfo>
 						<DepartureCode>DFW</DepartureCode>
-						<DepartureDate>2016-04-21</DepartureDate>
-						<DepartureTime>14:50</DepartureTime>
-						<ArrivalCode>ORD</ArrivalCode>
-						<ArrivalDate>2016-04-21</ArrivalDate>
-						<ArrivalTime>17:10</ArrivalTime>
+						<DepartureDate>2016-12-10</DepartureDate>
+						<DepartureTime>10:45</DepartureTime>
+						<ArrivalCode>SEA</ArrivalCode>
+						<ArrivalDate>2016-12-10</ArrivalDate>
+						<ArrivalTime>13:30</ArrivalTime>
 						<AirlineCode>AA</AirlineCode>
 						<FareBasisCode PriceClass="Lowest Fare">SA00ZNL1</FareBasisCode>
 						<record1FareType>SIP</record1FareType>
@@ -278,11 +466,11 @@
 							<SegmentIDRef SegmentTrackingID="1091DFWORD2016-04-21S">1</SegmentIDRef>
 							<AirlineCode>AA</AirlineCode>
 							<DepartureCode>DFW</DepartureCode>
-							<ArrivalCode>ORD</ArrivalCode>
-							<DepartureDate>2016-04-21</DepartureDate>
-							<DepartureTime>14:50</DepartureTime>
-							<ArrivalDate>2016-04-21</ArrivalDate>
-							<ArrivalTime>17:10</ArrivalTime>
+							<ArrivalCode>SEA</ArrivalCode>
+							<DepartureDate>2016-12-10</DepartureDate>
+							<DepartureTime>10:45</DepartureTime>
+							<ArrivalDate>2016-12-10</ArrivalDate>
+							<ArrivalTime>13:30</ArrivalTime>
 							<FlightNumber>1091</FlightNumber>
 							<Cabin>Y</Cabin>
 							<ClassOfService>S</ClassOfService>
@@ -333,7 +521,7 @@
 							</Taxes>
 						</FareComponent>
 					</FareInfo>
-					<FareCalculation>DFW AA CHI166.51SA00ZNL1 USD166.51END ZP DFW XT
+					<FareCalculation>DFW AA SEA166.51SA00ZNL1 USD166.51END ZP DFW XT
 						12.49US4.00ZP5.60AY4.50XF DFW4.50</FareCalculation>
 					<TicketByDate Time="23:59">2016-04-15</TicketByDate>
 					<Endorsement Type="A">
@@ -342,11 +530,11 @@
 					<Endorsement Type="A">
 						<Text>CXL BY FLT TIME OR NOVALUE</Text>
 					</Endorsement>
-					<Remark>This ticket is non-refundable.</Remark>
-					<Remark>Changes to this ticket will incur a penalty fee.</Remark>
+					<Remark>This offer is non-refundable.</Remark>
+					<Remark>Changes to this offer will incur a penalty fee.</Remark>
 					<Penalty  TicketRefundable="N">
-						<Change Total="200.00" Amount="200.00">
-							<PenaltyAmount Unit="M">200.00</PenaltyAmount>
+						<Change Total="150.00" Amount="150.00">
+							<PenaltyAmount Unit="M">150.00</PenaltyAmount>
 							<Taxes Amount="000"></Taxes>
 						</Change>
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
@@ -374,8 +562,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>MSP</destination>
-			<departureTime>2016-12-10T08:45</departureTime>
-			<arrivalTime>2016-12-10T09:30</arrivalTime>
+			<departureTime>2016-12-01T08:45</departureTime>
+			<arrivalTime>2016-12-01T09:30</arrivalTime>
 		</sliceDetail>
 		<segmentDetail>
 			<aircraftType>S80</aircraftType>
@@ -390,8 +578,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>MSP</destination>
-			<departureTime>2016-07-16T08:45:00</departureTime>
-			<arrivalTime>2016-24-05T11:45</arrivalTime>
+			<departureTime>2016-12-01T08:45:00</departureTime>
+			<arrivalTime>2016-12-01T09:30</arrivalTime>
 		</segmentDetail>
 		<Price Total="220.10">
 					<BaseFare Amount="191.63"></BaseFare>
@@ -439,11 +627,11 @@
 				<FareRules>
 					<FareInfo>
 						<DepartureCode>DFW</DepartureCode>
-						<DepartureDate>2016-04-21</DepartureDate>
-						<DepartureTime>18:20</DepartureTime>
-						<ArrivalCode>ORD</ArrivalCode>
-						<ArrivalDate>2016-04-21</ArrivalDate>
-						<ArrivalTime>20:38</ArrivalTime>
+						<DepartureDate>2016-12-01</DepartureDate>
+						<DepartureTime>08:45</DepartureTime>
+						<ArrivalCode>MSP</ArrivalCode>
+						<ArrivalDate>2016-12-01</ArrivalDate>
+						<ArrivalTime>11:45</ArrivalTime>
 						<AirlineCode>AA</AirlineCode>
 						<FareBasisCode PriceClass="Lowest Fare">GA07ZNI1</FareBasisCode>
 						<record1FareType>SIP</record1FareType>
@@ -451,11 +639,11 @@
 							<SegmentIDRef SegmentTrackingID="1295DFWORD2016-04-21G">1</SegmentIDRef>
 							<AirlineCode>AA</AirlineCode>
 							<DepartureCode>DFW</DepartureCode>
-							<ArrivalCode>ORD</ArrivalCode>
-							<DepartureDate>2016-04-21</DepartureDate>
-							<DepartureTime>18:20</DepartureTime>
-							<ArrivalDate>2016-04-21</ArrivalDate>
-							<ArrivalTime>20:38</ArrivalTime>
+							<ArrivalCode>MSP</ArrivalCode>
+							<DepartureDate>2016-12-01</DepartureDate>
+							<DepartureTime>08:45</DepartureTime>
+							<ArrivalDate>2016-12-01</ArrivalDate>
+							<ArrivalTime>09:30</ArrivalTime>
 							<FlightNumber>1295</FlightNumber>
 							<Cabin>Y</Cabin>
 							<ClassOfService>G</ClassOfService>
@@ -506,7 +694,7 @@
 							</Taxes>
 						</FareComponent>
 					</FareInfo>
-					<FareCalculation>DFW AA CHI191.63GA07ZNI1 USD191.63END ZP DFW XT
+					<FareCalculation>DFW AA MSP191.63GA07ZNI1 USD191.63END ZP DFW XT
 						14.37US4.00ZP5.60AY4.50XF DFW4.50</FareCalculation>
 					<TicketByDate Time="23:59">2016-04-15</TicketByDate>
 					<Endorsement Type="A">
@@ -515,11 +703,11 @@
 					<Endorsement Type="A">
 						<Text>CXL BY FLT TIME OR NOVALUE</Text>
 					</Endorsement>
-					<Remark>This ticket is non-refundable.</Remark>
-					<Remark>Changes to this ticket will incur a penalty fee.</Remark>
+					<Remark>This offer is non-refundable.</Remark>
+					<Remark>Changes to this offer will incur a penalty fee.</Remark>
 					<Penalty  TicketRefundable="N">
-						<Change Total="200.00" Amount="200.00">
-							<PenaltyAmount Unit="M">200.00</PenaltyAmount>
+						<Change Total="250.00" Amount="250.00">
+							<PenaltyAmount Unit="M">250.00</PenaltyAmount>
 							<Taxes Amount="000"></Taxes>
 						</Change>
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
@@ -546,8 +734,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>ORD</destination>
-			<departureTime>2016-12-10T06:45</departureTime>
-			<arrivalTime>2016-12-10T10:30</arrivalTime>
+			<departureTime>2016-11-10T06:45</departureTime>
+			<arrivalTime>2016-11-10T10:30</arrivalTime>
 		</sliceDetail>
 		<segmentDetail>
 			<aircraftType>S80</aircraftType>
@@ -562,8 +750,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>ORD</destination>
-			<departureTime>2016-12-10T06:45</departureTime>
-			<arrivalTime>2016-12-10T10:30</arrivalTime>
+			<departureTime>2016-11-10T06:45</departureTime>
+			<arrivalTime>2016-11-10T10:30</arrivalTime>
 		</segmentDetail>
 		<Price Total="163.10">
 					<BaseFare Amount="138.60"></BaseFare>
@@ -611,11 +799,11 @@
 				<FareRules>
 					<FareInfo>
 						<DepartureCode>DFW</DepartureCode>
-						<DepartureDate>2016-04-21</DepartureDate>
-						<DepartureTime>05:10</DepartureTime>
+						<DepartureDate>2016-11-10</DepartureDate>
+						<DepartureTime>06:45</DepartureTime>
 						<ArrivalCode>ORD</ArrivalCode>
-						<ArrivalDate>2016-04-21</ArrivalDate>
-						<ArrivalTime>07:29</ArrivalTime>
+						<ArrivalDate>2016-11-10</ArrivalDate>
+						<ArrivalTime>10:30</ArrivalTime>
 						<AirlineCode>AA</AirlineCode>
 						<FareBasisCode PriceClass="Lowest Fare">SA07ZOL1</FareBasisCode>
 						<record1FareType>SIP</record1FareType>
@@ -627,7 +815,7 @@
 							<DepartureDate>2016-04-21</DepartureDate>
 							<DepartureTime>05:10</DepartureTime>
 							<ArrivalDate>2016-04-21</ArrivalDate>
-							<ArrivalTime>07:29</ArrivalTime>
+							<ArrivalTime>10:30</ArrivalTime>
 							<FlightNumber>0090</FlightNumber>
 							<Cabin>Y</Cabin>
 							<ClassOfService>S</ClassOfService>
@@ -687,11 +875,11 @@
 					<Endorsement Type="A">
 						<Text>CXL BY FLT TIME OR NOVALUE</Text>
 					</Endorsement>
-					<Remark>This ticket is non-refundable.</Remark>
-					<Remark>Changes to this ticket will incur a penalty fee.</Remark>
+					<Remark>This offer is non-refundable.</Remark>
+					<Remark>Changes to this offer will incur a penalty fee.</Remark>
 					<Penalty  TicketRefundable="N">
-						<Change Total="200.00" Amount="200.00">
-							<PenaltyAmount Unit="M">200.00</PenaltyAmount>
+						<Change Total="350.00" Amount="350.00">
+							<PenaltyAmount Unit="M">350.00</PenaltyAmount>
 							<Taxes Amount="000"></Taxes>
 						</Change>
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
@@ -718,8 +906,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>BHM</destination>
-			<departureTime>2016-12-10T15:45</departureTime>
-			<arrivalTime>2016-12-10T19:30</arrivalTime>
+			<departureTime>2016-10-10T15:45</departureTime>
+			<arrivalTime>2016-10-10T19:30</arrivalTime>
 		</sliceDetail>
 		<segmentDetail>
 			<aircraftType>S80</aircraftType>
@@ -734,8 +922,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>BHM</destination>
-			<departureTime>2016-12-10T15:45</departureTime>
-			<arrivalTime>2016-12-10T19:30</arrivalTime>
+			<departureTime>2016-10-10T15:45</departureTime>
+			<arrivalTime>2016-10-10T19:30</arrivalTime>
 		</segmentDetail>
 		<Price Total="163.10">
 					<BaseFare Amount="138.60"></BaseFare>
@@ -783,11 +971,11 @@
 				<FareRules>
 					<FareInfo>
 						<DepartureCode>DFW</DepartureCode>
-						<DepartureDate>2016-04-21</DepartureDate>
-						<DepartureTime>20:10</DepartureTime>
-						<ArrivalCode>ORD</ArrivalCode>
-						<ArrivalDate>2016-04-21</ArrivalDate>
-						<ArrivalTime>22:34</ArrivalTime>
+						<DepartureDate>2016-10-10</DepartureDate>
+						<DepartureTime>15:45</DepartureTime>
+						<ArrivalCode>BHM</ArrivalCode>
+						<ArrivalDate>2016-10-10</ArrivalDate>
+						<ArrivalTime>19:30</ArrivalTime>
 						<AirlineCode>AA</AirlineCode>
 						<FareBasisCode PriceClass="Lowest Fare">SA07ZOL1</FareBasisCode>
 						<record1FareType>SIP</record1FareType>
@@ -850,7 +1038,7 @@
 							</Taxes>
 						</FareComponent>
 					</FareInfo>
-					<FareCalculation>DFW AA CHI138.60SA07ZOL1 USD138.60END ZP DFW XT
+					<FareCalculation>DFW AA BHM138.60SA07ZOL1 USD138.60END ZP DFW XT
 						10.40US4.00ZP5.60AY4.50XF DFW4.50</FareCalculation>
 					<TicketByDate Time="23:59">2016-04-15</TicketByDate>
 					<Endorsement Type="A">
@@ -859,11 +1047,11 @@
 					<Endorsement Type="A">
 						<Text>CXL BY FLT TIME OR NOVALUE</Text>
 					</Endorsement>
-					<Remark>This ticket is non-refundable.</Remark>
-					<Remark>Changes to this ticket will incur a penalty fee.</Remark>
+					<Remark>This offer is non-refundable.</Remark>
+					<Remark>Changes to this offer will incur a penalty fee.</Remark>
 					<Penalty  TicketRefundable="N">
-						<Change Total="200.00" Amount="200.00">
-							<PenaltyAmount Unit="M">200.00</PenaltyAmount>
+						<Change Total="300.00" Amount="300.00">
+							<PenaltyAmount Unit="M">300.00</PenaltyAmount>
 							<Taxes Amount="000"></Taxes>
 						</Change>
 						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>

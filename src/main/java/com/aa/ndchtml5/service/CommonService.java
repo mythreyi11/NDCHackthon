@@ -5,20 +5,51 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.aa.ndchtml5.converter.ConvertDataToView;
 import com.aa.ndchtml5.domain.Offers;
 import com.aa.ndchtml5.domain.Offers.Offer;
 import com.aa.ndchtml5.domain.Offers.Offer.SliceDetail;
 import com.aa.ndchtml5.web.model.FlightSearchCriteria;
+import com.aa.ndchtml5.web.model.OfferDetails;
 
 public class CommonService {
 	
-	public static List<Offer> findByFeature(List<String> selectedfeatures,
-			List<Offer> offers) {
-		List<Offer> resultToShow = new ArrayList<Offer>();
+	
+	/**
+	 * This method remove toBeRemovedList from parentList
+	 * @param filteredOffers
+	 * @param availableOfferDetails
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public static ArrayList<OfferDetails> getSubList(ArrayList<OfferDetails> parentList,
+			ArrayList<OfferDetails> toBeRemovedList) {
+
+		ArrayList<OfferDetails> newParentList = (ArrayList<OfferDetails>) parentList.clone();
+		if (toBeRemovedList.isEmpty()) {
+			return newParentList;
+		} else {
+			newParentList.removeAll(toBeRemovedList);
+			return newParentList;
+
+		}
+
+	}
+	
+	
+	/**
+	 * This method will filter the List based on the filters
+	 * @param selectedfeatures
+	 * @param offers
+	 * @return
+	 */
+	public static ArrayList<OfferDetails> filterByFeature(List<String> selectedfeatures,
+			List<OfferDetails> offers) {
+		ArrayList<OfferDetails> filteredList = new ArrayList<OfferDetails>();
 		boolean featurePresentInoffer = false;
-			for (Offer offer : offers) {
+			for (OfferDetails offer : offers) {
 				for (String selectedFeature : selectedfeatures) {
-					List<String> featuresInOffer = offer.getIncludedFeatures().getFeature();
+					List<String> featuresInOffer = offer.getIncludeFeatures();
 					if (isSelectedPresentInOffer(selectedFeature, featuresInOffer)) {
 						 featurePresentInoffer = true;
 					} else {
@@ -26,14 +57,22 @@ public class CommonService {
 				}
 			}
 				if (featurePresentInoffer) {
-					resultToShow.add(offer);
+					filteredList.add(offer);
 				}
 		}
-		return resultToShow;
+		return filteredList;
 	}
 	
-	public static List<Offer> filterByOffersFlightSearch(Offers allOffers, FlightSearchCriteria flightSearchCriteria) {
-
+	/**
+	 * This method will filter the offers by Date and Origin/Destination
+	 * @param allOffers
+	 * @param flightSearchCriteria
+	 * @return
+	 */
+	@SuppressWarnings("unused")
+	public static ArrayList<OfferDetails> filterByDateAndOD(Offers allOffers, FlightSearchCriteria flightSearchCriteria) {
+		
+		ArrayList<OfferDetails> filteredOfferDetailsList = new ArrayList<OfferDetails>();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date departDate = flightSearchCriteria.getDepartDate();
 		Date returnDate = flightSearchCriteria.getReturnDate();
@@ -42,8 +81,12 @@ public class CommonService {
 		String toAirport = flightSearchCriteria.getToAirport();
 		List<Offer> filteredList = new ArrayList<Offer>();
 		
-		if (fromAirport == null || toAirport == null || departDate == null)
-			return allOffers.getOffer();
+		if (fromAirport == null || toAirport == null || departDate == null) {
+			for (Offer offer : allOffers.getOffer()) {
+				filteredOfferDetailsList.add(ConvertDataToView.getOfferDetails(offer));
+			}
+			 return filteredOfferDetailsList;
+		}
 
 		for (Offers.Offer offer : allOffers.getOffer()) {
 			SliceDetail sliceDetail = offer.getSliceDetail();
@@ -60,9 +103,19 @@ public class CommonService {
 					&& sliceDepDate.compareTo(departDate) == 0)
 				filteredList.add(offer);
 		}
-		return filteredList;
+		for (Offer offer : filteredList) {
+			filteredOfferDetailsList.add(ConvertDataToView.getOfferDetails(offer));
+		}
+		 return filteredOfferDetailsList;
+		
 	}
 	
+	/**
+	 * Return if the selectedFeature is present offer's features
+	 * @param selectedFeature
+	 * @param featuresInOffer
+	 * @return
+	 */
 	private static boolean isSelectedPresentInOffer(String selectedFeature,
 			List<String> featuresInOffer) {
 		for (String featureInOffer : featuresInOffer) {
@@ -75,9 +128,17 @@ public class CommonService {
 		return false;
 	}
 
-	public static Offer getOfferByOfferID(String offerId, List<Offer> offers) {
+	
+	
+	/**
+	 * Get the offer from the List by offerId
+	 * @param offerId
+	 * @param offers
+	 * @return
+	 */
+	public static OfferDetails getOfferByOfferID(String offerId, List<OfferDetails> offers) {
 		offerId = offerId.replace("\"", "");
-		for (Offer offer : offers) {
+		for (OfferDetails offer : offers) {
 			if (offerId.equalsIgnoreCase(offer.getOfferId())) {
 				return offer;
 			}

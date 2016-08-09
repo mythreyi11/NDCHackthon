@@ -33,11 +33,6 @@ a:hover {
 	color: #ffffff;
 }
 
-.panel {
-	background: #666;
-	color: #ffffff;
-	border-radius: 10px;
-}
 
 .panel-heading {
 	background: #FCAC45;
@@ -166,4 +161,7 @@ ul.slide li:hover {
 }
 .offer-panel {
 	height: 375px;
+	background: #666;
+	color: #ffffff;
+	border-radius: 10px;
 }

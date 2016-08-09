@@ -2,9 +2,7 @@ package com.aa.ndchtml5.converter;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import com.aa.ndchtml5.common.Stop;
 import com.aa.ndchtml5.domain.Offers.Offer;
@@ -12,39 +10,10 @@ import com.aa.ndchtml5.web.model.OfferDetails;
 
 public class ConvertDataToView {
 	
-	/**
-	 * @param offers
-	 * @return
-	 */
-	public static ArrayList<OfferDetails> getOfferListToShow(List<Offer> offers , List<OfferDetails> availableOfferDetails) {
-		
-		ArrayList<OfferDetails> offerDetailsList = new ArrayList<OfferDetails>();
-		boolean purchased = false;
-		if (availableOfferDetails.isEmpty()) {
-			for (Offer offer : offers) {
-				offerDetailsList.add(getOfferDetails(offer));
-			}
-		}
-		else {
-			for (Offer offer : offers) {
-				for (OfferDetails offerDetails : availableOfferDetails) {
-					if (offer.getOfferId().equalsIgnoreCase(offerDetails.getOfferId())) {
-						purchased = true;
-						break;
-					}
-				}
-				if(!purchased) {
-					offerDetailsList.add(getOfferDetails(offer));
-				}
-				purchased = false;
-			}
-			
-		}
-		
-		return offerDetailsList; 
-	}
+
 	
 	/**
+	 * This method will return the offerDetails given the offer
 	 * @param offer
 	 * @return
 	 */
@@ -64,13 +33,27 @@ public class ConvertDataToView {
 		offerDetails.setFareRules(offer.getFareRules());
 		return offerDetails;
 	}
+	
+	
 
+	/**
+	 * This method will return Flight itinerary string
+	 * @param offer
+	 * @return
+	 */
 	private static String getFlightDetails(Offer offer) {
 		String stops = getStopDetails(offer.getSliceDetail().getNumberOfSegments().intValue());
 		String flightDetails = stops + " " + offer.getSliceDetail().getOrigin() + "-" +  offer.getSliceDetail().getDestination();
 		return flightDetails;
 	}
 	
+	
+	
+	/**
+	 * This method will return number of stops string
+	 * @param stops
+	 * @return
+	 */
 	private static String getStopDetails(int stops) {
 		switch (stops) {
 		case 0:
@@ -85,6 +68,13 @@ public class ConvertDataToView {
 		
 	}
 	
+	
+	
+	/**
+	 * This method will return formatted offer expiry date
+	 * @param dateStr
+	 * @return
+	 */
 	private static String populateExpiryDate(String dateStr) {
 		if (dateStr == null)
 			return null;
