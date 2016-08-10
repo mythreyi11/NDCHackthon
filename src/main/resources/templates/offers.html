@@ -94,8 +94,7 @@
 					<!--  section for showing the offers -->
 					<div id="filtered-offers-list">
 						<div class="col-sm-offset-1 col-sm-6"
-							th:fragment="filteredOffersList"
-							th:object="${displayOffersList}">
+							th:fragment="filteredOffersList" th:object="${displayOffersList}">
 							<div class="row">
 								<div class="col-xs-12 col-sm-6"
 									th:each="offer : ${displayOffersList}">
@@ -143,7 +142,7 @@
 						</div>
 						<!-- End of fragment filteredOffersList -->
 					</div>
-					
+
 					<!-- section for showing the cart -->
 					<div class="col-sm-3">
 						<nav class="navbar navbar-fixed navbar-right" role="navigation">
@@ -171,9 +170,19 @@
 															th:object="${shoppingCartOffersList}">
 															<div class="col-xs-12 text-center">
 																<table class="table">
-																	<th:block th:each="purchasedItem : ${shoppingCartOffersList}">
+																	<th:block
+																		th:each="purchasedItem : ${shoppingCartOffersList}">
 																		<tr>
-																			<td th:text="${purchasedItem.offerId}"></td>
+																			<td><a th:text="${purchasedItem.offerId}" 
+																				role="button" data-toggle="collapse"
+																				aria-expanded="false"
+																				th:href="${purchasedItem.offerId}"> </a>
+																				<div class="collapse"
+																					th:id="${purchasedItem.offerId}">
+																					<div class="well">
+																					<label th:text="${purchasedItem.offerId}"></label>
+																					</div>
+																				</div></td>
 																			<td><button type="button"
 																					th:onclick="'javascript:removeFromCart(\'' + ${purchasedItem.offerId} + '\');'">
 																					<i class="fa fa-minus-circle" aria-hidden="true"></i>
@@ -214,6 +223,6 @@
 		th:src="@{/js/jquery.1.10.2.min.js}"></script>
 	<script src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
 	<script src="/js/custom.js" th:src="@{/js/custom.js}"></script>
-	
+
 </body>
 </html>
