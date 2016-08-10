@@ -3,8 +3,9 @@
 	<offer>
 		<offerId>1Z346</offerId>
 		<offerExpiryTime>2016-12-11T09:45</offerExpiryTime>
+		<offerStatus>Ready</offerStatus>
 		<sliceDetail>
-			<numberOfSegments>2</numberOfSegments>
+			<numberOfSegments>1</numberOfSegments>
 			<totalFlyTime>735</totalFlyTime>
 			<totalLayoverTime>390</totalLayoverTime>
 			<totalTravelTime>1125</totalTravelTime>
@@ -26,26 +27,11 @@
 			<hasFreeSeat>false</hasFreeSeat>
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
-			<destination>MCO</destination>
+			<destination>MIA</destination>
 			<departureTime>2016-12-10T08:45</departureTime>
 			<arrivalTime>2016-12-10T09:30</arrivalTime>
 		</segmentDetail>
-		<segmentDetail>
-			<aircraftType>S80</aircraftType>
-			<flightNumber>2013</flightNumber>
-			<CarrierCode>BA</CarrierCode>
-			<bookingCode>L</bookingCode>
-			<mileage>1137</mileage>
-			<duration>180</duration>
-			<nextSegmentLeadTime>0</nextSegmentLeadTime>
-			<hasPaidSeat>false</hasPaidSeat>
-			<hasFreeSeat>false</hasFreeSeat>
-			<cabinClass>COACH</cabinClass>
-			<origin>MCO</origin>
-			<destination>MIA</destination>
-			<departureTime>2016-12-10T11:45</departureTime>
-			<arrivalTime>2016-12-10T19:30</arrivalTime>
-		</segmentDetail>
+		
 		<Price Total="103.10">
 			<BaseFare Amount="82.79"></BaseFare>
 			<taxes  Amount="20.31">
@@ -193,6 +179,7 @@
 	<offer>
 		<offerId>1Z520</offerId>
 		<offerExpiryTime>2016-12-11T09:45</offerExpiryTime>
+		<offerStatus>Ready</offerStatus>
 		<sliceDetail>
 			<numberOfSegments>2</numberOfSegments>
 			<totalFlyTime>735</totalFlyTime>
@@ -311,9 +298,9 @@
 				</RelatedSegment>
 				<FareRefKey>APP4d7Cn7nbxPtQAFPKaZgTtTWfBIvaXbXSQHIOSbZoM#####PTCADT/TNO011/RNO611L/RONO25/TYPEPrice/DEP**DFW/ARR**CHI/
 				</FareRefKey>
-				<FareComponent Total="103.10" Fare="82.79" Surcharges="0">
+				<FareComponent Total="83.10" Fare="62.79" Surcharges="0">
 					<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
-					<BaseFare Amount="82.79"></BaseFare>
+					<BaseFare Amount="62.79"></BaseFare>
 					<Taxes  Amount="20.31">
 						<Tax  Amount="6.21">
 							<Designator>US</Designator>
@@ -381,6 +368,7 @@
 	<offer>
 		<offerId>1Z347</offerId>
 		<offerExpiryTime>2016-12-11T19:45</offerExpiryTime>
+		<offerStatus>Ready</offerStatus>
 		<sliceDetail>
 			<numberOfSegments>1</numberOfSegments>
 			<totalFlyTime>735</totalFlyTime>
@@ -554,6 +542,8 @@
 	</offer>
 	<offer>
 		<offerId>1Z348</offerId>
+		<offerExpiryTime>2016-12-11T19:45</offerExpiryTime>
+		<offerStatus>Ready</offerStatus>
 		<sliceDetail>
 			<numberOfSegments>1</numberOfSegments>
 			<totalFlyTime>735</totalFlyTime>
@@ -726,6 +716,8 @@
 	</offer>
 	<offer>
 		<offerId>1Z349</offerId>
+		<offerExpiryTime>2016-12-11T19:45</offerExpiryTime>
+		<offerStatus>Ready</offerStatus>
 		<sliceDetail>
 			<numberOfSegments>1</numberOfSegments>
 			<totalFlyTime>735</totalFlyTime>
@@ -898,6 +890,8 @@
 	</offer>
 	<offer>
 		<offerId>1Z350</offerId>
+		<offerExpiryTime>2016-12-11T19:45</offerExpiryTime>
+		<offerStatus>Ready</offerStatus>
 		<sliceDetail>
 			<numberOfSegments>1</numberOfSegments>
 			<totalFlyTime>735</totalFlyTime>

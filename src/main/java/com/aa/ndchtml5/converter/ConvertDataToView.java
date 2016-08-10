@@ -42,7 +42,7 @@ public class ConvertDataToView {
 	 * @return
 	 */
 	private static String getFlightDetails(Offer offer) {
-		String stops = getStopDetails(offer.getSliceDetail().getNumberOfSegments().intValue());
+		String stops = getStopDetails(offer.getSliceDetail().getNumberOfSegments());
 		String flightDetails = stops + " " + offer.getSliceDetail().getOrigin() + "-" +  offer.getSliceDetail().getDestination();
 		return flightDetails;
 	}

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.aa.ndchtml5.converter.ConvertXMLToJava;
 import com.aa.ndchtml5.domain.Offers;
+import com.aa.ndchtml5.domain.Offers.Offer;
 import com.aa.ndchtml5.service.CommonService;
 import com.aa.ndchtml5.web.model.FilterCriteria;
 import com.aa.ndchtml5.web.model.FlightSearchCriteria;
@@ -168,6 +169,15 @@ public class MainController {
 	@RequestMapping(value = "/showReceipt", method = RequestMethod.POST)
 	public String returnReceiptPage(@ModelAttribute("paymentDetails") PaymentDetails paymentDetails, ModelMap model) {
 		model.addAttribute("shoppingCartOffersList", shoppingCartOffersList);
+		for(OfferDetails offerDetails:shoppingCartOffersList){
+			for(Offer offer:allOffers.getOffer()){
+				if(offerDetails.getOfferId().equalsIgnoreCase(offer.getOfferId())){
+					offer.setOfferStatus("Purchased");
+				}
+			}
+			
+		}
+		ConvertXMLToJava.persistOffers(allOffers);
 		return "receipt";
 	}
 
