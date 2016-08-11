@@ -909,8 +909,7 @@
 		</includedFeatures>
 		<ForPurchaseFeatures>
 			<Feature>Wifi</Feature>
-			<Feature>Extra Miles</Feature>
-			<Feature>Checked Bags</Feature>
+			<Feature>Mileage Multiplier</Feature>
 		</ForPurchaseFeatures>
 	</offer>
 	
