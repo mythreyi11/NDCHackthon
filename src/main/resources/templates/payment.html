@@ -17,7 +17,7 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<div class="container">
 	<div class="left">
 		<a href="/welcome"><img src="/images/home.jpg"></img></a>
 	</div>
@@ -25,9 +25,7 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">Review and pay</h3>
 			</div>
-			<div class="panel-body">
-				<div id="filtered-result" th:fragment="resultsList"
-					th:object="${shoppingCartOffersList}" class="col-sm-offset-1 col-sm-5">
+			<div class="panel-body" th:object="${shoppingCartOffersList}">
 					<table
 						class="table table-striped table-hover">
 						<tr>
@@ -46,7 +44,6 @@
 							</tr>
 						</th:block>
 					</table>
-				</div>
 			</div>
 		</div>
 		<form class="form-display" autocomplete="off"
