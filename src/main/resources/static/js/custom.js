@@ -95,8 +95,4 @@
 								.removeClass('back-to-top-visible');
 					});
 			
-			/*function() {
-				($"#cartimage").hover() 
-						.addClass('animated infinite pulse');
-			});
-*/
+		

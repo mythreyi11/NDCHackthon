@@ -25,10 +25,8 @@
 
 <body>
 	<div id="main" class="container-fluid">
-
 		<div class="left">
-			<a id="towelcome" href="/welcome"><i
-				class="fa fa-angle-left big-arrow"></i></a>
+			<a href="/welcome"><img src="/images/home.jpg"></img></a>
 		</div>
 		<!--  to go back to main screen -->
 		<p class="padding-top"></p>
@@ -180,7 +178,7 @@
 																			<td><a th:text="${purchasedItem.offerId}" 
 																				role="button" data-toggle="collapse"
 																				aria-expanded="false"
-																				th:href="${purchasedItem.offerId}"> </a>
+																				th:href="'#' + ${purchasedItem.offerId}"> </a>
 																				<div class="collapse"
 																					th:id="${purchasedItem.offerId}">
 																					<div class="well">
