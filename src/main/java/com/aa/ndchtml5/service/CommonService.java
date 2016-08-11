@@ -46,19 +46,12 @@ public class CommonService {
 	public static ArrayList<OfferDetails> filterByFeature(List<String> selectedfeatures,
 			List<OfferDetails> offers) {
 		ArrayList<OfferDetails> filteredList = new ArrayList<OfferDetails>();
-		boolean featurePresentInoffer = false;
-			for (OfferDetails offer : offers) {
-				for (String selectedFeature : selectedfeatures) {
-					List<String> featuresInOffer = offer.getIncludeFeatures();
-					if (isSelectedPresentInOffer(selectedFeature, featuresInOffer)) {
-						 featurePresentInoffer = true;
-					} else {
-						 featurePresentInoffer = false;
-				}
-			}
-				if (featurePresentInoffer) {
-					filteredList.add(offer);
-				}
+		for (OfferDetails offer : offers) {
+			List<String> featuresInOffer = new ArrayList<String>();
+			featuresInOffer.addAll(offer.getIncludeFeatures());
+			featuresInOffer.addAll(offer.getPurchaseFeautues());
+			if (featuresInOffer.containsAll(selectedfeatures))
+				filteredList.add(offer);
 		}
 		return filteredList;
 	}

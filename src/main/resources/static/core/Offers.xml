@@ -1086,7 +1086,7 @@
 		</includedFeatures>
 		<ForPurchaseFeatures>
 			<Feature>Pre Ordered Meals</Feature>
-			<Feature>Baggage delivery</Feature>
+			<Feature>Baggage Delivery</Feature>
 			</ForPurchaseFeatures>
 	</offer>
 	
@@ -1276,7 +1276,7 @@
 			
 		<ForPurchaseFeatures>
 			<Feature>Pre Ordered Meals</Feature>
-			<Feature>Baggage delivery</Feature>
+			<Feature>Baggage Delivery</Feature>
 			</ForPurchaseFeatures>
 	</offer>
 	
@@ -1457,7 +1457,7 @@
 							</Taxes>
 						</FareComponent>
 					</FareInfo>
-					<FareCalculation>DFW AA BHM138.60SA07ZOL1 USD138.60END ZP DFW XT
+					<FareCalculation>DFW AA OGG138.60SA07ZOL1 USD138.60END ZP DFW XT
 						10.40US4.00ZP5.60AY4.50XF DFW4.50</FareCalculation>
 					<TicketByDate Time="23:59">2016-04-15</TicketByDate>
 					<Endorsement Type="A">
@@ -1486,7 +1486,7 @@
 		</includedFeatures>
 		<ForPurchaseFeatures>
 			<Feature>Mileage Multiplier</Feature>
-			<Feature>Upgrade to First Class</Feature>
+			<Feature>Upgrade To First Class</Feature>
 			<Feature>Pre Ordered Meals</Feature>
 		</ForPurchaseFeatures>
 	</offer>
@@ -1659,13 +1659,11 @@
 
 		<includedFeatures>
 			<Feature>Seat Back Entertainment</Feature>	
-			<Feature>Option to choose Exit Row</Feature>
-			<Feature>PowerPorts</Feature>
-			<Feature>Free Group1 boarding</Feature>
+			
 		</includedFeatures>
 		<ForPurchaseFeatures>
 			<Feature>Mileage Multiplier</Feature>
-			<Feature>Upgrade to First Class</Feature>
+			
 			<Feature>Pre Ordered Meals</Feature>
 		</ForPurchaseFeatures>
 	</offer>
