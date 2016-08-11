@@ -92,7 +92,7 @@ ul.slide li:hover {
 }
 
 .big-cart {
-	font-size: 300px;
+	font-size: 250px;
 }
 
 .big-arrow {
@@ -172,4 +172,8 @@ ul.slide li:hover {
 	background: #666;
 	color: #ffffff;
 	border-radius: 10px;
+}
+.scrollable{
+	max-height: 150px;
+	overflow-y: auto;
 }

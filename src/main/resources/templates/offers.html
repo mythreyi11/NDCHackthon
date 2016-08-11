@@ -101,7 +101,7 @@
 								<div class="col-xs-12 col-sm-6"
 									th:each="offer : ${displayOffersList}">
 									<div class="offer-highlight">
-										<div class="panel offer-panel" th:id="${offer.offerId}"
+										<div class="panel offer-panel grabbable" th:id="${offer.offerId}"
 											draggable="true" ondragstart="drag(event)">
 											<div class="panel-heading">
 												<div class="row">
@@ -171,6 +171,7 @@
 														<form id="view-cart-form" th:action="@{/payment}"
 															th:object="${shoppingCartOffersList}">
 															<div class="col-xs-12 text-center">
+																<div class="scrollable">
 																<table class="table">
 																	<th:block
 																		th:each="purchasedItem : ${shoppingCartOffersList}">
@@ -192,6 +193,7 @@
 																		</tr>
 																	</th:block>
 																</table>
+																</div>
 																<button type="submit" class="btn">Submit</button>
 															</div>
 														</form>
