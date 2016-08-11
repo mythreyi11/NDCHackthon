@@ -176,6 +176,8 @@
 			<Feature>Pre Ordered Meals</Feature>
 		</ForPurchaseFeatures>
 	</offer>
+	
+	
 	<offer>
 		<offerId>1Z520</offerId>
 		<offerExpiryTime>2016-12-11T09:45</offerExpiryTime>
@@ -365,6 +367,8 @@
 			<Feature>Pre Ordered Meals</Feature>
 		</ForPurchaseFeatures>
 	</offer>
+	
+	
 	<offer>
 		<offerId>1Z347</offerId>
 		<offerExpiryTime>2016-12-11T19:45</offerExpiryTime>
@@ -540,6 +544,201 @@
 			<Feature>Pre Ordered Meals</Feature>
 		</ForPurchaseFeatures>
 	</offer>
+	
+	
+	
+	<offer>
+		<offerId>1Z398</offerId>
+		<offerExpiryTime>2016-10-11T19:45</offerExpiryTime>
+		<offerStatus>Ready</offerStatus>
+		<sliceDetail>
+			<numberOfSegments>2</numberOfSegments>
+			<totalFlyTime>902</totalFlyTime>
+			<totalLayoverTime>390</totalLayoverTime>
+			<totalTravelTime>1292</totalTravelTime>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>SEA</destination>
+			<departureTime>2016-12-10T12:45</departureTime>
+			<arrivalTime>2016-12-10T19:30</arrivalTime>
+		</sliceDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>1454</flightNumber>
+			<CarrierCode>AA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>340</duration>
+			<nextSegmentLeadTime>390</nextSegmentLeadTime>
+			<hasPaidSeat>true</hasPaidSeat>
+			<hasFreeSeat>true</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>LAX</destination>
+			<departureTime>2016-12-10T12:45</departureTime>
+			<arrivalTime>2016-12-10T14:30</arrivalTime>
+		</segmentDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>2345</flightNumber>
+			<CarrierCode>AA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>930</mileage>
+			<duration>572</duration>
+			<nextSegmentLeadTime>0</nextSegmentLeadTime>
+			<hasPaidSeat>true</hasPaidSeat>
+			<hasFreeSeat>true</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>LAX</origin>
+			<destination>SEA</destination>
+			<departureTime>2016-12-10T17:45</departureTime>
+			<arrivalTime>2016-12-10T19:30</arrivalTime>
+		</segmentDetail>
+		<Price Total="143.10">
+					<BaseFare Amount="116.51"></BaseFare>
+					<taxes  Amount="26.59">
+						<tax  Amount="5.60">
+							<Designator>AY</Designator>
+							<Nature>US</Nature>
+							<Description>US September 11th Security Fee</Description>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>5.60</LocalAmount>
+						</tax>
+						<tax  Amount="12.49">
+							<Designator>US</Designator>
+							<Nature>US</Nature>
+							<Description>US Transportation Tax</Description>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>12.49</LocalAmount>
+						</tax>
+						<tax  Amount="4.50">
+							<Designator>XF</Designator>
+							<Nature>US</Nature>
+							<Description>US Passenger Facility Charge</Description>
+							<CollectionPoint Amount="4.50">
+								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+								<AirportAmount>4.50</AirportAmount>
+								<AirportCode>DFW</AirportCode>
+							</CollectionPoint>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>4.50</LocalAmount>
+						</tax>
+						<tax  Amount="4.00">
+							<Designator>ZP</Designator>
+							<Nature>US</Nature>
+							<Description>US Flight Segment Tax</Description>
+							<CollectionPoint Amount="4.00">
+								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+								<AirportAmount>4.00</AirportAmount>
+								<AirportCode>DFW</AirportCode>
+							</CollectionPoint>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>4.00</LocalAmount>
+						</tax>
+					</taxes>
+				</Price>
+				<FareRules>
+					<FareInfo>
+						<DepartureCode>DFW</DepartureCode>
+						<DepartureDate>2016-12-10</DepartureDate>
+						<DepartureTime>12:45</DepartureTime>
+						<ArrivalCode>SEA</ArrivalCode>
+						<ArrivalDate>2016-12-10</ArrivalDate>
+						<ArrivalTime>19:30</ArrivalTime>
+						<AirlineCode>AA</AirlineCode>
+						<FareBasisCode PriceClass="Lowest Fare">SA00ZNL1</FareBasisCode>
+						<record1FareType>SIP</record1FareType>
+						<RelatedSegment MarriedSegment="S">
+							<SegmentIDRef SegmentTrackingID="1091DFWORD2016-04-21S">1</SegmentIDRef>
+							<AirlineCode>AA</AirlineCode>
+							<DepartureCode>DFW</DepartureCode>
+							<ArrivalCode>SEA</ArrivalCode>
+							<DepartureDate>2016-12-10</DepartureDate>
+							<DepartureTime>12:45</DepartureTime>
+							<ArrivalDate>2016-12-10</ArrivalDate>
+							<ArrivalTime>19:30</ArrivalTime>
+							<FlightNumber>1091</FlightNumber>
+							<Cabin>Y</Cabin>
+							<ClassOfService>S</ClassOfService>
+							<NVB>2016-04-21</NVB>
+							<NVA>2016-04-21</NVA>
+							<StopOverIndicator>O</StopOverIndicator>
+							<ElectronicTicketing>Y</ElectronicTicketing>
+							<SegmentAvailability>FA|AA|PA|ZA|YA|BA|HA|MA|LA|KA|WA|VA|E0|GA|SA|NA|QA|OA|T0
+							</SegmentAvailability>
+						</RelatedSegment>
+						<FareRefKey>AIyl31QHm5NlBwQvuNkQ9cpl2/KPZqHZZPam8FAgn/aY#####PTCADT/TNO011/RNO611L/RONO205/TYPEPrice/DEP**DFW/ARR**CHI/
+						</FareRefKey>
+						<FareComponent Total="143.10" Fare="116.51"
+							Surcharges="0">
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<BaseFare Amount="116.51"></BaseFare>
+							<Taxes  Amount="26.59">
+								<Tax  Amount="12.49">
+									<Designator>US</Designator>
+									<Nature>US</Nature>
+									<Description>US Transportation Tax</Description>
+								</Tax>
+								<Tax  Amount="5.60">
+									<Designator>AY</Designator>
+									<Nature>US</Nature>
+									<Description>US September 11th Security Fee</Description>
+								</Tax>
+								<Tax  Amount="4.50">
+									<Designator>XF</Designator>
+									<Nature>US</Nature>
+									<Description>US Passenger Facility Charge</Description>
+									<CollectionPoint Amount="4.50">
+										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+										<AirportAmount>4.50</AirportAmount>
+										<AirportCode>DFW</AirportCode>
+									</CollectionPoint>
+								</Tax>
+								<Tax  Amount="4.00">
+									<Designator>ZP</Designator>
+									<Nature>US</Nature>
+									<Description>US Flight Segment Tax</Description>
+									<CollectionPoint Amount="4.00">
+										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+										<AirportAmount>4.00</AirportAmount>
+										<AirportCode>DFW</AirportCode>
+									</CollectionPoint>
+								</Tax>
+							</Taxes>
+						</FareComponent>
+					</FareInfo>
+					<FareCalculation>DFW AA SEA166.51SA00ZNL1 USD166.51END ZP DFW XT
+						12.49US4.00ZP5.60AY4.50XF DFW4.50</FareCalculation>
+					<TicketByDate Time="23:59">2016-04-15</TicketByDate>
+					<Endorsement Type="A">
+						<Text>NONREF/SVCCHGPLUSFAREDIF/</Text>
+					</Endorsement>
+					<Endorsement Type="A">
+						<Text>CXL BY FLT TIME OR NOVALUE</Text>
+					</Endorsement>
+					<Remark>This offer is non-refundable.</Remark>
+					<Remark>Changes to this offer will incur a penalty fee.</Remark>
+					<Penalty  TicketRefundable="N">
+						<Change Total="150.00" Amount="150.00">
+							<PenaltyAmount Unit="M">150.00</PenaltyAmount>
+							<Taxes Amount="000"></Taxes>
+						</Change>
+						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+					</Penalty>
+					<FeeApplies ChangeItinerary="Y"></FeeApplies>
+				</FareRules>
+
+		<includedFeatures>
+			<Feature>Seat Back Entertainment</Feature>
+		</includedFeatures>
+		<ForPurchaseFeatures>
+			<Feature>Advance Seat Selection</Feature>
+			<Feature>Pre Ordered Meals</Feature>
+		</ForPurchaseFeatures>
+	</offer>
+	
+	
+	
 	<offer>
 		<offerId>1Z348</offerId>
 		<offerExpiryTime>2016-12-11T19:45</offerExpiryTime>
@@ -552,8 +751,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>MSP</destination>
-			<departureTime>2016-12-01T08:45</departureTime>
-			<arrivalTime>2016-12-01T09:30</arrivalTime>
+			<departureTime>2016-12-10T08:45</departureTime>
+			<arrivalTime>2016-12-10T09:30</arrivalTime>
 		</sliceDetail>
 		<segmentDetail>
 			<aircraftType>S80</aircraftType>
@@ -568,8 +767,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>MSP</destination>
-			<departureTime>2016-12-01T08:45:00</departureTime>
-			<arrivalTime>2016-12-01T09:30</arrivalTime>
+			<departureTime>2016-12-10T08:45:00</departureTime>
+			<arrivalTime>2016-12-10T09:30</arrivalTime>
 		</segmentDetail>
 		<Price Total="220.10">
 					<BaseFare Amount="191.63"></BaseFare>
@@ -714,6 +913,9 @@
 			<Feature>Checked Bags</Feature>
 		</ForPurchaseFeatures>
 	</offer>
+	
+	
+	
 	<offer>
 		<offerId>1Z349</offerId>
 		<offerExpiryTime>2016-12-11T19:45</offerExpiryTime>
@@ -726,8 +928,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>ORD</destination>
-			<departureTime>2016-11-10T06:45</departureTime>
-			<arrivalTime>2016-11-10T10:30</arrivalTime>
+			<departureTime>2016-12-10T06:45</departureTime>
+			<arrivalTime>2016-12-10T10:30</arrivalTime>
 		</sliceDetail>
 		<segmentDetail>
 			<aircraftType>S80</aircraftType>
@@ -742,8 +944,8 @@
 			<cabinClass>COACH</cabinClass>
 			<origin>DFW</origin>
 			<destination>ORD</destination>
-			<departureTime>2016-11-10T06:45</departureTime>
-			<arrivalTime>2016-11-10T10:30</arrivalTime>
+			<departureTime>2016-12-10T06:45</departureTime>
+			<arrivalTime>2016-12-10T10:30</arrivalTime>
 		</segmentDetail>
 		<Price Total="163.10">
 					<BaseFare Amount="138.60"></BaseFare>
@@ -888,6 +1090,409 @@
 			<Feature>Baggage delivery</Feature>
 			</ForPurchaseFeatures>
 	</offer>
+	
+	
+	<offer>
+		<offerId>1Z450</offerId>
+		<offerExpiryTime>2016-11-11T16:45</offerExpiryTime>
+		<offerStatus>Ready</offerStatus>
+		<sliceDetail>
+			<numberOfSegments>2</numberOfSegments>
+			<totalFlyTime>735</totalFlyTime>
+			<totalLayoverTime>390</totalLayoverTime>
+			<totalTravelTime>1125</totalTravelTime>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>ORD</destination>
+			<departureTime>2016-11-10T06:45</departureTime>
+			<arrivalTime>2016-11-10T114:30</arrivalTime>
+		</sliceDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>2345</flightNumber>
+			<CarrierCode>AS</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>340</duration>
+			<nextSegmentLeadTime>390</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>ATL</destination>
+			<departureTime>2016-12-10T06:45</departureTime>
+			<arrivalTime>2016-12-10T10:30</arrivalTime>
+		</segmentDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>1905</flightNumber>
+			<CarrierCode>AA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>395</duration>
+			<nextSegmentLeadTime>0</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>ATL</origin>
+			<destination>ORD</destination>
+			<departureTime>2016-12-10T12:45</departureTime>
+			<arrivalTime>2016-12-10T14:30</arrivalTime>
+		</segmentDetail>
+		<Price Total="113.10">
+					<BaseFare Amount="88.60"></BaseFare>
+					<taxes  Amount="24.50">
+						<tax  Amount="5.60">
+							<Designator>AY</Designator>
+							<Nature>US</Nature>
+							<Description>US September 11th Security Fee</Description>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>5.60</LocalAmount>
+						</tax>
+						<tax  Amount="10.40">
+							<Designator>US</Designator>
+							<Nature>US</Nature>
+							<Description>US Transportation Tax</Description>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>10.40</LocalAmount>
+						</tax>
+						<tax  Amount="4.50">
+							<Designator>XF</Designator>
+							<Nature>US</Nature>
+							<Description>US Passenger Facility Charge</Description>
+							<CollectionPoint Amount="4.50">
+								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+								<AirportAmount>4.50</AirportAmount>
+								<AirportCode>DFW</AirportCode>
+							</CollectionPoint>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>4.50</LocalAmount>
+						</tax>
+						<tax  Amount="4.00">
+							<Designator>ZP</Designator>
+							<Nature>US</Nature>
+							<Description>US Flight Segment Tax</Description>
+							<CollectionPoint Amount="4.00">
+								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+								<AirportAmount>4.00</AirportAmount>
+								<AirportCode>DFW</AirportCode>
+							</CollectionPoint>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>4.00</LocalAmount>
+						</tax>
+					</taxes>
+				</Price>
+				<FareRules>
+					<FareInfo>
+						<DepartureCode>DFW</DepartureCode>
+						<DepartureDate>2016-11-10</DepartureDate>
+						<DepartureTime>06:45</DepartureTime>
+						<ArrivalCode>ORD</ArrivalCode>
+						<ArrivalDate>2016-11-10</ArrivalDate>
+						<ArrivalTime>10:30</ArrivalTime>
+						<AirlineCode>AA</AirlineCode>
+						<FareBasisCode PriceClass="Lowest Fare">SA07ZOL1</FareBasisCode>
+						<record1FareType>SIP</record1FareType>
+						<RelatedSegment MarriedSegment="S">
+							<SegmentIDRef SegmentTrackingID="90DFWORD2016-04-21S">1</SegmentIDRef>
+							<AirlineCode>AA</AirlineCode>
+							<DepartureCode>DFW</DepartureCode>
+							<ArrivalCode>ORD</ArrivalCode>
+							<DepartureDate>2016-04-21</DepartureDate>
+							<DepartureTime>05:10</DepartureTime>
+							<ArrivalDate>2016-04-21</ArrivalDate>
+							<ArrivalTime>10:30</ArrivalTime>
+							<FlightNumber>0090</FlightNumber>
+							<Cabin>Y</Cabin>
+							<ClassOfService>S</ClassOfService>
+							<NVB>2016-04-21</NVB>
+							<NVA>2016-04-21</NVA>
+							<StopOverIndicator>O</StopOverIndicator>
+							<ElectronicTicketing>Y</ElectronicTicketing>
+							<SegmentAvailability>FA|AA|PA|ZA|YA|BA|HA|MA|LA|KA|WA|VA|E0|GA|SA|N0|Q0|O0|T0
+							</SegmentAvailability>
+						</RelatedSegment>
+						<FareRefKey>AXi6Qptn9VhN/oqPb1tDtLu0pLThlG9xHExuIeO9ud6M#####PTCADT/TNO011/RNO611L/RONO205/TYPEPrice/DEP**DFW/ARR**CHI/
+						</FareRefKey>
+						<FareComponent Total="113.10" Fare="88.60"
+							Surcharges="0">
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<BaseFare Amount="88.60"></BaseFare>
+							<Taxes  Amount="24.50">
+								<Tax  Amount="10.40">
+									<Designator>US</Designator>
+									<Nature>US</Nature>
+									<Description>US Transportation Tax</Description>
+								</Tax>
+								<Tax  Amount="5.60">
+									<Designator>AY</Designator>
+									<Nature>US</Nature>
+									<Description>US September 11th Security Fee</Description>
+								</Tax>
+								<Tax  Amount="4.50">
+									<Designator>XF</Designator>
+									<Nature>US</Nature>
+									<Description>US Passenger Facility Charge</Description>
+									<CollectionPoint Amount="4.50">
+										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+										<AirportAmount>4.50</AirportAmount>
+										<AirportCode>DFW</AirportCode>
+									</CollectionPoint>
+								</Tax>
+								<Tax  Amount="4.00">
+									<Designator>ZP</Designator>
+									<Nature>US</Nature>
+									<Description>US Flight Segment Tax</Description>
+									<CollectionPoint Amount="4.00">
+										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+										<AirportAmount>4.00</AirportAmount>
+										<AirportCode>DFW</AirportCode>
+									</CollectionPoint>
+								</Tax>
+							</Taxes>
+						</FareComponent>
+					</FareInfo>
+					<FareCalculation>DFW AA CHI138.60SA07ZOL1 USD138.60END ZP DFW XT
+						10.40US4.00ZP5.60AY4.50XF DFW4.50</FareCalculation>
+					<TicketByDate Time="23:59">2016-04-15</TicketByDate>
+					<Endorsement Type="A">
+						<Text>NONREF/SVCCHGPLUSFAREDIF/</Text>
+					</Endorsement>
+					<Endorsement Type="A">
+						<Text>CXL BY FLT TIME OR NOVALUE</Text>
+					</Endorsement>
+					<Remark>This offer is non-refundable.</Remark>
+					<Remark>Changes to this offer will incur a penalty fee.</Remark>
+					<Penalty  TicketRefundable="N">
+						<Change Total="350.00" Amount="350.00">
+							<PenaltyAmount Unit="M">350.00</PenaltyAmount>
+							<Taxes Amount="000"></Taxes>
+						</Change>
+						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+					</Penalty>
+					<FeeApplies ChangeItinerary="Y"></FeeApplies>
+				</FareRules>
+
+		<includedFeatures/>
+			
+		<ForPurchaseFeatures>
+			<Feature>Pre Ordered Meals</Feature>
+			<Feature>Baggage delivery</Feature>
+			</ForPurchaseFeatures>
+	</offer>
+	
+	
+	<offer>
+		<offerId>1Z789</offerId>
+		<offerExpiryTime>2016-10-11T12:45</offerExpiryTime>
+		<offerStatus>Ready</offerStatus>
+		<sliceDetail>
+			<numberOfSegments>3</numberOfSegments>
+			<totalFlyTime>1480</totalFlyTime>
+			<totalLayoverTime>390</totalLayoverTime>
+			<totalTravelTime>1870</totalTravelTime>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>OGG</destination>
+			<departureTime>2016-12-10T06:45</departureTime>
+			<arrivalTime>2016-12-10T23:30</arrivalTime>
+		</sliceDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>1467</flightNumber>
+			<CarrierCode>AA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>180</duration>
+			<nextSegmentLeadTime>180</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>DFW</origin>
+			<destination>PHX</destination>
+			<departureTime>2016-12-10T06:45</departureTime>
+			<arrivalTime>2016-12-10T10:30</arrivalTime>
+		</segmentDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>1467</flightNumber>
+			<CarrierCode>AA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>380</duration>
+			<nextSegmentLeadTime>210</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>PHX</origin>
+			<destination>LAX</destination>
+			<departureTime>2016-10-10T12:45</departureTime>
+			<arrivalTime>2016-10-10T14:30</arrivalTime>
+		</segmentDetail>
+		<segmentDetail>
+			<aircraftType>S80</aircraftType>
+			<flightNumber>1467</flightNumber>
+			<CarrierCode>HA</CarrierCode>
+			<bookingCode>L</bookingCode>
+			<mileage>1137</mileage>
+			<duration>920</duration>
+			<nextSegmentLeadTime>0</nextSegmentLeadTime>
+			<hasPaidSeat>false</hasPaidSeat>
+			<hasFreeSeat>false</hasFreeSeat>
+			<cabinClass>COACH</cabinClass>
+			<origin>LAX</origin>
+			<destination>OGG</destination>
+			<departureTime>2016-10-10T16:45</departureTime>
+			<arrivalTime>2016-10-10T23:30</arrivalTime>
+		</segmentDetail>
+		<Price Total="1263.10">
+					<BaseFare Amount="1138.60"></BaseFare>
+					<taxes  Amount="124.50">
+						<tax  Amount="55.60">
+							<Designator>AY</Designator>
+							<Nature>US</Nature>
+							<Description>US September 11th Security Fee</Description>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>55.60</LocalAmount>
+						</tax>
+						<tax  Amount="20.40">
+							<Designator>US</Designator>
+							<Nature>US</Nature>
+							<Description>US Transportation Tax</Description>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>20.40</LocalAmount>
+						</tax>
+						<tax  Amount="14.50">
+							<Designator>XF</Designator>
+							<Nature>US</Nature>
+							<Description>US Passenger Facility Charge</Description>
+							<CollectionPoint Amount="4.50">
+								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+								<AirportAmount>14.50</AirportAmount>
+								<AirportCode>DFW</AirportCode>
+							</CollectionPoint>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>14.50</LocalAmount>
+						</tax>
+						<tax  Amount="34.00">
+							<Designator>ZP</Designator>
+							<Nature>US</Nature>
+							<Description>US Flight Segment Tax</Description>
+							<CollectionPoint Amount="34.00">
+								<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+								<AirportAmount>34.00</AirportAmount>
+								<AirportCode>DFW</AirportCode>
+							</CollectionPoint>
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<LocalAmount>34.00</LocalAmount>
+						</tax>
+					</taxes>
+				</Price>
+				<FareRules>
+					<FareInfo>
+						<DepartureCode>DFW</DepartureCode>
+						<DepartureDate>2016-12-10</DepartureDate>
+						<DepartureTime>06:45</DepartureTime>
+						<ArrivalCode>OGG</ArrivalCode>
+						<ArrivalDate>2016-12-10</ArrivalDate>
+						<ArrivalTime>23:30</ArrivalTime>
+						<AirlineCode>AA</AirlineCode>
+						<FareBasisCode PriceClass="Lowest Fare">SA07ZOL1</FareBasisCode>
+						<record1FareType>SIP</record1FareType>
+						<RelatedSegment MarriedSegment="S">
+							<SegmentIDRef SegmentTrackingID="1142DFWORD2016-04-21S">1</SegmentIDRef>
+							<AirlineCode>AA</AirlineCode>
+							<DepartureCode>DFW</DepartureCode>
+							<ArrivalCode>ORD</ArrivalCode>
+							<DepartureDate>2016-12-10</DepartureDate>
+							<DepartureTime>06:45</DepartureTime>
+							<ArrivalDate>2016-04-21</ArrivalDate>
+							<ArrivalTime>22:34</ArrivalTime>
+							<FlightNumber>1142</FlightNumber>
+							<Cabin>Y</Cabin>
+							<ClassOfService>S</ClassOfService>
+							<NVB>2016-04-21</NVB>
+							<NVA>2016-04-21</NVA>
+							<StopOverIndicator>O</StopOverIndicator>
+							<ElectronicTicketing>Y</ElectronicTicketing>
+							<SegmentAvailability>FA|AA|PA|ZA|YA|BA|HA|MA|LA|KA|WA|VA|E0|GA|SA|N0|Q0|O0|T0
+							</SegmentAvailability>
+						</RelatedSegment>
+						<FareRefKey>AXi6Qptn9VhN/oqPb1tDtLu0pLThlG9xHExuIeO9ud6M#####PTCADT/TNO011/RNO611L/RONO205/TYPEPrice/DEP**DFW/ARR**CHI/
+						</FareRefKey>
+						<FareComponent Total="1263.10" Fare="1138.60"
+							Surcharges="0">
+							<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+							<BaseFare Amount="1138.60"></BaseFare>
+							<Taxes  Amount="124.50">
+								<Tax  Amount="55.60">
+									<Designator>US</Designator>
+									<Nature>US</Nature>
+									<Description>US Transportation Tax</Description>
+								</Tax>
+								<Tax  Amount="20.40">
+									<Designator>AY</Designator>
+									<Nature>US</Nature>
+									<Description>US September 11th Security Fee</Description>
+								</Tax>
+								<Tax  Amount="14.50">
+									<Designator>XF</Designator>
+									<Nature>US</Nature>
+									<Description>US Passenger Facility Charge</Description>
+									<CollectionPoint Amount="14.50">
+										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+										<AirportAmount>14.50</AirportAmount>
+										<AirportCode>DFW</AirportCode>
+									</CollectionPoint>
+								</Tax>
+								<Tax  Amount="34.00">
+									<Designator>ZP</Designator>
+									<Nature>US</Nature>
+									<Description>US Flight Segment Tax</Description>
+									<CollectionPoint Amount="34.00">
+										<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+										<AirportAmount>34.00</AirportAmount>
+										<AirportCode>DFW</AirportCode>
+									</CollectionPoint>
+								</Tax>
+							</Taxes>
+						</FareComponent>
+					</FareInfo>
+					<FareCalculation>DFW AA BHM138.60SA07ZOL1 USD138.60END ZP DFW XT
+						10.40US4.00ZP5.60AY4.50XF DFW4.50</FareCalculation>
+					<TicketByDate Time="23:59">2016-04-15</TicketByDate>
+					<Endorsement Type="A">
+						<Text>NONREF/SVCCHGPLUSFAREDIF/</Text>
+					</Endorsement>
+					<Endorsement Type="A">
+						<Text>CXL BY FLT TIME OR NOVALUE</Text>
+					</Endorsement>
+					<Remark>This offer is non-refundable.</Remark>
+					<Remark>Changes to this offer will incur a penalty fee.</Remark>
+					<Penalty  TicketRefundable="N">
+						<Change Total="300.00" Amount="300.00">
+							<PenaltyAmount Unit="M">300.00</PenaltyAmount>
+							<Taxes Amount="000"></Taxes>
+						</Change>
+						<CurrencyCode NumberOfDecimals="2">USD</CurrencyCode>
+					</Penalty>
+					<FeeApplies ChangeItinerary="Y"></FeeApplies>
+				</FareRules>
+
+		<includedFeatures>
+			<Feature>Seat Back Entertainment</Feature>	
+			<Feature>Option to choose Exit Row</Feature>
+			<Feature>PowerPorts</Feature>
+			<Feature>Free Group1 boarding</Feature>
+		</includedFeatures>
+		<ForPurchaseFeatures>
+			<Feature>Mileage Multiplier</Feature>
+			<Feature>Upgrade to First Class</Feature>
+			<Feature>Pre Ordered Meals</Feature>
+		</ForPurchaseFeatures>
+	</offer>
+	
+	
 	<offer>
 		<offerId>1Z350</offerId>
 		<offerExpiryTime>2016-12-11T19:45</offerExpiryTime>

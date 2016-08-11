@@ -59,9 +59,11 @@ public class ConvertDataToView {
 		case 0:
 			return Stop.NONSTOP.getValue();
 		case 1:
-			return Stop.ONE_PLUS.getValue();
+			return Stop.ONE.getValue();
 		case 2:
-			return Stop.TWO_PLUS.getValue();
+			return Stop.TWO.getValue();
+		case 3:
+			return Stop.THREE.getValue();
 		default:
 			return null;
 		}
