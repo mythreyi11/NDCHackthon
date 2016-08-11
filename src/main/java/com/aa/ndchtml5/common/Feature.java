@@ -15,10 +15,11 @@ public class Feature extends DynamicView {
 	public static Feature UPGRADE_TO_FIRSTCLASS = new Feature("Upgrade To First Class",
 			"/images/upgrade_to_first_class.jpg");
 	public static Feature DOUBLE_MILES = new Feature("Double Miles", "/images/double_miles.jpg");
+	public static Feature ONE_FREE_CHECKED_BAG = new Feature("One Free Checked Bag", "/images/one_free_checked_bag.jpg");
 
 	public static final Feature[] featuresList = { SEAT_BACK_ENTERTAINMENT, POWER_PORTS, MAIN_CABIN_SEAT,
 			PRE_ORDERED_MEALS, WIFI, ADVANCE_SEAT_SELECTION, FREE_GROUP_ONE_BOARDING, BAGGAGE_DELIVERY,
-			UPGRADE_TO_FIRSTCLASS, DOUBLE_MILES };
+			UPGRADE_TO_FIRSTCLASS, DOUBLE_MILES,ONE_FREE_CHECKED_BAG};
 
 	public Feature(String code, String value) {
 		super(code, value);
