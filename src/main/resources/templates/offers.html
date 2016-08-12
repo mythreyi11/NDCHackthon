@@ -101,8 +101,9 @@
 								<div class="col-xs-12 col-sm-6"
 									th:each="offer : ${displayOffersList}">
 									<div class="offer-highlight">
-										<div class="panel offer-panel grabbable" th:id="${offer.offerId}"
-											draggable="true" ondragstart="drag(event)">
+										<div class="panel offer-panel grabbable"
+											th:id="${offer.offerId}" draggable="true"
+											ondragstart="drag(event)">
 											<div class="panel-heading">
 												<div class="row">
 													<label class="col-xs-offset-2 col-xs-2">Offer </label> <label
@@ -172,27 +173,30 @@
 															th:object="${shoppingCartOffersList}">
 															<div class="col-xs-12 text-center">
 																<div class="scrollable">
-																<table class="table">
-																	<th:block
-																		th:each="purchasedItem : ${shoppingCartOffersList}">
-																		<tr>
-																			<td><a th:text="${purchasedItem.offerId}" 
-																				role="button" data-toggle="collapse"
-																				aria-expanded="false"
-																				th:href="'#' + ${purchasedItem.offerId}"> </a>
-																				<div class="collapse"
-																					th:id="${purchasedItem.offerId}">
-																					<div class="well">
-																					<label th:text="${purchasedItem.offerId}"></label>
-																					</div>
-																				</div></td>
-																			<td><button type="button"
-																					th:onclick="'javascript:removeFromCart(\'' + ${purchasedItem.offerId} + '\');'">
-																					<i class="fa fa-minus-circle" aria-hidden="true"></i>
-																				</button></td>
-																		</tr>
-																	</th:block>
-																</table>
+																	<table class="table">
+																		<th:block
+																			th:each="purchasedItem : ${shoppingCartOffersList}">
+																			<tr>
+																				<td><a th:text="${purchasedItem.offerId}"
+																					role="button" data-toggle="collapse"
+																					aria-expanded="false"
+																					th:href="'#' + ${purchasedItem.offerId}"> </a>
+																					<div class="collapse"
+																						th:id="${purchasedItem.offerId}">
+																						<div class="well">
+																							<label th:text="${purchasedItem.flightDetails}"> </label>
+																							<label>Fare:</label> <label
+																								th:text="${purchasedItem.fare}">
+																							</label>
+																						</div>
+																					</div></td>
+																				<td><button type="button"
+																						th:onclick="'javascript:removeFromCart(\'' + ${purchasedItem.offerId} + '\');'">
+																						<i class="fa fa-minus-circle" aria-hidden="true"></i>
+																					</button></td>
+																			</tr>
+																		</th:block>
+																	</table>
 																</div>
 																<button type="submit" class="btn">Submit</button>
 															</div>
