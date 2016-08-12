@@ -2,15 +2,16 @@ package com.aa.ndchtml5.converter;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import com.aa.ndchtml5.common.Feature;
 import com.aa.ndchtml5.common.Stop;
 import com.aa.ndchtml5.domain.Offers.Offer;
 import com.aa.ndchtml5.web.model.OfferDetails;
 
 public class ConvertDataToView {
-	
-
 	
 	/**
 	 * This method will return the offerDetails given the offer
@@ -31,10 +32,10 @@ public class ConvertDataToView {
 		offerDetails.setPurchaseFeautues(offer.getForPurchaseFeatures().getFeature());
 		offerDetails.setPrice(offer.getPrice());
 		offerDetails.setFareRules(offer.getFareRules());
+		offerDetails.setInclTotalFeatures(getTotalFeature(offerDetails.getIncludeFeatures()));
+		offerDetails.setPurTotalFeautues(getTotalFeature(offerDetails.getPurchaseFeautues()));
 		return offerDetails;
 	}
-	
-	
 
 	/**
 	 * This method will return Flight itinerary string
@@ -46,8 +47,6 @@ public class ConvertDataToView {
 		String flightDetails = stops + " " + offer.getSliceDetail().getOrigin() + "-" +  offer.getSliceDetail().getDestination();
 		return flightDetails;
 	}
-	
-	
 	
 	/**
 	 * This method will return number of stops string
@@ -69,8 +68,6 @@ public class ConvertDataToView {
 		}
 		
 	}
-	
-	
 	
 	/**
 	 * This method will return formatted offer expiry date
@@ -94,4 +91,12 @@ public class ConvertDataToView {
 		formattedStr = "(Expires " +formattedStr+")";
 		return formattedStr;
 	}
+	
+	private static List<Feature> getTotalFeature(List<String> features) {
+		List<Feature> totalFeatures = new ArrayList<Feature>();
+		for (String feature : features) {
+				totalFeatures.add(Feature.getByCode(feature));
+			}
+		return totalFeatures;
+		}
 }

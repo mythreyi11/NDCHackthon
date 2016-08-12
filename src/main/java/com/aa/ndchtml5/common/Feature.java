@@ -24,5 +24,13 @@ public class Feature extends DynamicView {
 	public Feature(String code, String value) {
 		super(code, value);
 	}
-
+	
+	public static Feature getByCode(String code) {
+		for (Feature feature : featuresList) {
+			if (feature.getCode() != null && feature.getCode().equalsIgnoreCase(code)) {
+				return feature;
+			}
+		}
+		return null;
+	}
 }

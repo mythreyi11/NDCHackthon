@@ -18,79 +18,88 @@
 
 <body>
 	<div class="container">
-	<div class="left">
-		<a href="/welcome"><img src="/images/home.jpg"></img></a>
-	</div>
+		<div class="left">
+			<a href="/welcome"><img src="/images/home.jpg"></img></a>
+		</div>
 		<div class="panel">
 			<div class="panel-heading">
 				<h3 class="panel-title">Offer Summary</h3>
 			</div>
 			<div class="panel-body" th:object="${shoppingCartOffersList}">
-					<table
-						class="table table-striped table-hover">
+				<table class="table table-striped table-hover">
+					<tr>
+						<th>Sno.</th>
+						<th>Offer Id</th>
+						<th>Flight Details</th>
+						<th>Fare</th>
+						<th>Included Features</th>
+						<th>For Purchase Features</th>
+					</tr>
+					<th:block
+						th:each="purchasedItem,iterator : ${shoppingCartOffersList}">
 						<tr>
-							<th>Sno.</th>
-							<th>Offer Id</th>
-							<th>Flight Details</th>
-							<th>Fare</th>
-							<th>Included Features</th>
-							<th>For Purchase Features</th>
+							<td th:text="${iterator.index+1}"></td>
+							<td th:text="${purchasedItem.offerId}"></td>
+							<td th:text="${purchasedItem.flightDetails}"></td>
+							<td th:text="${purchasedItem.fare}"></td>
+							<td><ul>
+
+									<li th:each="inclFeature : ${purchasedItem.inclTotalFeatures}">
+										<img th:title="${inclFeature.getCode()}"
+										th:src="${inclFeature.getValue()}"
+										th:alt="${inclFeature.getCode()}"></img>
+									</li>
+								</ul></td>
+							<td><ul>
+									<li th:each="purFeature : ${purchasedItem.purTotalFeatures}">
+										<img th:title="${purFeature.getCode()}"
+										th:src="${purFeature.getValue()}"
+										th:alt="${purFeature.getCode()}"></img>
+										</li>
+								</ul></td>
 						</tr>
-						<th:block
-							th:each="purchasedItem,iterator : ${shoppingCartOffersList}">
-							<tr>
-								<td th:text="${iterator.index+1}"></td>
-								<td th:text="${purchasedItem.offerId}"></td>
-								<td th:text="${purchasedItem.flightDetails}"></td>
-								<td th:text="${purchasedItem.fare}"></td>
-								<td><ul>
-														<li th:each="inclFeature : ${purchasedItem.includeFeatures}"
-															th:text="${inclFeature}"></li>
-													</ul></td>
-								<td><ul>
-														<li th:each="purFeature : ${purchasedItem.purchaseFeautues}"
-															th:text="${purFeature}"></li>
-													</ul></td>
-							</tr>
-						</th:block>
-					</table>
+					</th:block>
+				</table>
 			</div>
 		</div>
-		
+
 		<div class="panel">
 			<div class="panel-heading">
 				<h3 class="panel-title">Fare Rules</h3>
 			</div>
 			<div class="panel-body" th:object="${shoppingCartOffersList}">
-					<table
-						class="table table-striped table-hover">
+				<table class="table table-striped table-hover">
+					<tr>
+						<th>Sno.</th>
+						<th>Offer Id</th>
+						<th>Base Fare</th>
+						<th>Tax Amount</th>
+						<th>Remarks</th>
+						<th>Change Itinerary allowed</th>
+						<th>Penalty Amount</th>
+					</tr>
+					<th:block
+						th:each="purchasedItem,iterator : ${shoppingCartOffersList}">
 						<tr>
-							<th>Sno.</th>
-							<th>Offer Id</th>
-							<th>Base Fare</th>
-							<th>Tax Amount</th>
-							<th>Remarks</th>
-							<th>Change Itinerary allowed</th>
-							<th>Penalty Amount</th>
+							<td th:text="${iterator.index+1}"></td>
+							<td th:text="${purchasedItem.offerId}"></td>
+							<td th:text="'$'+${purchasedItem.price.baseFare.amount}"></td>
+							<td th:text="'$'+${purchasedItem.price.taxes.amount}"></td>
+							<td>
+								<ul>
+									<li th:each="remark : ${purchasedItem.fareRules.Remark}"
+										th:text="${remark}"></li>
+								</ul>
+							</td>
+							<td
+								th:text="${purchasedItem.fareRules.feeApplies.changeItinerary}">
+							</td>
+							<td
+								th:text="'$'+${purchasedItem.fareRules.penalty.change.amount}">
+							</td>
 						</tr>
-						<th:block
-							th:each="purchasedItem,iterator : ${shoppingCartOffersList}">
-							<tr>
-								<td th:text="${iterator.index+1}"></td>
-								<td th:text="${purchasedItem.offerId}"></td>
-								<td th:text="'$'+${purchasedItem.price.baseFare.amount}"></td>
-								<td th:text="'$'+${purchasedItem.price.taxes.amount}"></td>
-								<td> <ul>
-														<li th:each="remark : ${purchasedItem.fareRules.Remark}"
-															th:text="${remark}"></li>
-													</ul></td>
-								<td th:text="${purchasedItem.fareRules.feeApplies.changeItinerary}">
-								</td>
-								<td th:text="'$'+${purchasedItem.fareRules.penalty.change.amount}">
-								</td>
-							</tr>
-						</th:block>
-					</table>
+					</th:block>
+				</table>
 			</div>
 		</div>
 	</div>

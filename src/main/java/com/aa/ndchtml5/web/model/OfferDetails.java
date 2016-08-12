@@ -2,6 +2,7 @@ package com.aa.ndchtml5.web.model;
 
 import java.util.List;
 
+import com.aa.ndchtml5.common.Feature;
 import com.aa.ndchtml5.domain.Offers.Offer.FareRules;
 import com.aa.ndchtml5.domain.Offers.Offer.Price;
 
@@ -15,6 +16,8 @@ public class OfferDetails {
 	private String offerExpiryDate;
 	private FareRules fareRules;
 	private Price price;
+	private List<Feature> inclTotalFeatures;
+	private List<Feature> purTotalFeatures;
 	
 	public String getOfferId() {
 		return offerId;
@@ -75,6 +78,18 @@ public class OfferDetails {
 	 */
 	public void setPrice(Price price) {
 		this.price = price;
+	}
+	public List<Feature> getInclTotalFeatures() {
+		return inclTotalFeatures;
+	}
+	public void setInclTotalFeatures(List<Feature> inclTotalFeatures) {
+		this.inclTotalFeatures = inclTotalFeatures;
+	}
+	public List<Feature> getPurTotalFeatures() {
+		return purTotalFeatures;
+	}
+	public void setPurTotalFeautues(List<Feature> purTotalFeatures) {
+		this.purTotalFeatures = purTotalFeatures;
 	}
 	
 	
