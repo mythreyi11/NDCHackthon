@@ -169,7 +169,7 @@
 			<Feature>Seat Back Entertainment</Feature>
 			<Feature>PowerPorts</Feature>
 			<Feature>Double Miles</Feature>
-			<Feature>Free Wifi</Feature>
+			<Feature>Wifi</Feature>
 		</includedFeatures>
 		<ForPurchaseFeatures>
 			<Feature>Advance Seat Selection</Feature>
@@ -360,7 +360,7 @@
 
 		<includedFeatures>
 			<Feature>Seat Back Entertainment</Feature>
-			<Feature>Free Wifi</Feature>
+			<Feature>Wifi</Feature>
 		</includedFeatures>
 		<ForPurchaseFeatures>
 			<Feature>Advance Seat Selection</Feature>
@@ -537,7 +537,7 @@
 		<includedFeatures>
 			<Feature>Seat Back Entertainment</Feature>
 			<Feature>One Free Checked Bag</Feature>
-			<Feature>Free Wifi</Feature>
+			<Feature>Wifi</Feature>
 		</includedFeatures>
 		<ForPurchaseFeatures>
 			<Feature>Advance Seat Selection</Feature>

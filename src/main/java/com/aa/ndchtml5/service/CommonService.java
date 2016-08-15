@@ -56,6 +56,26 @@ public class CommonService {
 		return filteredList;
 	}
 	
+	
+	/**
+	 * This method will filter the List based on the filters
+	 * @param selectedfeatures
+	 * @param offers
+	 * @return
+	 */
+	public static ArrayList<OfferDetails> filterByStops(List<String> selectedStops,
+			List<OfferDetails> offers) {
+		ArrayList<OfferDetails> filteredList = new ArrayList<OfferDetails>();
+		for (OfferDetails offer : offers) {
+			if(String.valueOf(offer.getNoOfSegments()).equals(selectedStops.get(0))){
+				filteredList.add(offer);
+			}
+			
+		}
+		return filteredList;
+	}
+	
+	
 	/**
 	 * This method will filter the offers by Date and Origin/Destination
 	 * @param allOffers

@@ -34,6 +34,10 @@ public class ConvertDataToView {
 		offerDetails.setFareRules(offer.getFareRules());
 		offerDetails.setInclTotalFeatures(getTotalFeature(offerDetails.getIncludeFeatures()));
 		offerDetails.setPurTotalFeautues(getTotalFeature(offerDetails.getPurchaseFeautues()));
+		offerDetails.setNoOfSegments(offer.getSliceDetail().getNumberOfSegments());
+		offerDetails.setSegmentDetailList(offer.getSegmentDetail());
+		
+		
 		return offerDetails;
 	}
 
