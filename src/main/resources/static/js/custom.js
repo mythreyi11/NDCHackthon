@@ -1,14 +1,21 @@
 			function getDetailsOnFilterSelection() {
-				var filters = {}
-				filters["selectedFeatures"] = $(
-						"input[type='checkbox']:checked").map(function() {
+				var selectedFeatures = {};
+				var selectedStops = {};
+					selectedFeatures["selectedFeatures"] = $(
+						"input.features[type='checkbox']:checked").map(function() {
 					return this.value;
 				}).get()
+				
+					selectedStops["selectedStops"] = $(
+							"input.stops[type='checkbox']:checked").map(function() {
+						return this.value;
+					}).get()
+					
 				$.ajax({
 					type : "POST",
 					contentType : "application/json",
 					url : "/getDetailsOnFilterSelection",
-					data : JSON.stringify(filters),
+					data : JSON.stringify({'selectedFeatures':selectedFeatures , 'selectedStops':selectedStops}),
 					dataType : 'html',
 					timeout : 100000,
 					success : function(data) {

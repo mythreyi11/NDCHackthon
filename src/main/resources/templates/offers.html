@@ -50,7 +50,7 @@
 							</div>
 							<ul class="slide">
 								<li th:each="stop : ${T(com.aa.ndchtml5.common.Stop).stopsList}">
-									<input type="checkbox" th:id="${stop.getCode()}"
+									<input type="checkbox"  class ="stops"
 									onclick="getDetailsOnFilterSelection()"
 									th:value="${stop.getCode()}" /> <label
 									th:for="${stop.getCode()}" th:text="${stop.getValue()}"></label>
@@ -64,7 +64,7 @@
 							<ul class="slide">
 								<li
 									th:each="airline : ${T(com.aa.ndchtml5.common.Airline).airlineList}">
-									<input type="checkbox" th:id="${airline.getCode()}"
+									<input type="checkbox"  class ="airlines"
 									onclick="getDetailsOnFilterSelection()"
 									th:value="${airline.getCode()}" /> <label
 									th:for="${airline.getCode()}" th:text="${airline.getValue()}"></label>
@@ -78,7 +78,7 @@
 							<ul class="slide">
 								<li
 									th:each="feature : ${T(com.aa.ndchtml5.common.Feature).featuresList}">
-									<input type="checkbox" th:id="${feature.getCode()}"
+									<input type="checkbox"  class ="features"
 									onclick="getDetailsOnFilterSelection()"
 									th:value="${feature.getCode()}" /> <label
 									th:for="${feature.getCode()}"> <img
