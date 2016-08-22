@@ -3,12 +3,16 @@ package com.aa.ndchtml5.service;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import com.aa.ndchtml5.converter.ConvertDataToView;
 import com.aa.ndchtml5.domain.Offers;
 import com.aa.ndchtml5.domain.Offers.Offer;
 import com.aa.ndchtml5.domain.Offers.Offer.SliceDetail;
+import com.aa.ndchtml5.web.model.FilterCriteria;
 import com.aa.ndchtml5.web.model.FlightSearchCriteria;
 import com.aa.ndchtml5.web.model.OfferDetails;
 
@@ -157,6 +161,52 @@ public class CommonService {
 			}
 		}
 		return null;
+	}
+
+
+	public static FilterCriteria mapFromJson(String str) {
+		FilterCriteria filters = new FilterCriteria();
+		Map<String, List<String>> responseMap = splitToMap(str, "&", ":",",");
+		for(Entry<String, List<String>> e : responseMap.entrySet()) {
+			if(e.getKey().contains("selectedFeatures")) {
+			filters.setSelectedFeatures(e.getValue());
+			}
+			if(e.getKey().contains("selectedStops")) {
+			filters.setSelectedStops(e.getValue()); 
+			}
+			if(e.getKey().contains("selectedAirlines")) {
+			filters.setSelectedAirlines(e.getValue());
+			}
+		}
+		return filters;
+	}
+
+	private static Map<String, List<String>> splitToMap(String source, String entriesSeparator,
+			String keyValueSeparator, String valueValueSeparator) {
+		source = source.replace("{", "");
+		source = source.replace("}", "");
+		source = source.replace("\"", "");
+		source = source.replace("[", "");
+		source = source.replace("]", "");
+		Map<String, List<String>> map = new HashMap<String, List<String>>();
+		String[] entries = source.split(entriesSeparator);
+		for (String entry : entries) {
+			if (entry.contains(keyValueSeparator)) {
+				String[] keyValue = entry.split(keyValueSeparator);
+				String[] values = keyValue.length > 1 ? keyValue[1].split(valueValueSeparator): new String[0];
+				List<String> valuesList = convertToList(values);
+				map.put(keyValue[0], valuesList);
+			}
+		}
+		return map;
+	}
+	
+	private static List<String> convertToList(String[] values) {
+		List<String> valuesList = new ArrayList<String>();
+		for (String s : values) {
+			valuesList.add(s);
+		}
+		return valuesList;
 	}
 
 }

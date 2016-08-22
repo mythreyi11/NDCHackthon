@@ -83,20 +83,24 @@ public class MainController {
 	 * @return
 	 */
 	@RequestMapping(value = "/getDetailsOnFilterSelection", method = RequestMethod.POST)
-	public String getFilteredOffers(@RequestBody FilterCriteria filters, ModelMap model) {
+	public String getFilteredOffers(@RequestBody String jsonInString, ModelMap model) {
+
+		FilterCriteria filters = CommonService.mapFromJson(jsonInString);
+		//load the displayOffersList with the available flightSearchOffersList first
+		displayOffersList = (ArrayList<OfferDetails>) flightSearchOffersList.clone();
 		
-		// if there are filters present then filter the flightSearchOffersList based on filters and remove shopping cart list
-		if (filters != null && !filters.getSelectedFeatures().isEmpty()) {
-			displayOffersList = CommonService.filterByFeature(filters.getSelectedFeatures(), flightSearchOffersList);
-			
-			displayOffersList = CommonService.getSubList(displayOffersList, shoppingCartOffersList);
-			//displayOffersList.removeAll(shoppingCartOffersList);
+		// filter by features is any of them are selected
+		if (!filters.getSelectedFeatures().isEmpty()) {
+			displayOffersList = CommonService.filterByFeature(filters.getSelectedFeatures(), displayOffersList);
 		}
-		else {
-			// if there are no filters then remove shoppingCartOffersList from flightSearchOffersList
-			//flightSearchOffersList.removeAll(shoppingCartOffersList);
-		displayOffersList = CommonService.getSubList(flightSearchOffersList, shoppingCartOffersList);
+		// filter by stops if any of them were selected
+		if (!filters.getSelectedStops().isEmpty()) {
+			displayOffersList = CommonService.filterByStops(filters.getSelectedStops(), displayOffersList);
 		}
+		//filter out the shopping cart list from the displayOffersList
+		displayOffersList = CommonService.getSubList(displayOffersList, shoppingCartOffersList);
+		// displayOffersList.removeAll(shoppingCartOffersList);
+
 		model.addAttribute("displayOffersList", displayOffersList);
 		return "offers :: filteredOffersList ";
 

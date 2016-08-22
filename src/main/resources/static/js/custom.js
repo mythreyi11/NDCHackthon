@@ -1,21 +1,26 @@
 			function getDetailsOnFilterSelection() {
 				var selectedFeatures = {};
 				var selectedStops = {};
-					selectedFeatures["selectedFeatures"] = $(
+				var selectedAirlines ={};
+				selectedFeatures["selectedFeatures"] = $(
 						"input.features[type='checkbox']:checked").map(function() {
 					return this.value;
 				}).get()
 				
-					selectedStops["selectedStops"] = $(
+				selectedStops["selectedStops"] = $(
 							"input.stops[type='checkbox']:checked").map(function() {
 						return this.value;
 					}).get()
+				selectedAirlines["selectedAirlines"] = $(
+							"input.airlines[type='checkbox']:checked").map(function() {
+						return this.value;
+					}).get()	
 					
 				$.ajax({
 					type : "POST",
 					contentType : "application/json",
 					url : "/getDetailsOnFilterSelection",
-					data : JSON.stringify({'selectedFeatures':selectedFeatures , 'selectedStops':selectedStops}),
+					data : JSON.stringify(selectedFeatures) +'&'+ JSON.stringify(selectedStops) + '&'+JSON.stringify(selectedAirlines),
 					dataType : 'html',
 					timeout : 100000,
 					success : function(data) {
