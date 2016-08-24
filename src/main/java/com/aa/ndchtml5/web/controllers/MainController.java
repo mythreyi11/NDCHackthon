@@ -82,22 +82,30 @@ public class MainController {
 	 * @param model
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/getDetailsOnFilterSelection", method = RequestMethod.POST)
 	public String getFilteredOffers(@RequestBody String jsonInString, ModelMap model) {
 
 		FilterCriteria filters = CommonService.mapFromJson(jsonInString);
-		//load the displayOffersList with the available flightSearchOffersList first
+		// load the displayOffersList with the available flightSearchOffersList
+		// first
 		displayOffersList = (ArrayList<OfferDetails>) flightSearchOffersList.clone();
-		
-		// filter by features is any of them are selected
-		if (!filters.getSelectedFeatures().isEmpty()) {
-			displayOffersList = CommonService.filterByFeature(filters.getSelectedFeatures(), displayOffersList);
-		}
+
 		// filter by stops if any of them were selected
 		if (!filters.getSelectedStops().isEmpty()) {
 			displayOffersList = CommonService.filterByStops(filters.getSelectedStops(), displayOffersList);
 		}
-		//filter out the shopping cart list from the displayOffersList
+		// filter by stops if any of them were selected
+		if (!filters.getSelectedAirlines().isEmpty()) {
+			displayOffersList = CommonService.filterByAirlines(filters.getSelectedAirlines(), displayOffersList);
+		}
+
+		// filter by features is any of them are selected
+		if (!filters.getSelectedFeatures().isEmpty()) {
+			displayOffersList = CommonService.filterByFeature(filters.getSelectedFeatures(), displayOffersList);
+		}
+
+		// filter out the shopping cart list from the displayOffersList
 		displayOffersList = CommonService.getSubList(displayOffersList, shoppingCartOffersList);
 		// displayOffersList.removeAll(shoppingCartOffersList);
 

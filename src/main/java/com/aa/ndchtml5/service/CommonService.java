@@ -2,6 +2,7 @@ package com.aa.ndchtml5.service;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Map.Entry;
 import com.aa.ndchtml5.converter.ConvertDataToView;
 import com.aa.ndchtml5.domain.Offers;
 import com.aa.ndchtml5.domain.Offers.Offer;
+import com.aa.ndchtml5.domain.Offers.Offer.SegmentDetail;
 import com.aa.ndchtml5.domain.Offers.Offer.SliceDetail;
 import com.aa.ndchtml5.web.model.FilterCriteria;
 import com.aa.ndchtml5.web.model.FlightSearchCriteria;
@@ -71,10 +73,34 @@ public class CommonService {
 			List<OfferDetails> offers) {
 		ArrayList<OfferDetails> filteredList = new ArrayList<OfferDetails>();
 		for (OfferDetails offer : offers) {
-			if(String.valueOf(offer.getNoOfSegments()).equals(selectedStops.get(0))){
+			if(selectedStops.contains(String.valueOf(offer.getNoOfSegments()))){
 				filteredList.add(offer);
 			}
 			
+		}
+		return filteredList;
+	}
+	
+	/**
+	 * This method will filter the List based on the filters
+	 * @param selectedfeatures
+	 * @param offers
+	 * @return
+	 */
+	public static ArrayList<OfferDetails> filterByAirlines(List<String> selectedAirlines,
+			List<OfferDetails> offers) {
+		ArrayList<OfferDetails> filteredList = new ArrayList<OfferDetails>();
+		for (OfferDetails offer : offers) {
+			List<SegmentDetail> segmentDetailList = offer.getSegmentDetailList();
+			String[] otherAirlinesCarrierCodes = {"IB","AS","HA","SQ"};
+			List<String> otherAirlinesList = Arrays.asList(otherAirlinesCarrierCodes);
+			for (SegmentDetail segment : segmentDetailList) {
+				if (selectedAirlines.contains(segment.getCarrierCode()) || (selectedAirlines.contains("OA") && otherAirlinesList.contains(segment.getCarrierCode()))) {
+					filteredList.add(offer);
+				}
+
+			}
+
 		}
 		return filteredList;
 	}

@@ -18,7 +18,7 @@
 		<segmentDetail>
 			<aircraftType>S80</aircraftType>
 			<flightNumber>1324</flightNumber>
-			<CarrierCode>AA</CarrierCode>
+			<CarrierCode>BA</CarrierCode>
 			<bookingCode>L</bookingCode>
 			<mileage>1137</mileage>
 			<duration>180</duration>
@@ -387,7 +387,7 @@
 		<segmentDetail>
 			<aircraftType>S80</aircraftType>
 			<flightNumber>1454</flightNumber>
-			<CarrierCode>AA</CarrierCode>
+			<CarrierCode>BA</CarrierCode>
 			<bookingCode>L</bookingCode>
 			<mileage>1137</mileage>
 			<duration>180</duration>
@@ -581,7 +581,7 @@
 		<segmentDetail>
 			<aircraftType>S80</aircraftType>
 			<flightNumber>2345</flightNumber>
-			<CarrierCode>AA</CarrierCode>
+			<CarrierCode>AS</CarrierCode>
 			<bookingCode>L</bookingCode>
 			<mileage>930</mileage>
 			<duration>572</duration>
