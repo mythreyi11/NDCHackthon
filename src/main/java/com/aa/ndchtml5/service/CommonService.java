@@ -94,11 +94,19 @@ public class CommonService {
 			List<SegmentDetail> segmentDetailList = offer.getSegmentDetailList();
 			String[] otherAirlinesCarrierCodes = {"IB","AS","HA","SQ"};
 			List<String> otherAirlinesList = Arrays.asList(otherAirlinesCarrierCodes);
+			boolean checkForAllSegments = false;
 			for (SegmentDetail segment : segmentDetailList) {
 				if (selectedAirlines.contains(segment.getCarrierCode()) || (selectedAirlines.contains("OA") && otherAirlinesList.contains(segment.getCarrierCode()))) {
-					filteredList.add(offer);
+					checkForAllSegments = true;
+				}
+				else {
+					checkForAllSegments = false;
+					break;
 				}
 
+			}
+			if (checkForAllSegments) {
+				filteredList.add(offer);
 			}
 
 		}
